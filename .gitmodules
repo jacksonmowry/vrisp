@@ -1,0 +1,6 @@
+[submodule "framework-open"]
+	path = framework-open
+	url = git@github.com:jacksonmowry/framework-open.git
+[submodule "dbscan"]
+	path = dbscan
+	url = git@github.com:TENNLab-UTK/dbscan.git
