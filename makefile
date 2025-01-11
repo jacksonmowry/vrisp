@@ -14,7 +14,8 @@ VRISP_OBJ = framework-open/obj/vrisp.o  framework-open/obj/vrisp_static.o
 FRAMEWORK_DIR = framework-open/
 DBSCAN_DIR = dbscan/
 
-all: bin/dbscan_app_risp \
+all: dirs \
+	 bin/dbscan_app_risp \
 	 bin/dbscan_app_vrisp \
 	 bin/downscale_app_risp \
 	 bin/downscale_app_vrisp
@@ -37,6 +38,9 @@ dbscan:
 framework:
 	( cd $(FRAMEWORK_DIR); make )
 
+dirs:
+	mkdir -p bin
+
 clean:
 	 rm -f bin/*
 
@@ -47,5 +51,7 @@ clean_framework:
 	( cd framework-open/ ; make clean )
 
 clean_all: clean clean_dbscan clean_framework
+
+.PHONY: dirs
 
 # end
