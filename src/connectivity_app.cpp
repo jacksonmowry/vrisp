@@ -1,17 +1,6 @@
 #include "framework.hpp"
-#include "utils/json_helpers.hpp"
 #include <chrono>
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
 #include <fstream>
-#include <iostream>
-#include <map>
-#include <sstream>
-#include <unistd.h>
-#include <unordered_set>
-#include <vector>
 
 using namespace std;
 using namespace neuro;
@@ -36,27 +25,31 @@ Network *load_network(Processor **pp, const json &network_json) {
 
   if (p->get_network_properties().as_json() !=
       net->get_properties().as_json()) {
-    // throw SRE("network and processor properties do not match.");
+    fprintf(
+        stderr,
+        "%s: load_network: Network and processor properties do not match.\n",
+        __FILE__);
+    return nullptr;
   }
 
   if (!p->load_network(net)) {
-    fprintf(stderr, "Failed to load network.\n");
-    exit(1);
+    fprintf(stderr, "%s: load_network: Failed to load network.\n", __FILE__);
+    return nullptr;
   }
-  // track_all_neuron_events(p, net);
 
   return net;
 }
 
 int main(int argc, char *argv[]) {
   if (argc != 4) {
-    fprintf(stderr, "usage: %s network_json activity_denom timesteps\n",
+    fprintf(stderr, "usage: %s network_json activity_percent timesteps\n",
             argv[0]);
-    exit(1);
+    return 1;
   }
+
   json network_json;
   vector<string> json_source = {argv[1]};
-  int activity_denom = stoi(argv[2]);
+  int activity_percent = stoi(argv[2]);
   size_t total_timesteps = stoull(argv[3]);
 
   ifstream fin(argv[1]);
@@ -65,6 +58,10 @@ int main(int argc, char *argv[]) {
   Processor *p = nullptr;
   Network *n = load_network(&p, network_json);
 
+  if (!n) {
+    fprintf(stderr, "%s: main: Unable to load network.\n", __FILE__);
+  }
+
   std::chrono::duration<double, std::ratio<1>> d =
       std::chrono::duration<double, std::ratio<1>>::zero();
 
@@ -72,7 +69,7 @@ int main(int argc, char *argv[]) {
     chrono::time_point<chrono::steady_clock> tp = chrono::steady_clock::now();
 
     for (int i = 0; i < n->num_inputs(); i++) {
-      if ((int)(rand() % 100 + 1) <= activity_denom) {
+      if ((int)(rand() % 100 + 1) <= activity_percent) {
         p->apply_spike(Spike(i, 0, 1));
       }
     }
