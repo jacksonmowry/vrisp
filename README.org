@@ -8,8 +8,8 @@ This repo utilizes git submodules, which require an additional flag when cloning
 git clone --recurse-submodules https://github.com/jacksonmowry/vrisp.git
 #+end_src
 
-* Buidling
-The makefile does nothing fancy, it simply makes all of the dependencies and then the actual apps for the processors we will be testing. It will always rebuild the apps even if nothing has changed, but you shouldn't need to run =make= more than once anyways.
+* Building
+The makefile does nothing fancy, it simply makes the dependencies and then the actual apps for the processors we will be testing.
 
 ** Building Natively
 
@@ -36,3 +36,50 @@ make riscv_vector CXX=riscv64-linux-gnu-g++ CFLAGS='-march=rv64gcv -Ofast -stati
 #+end_src
 
 You can of course substitute whichever particular compiler is present on your platform.
+
+* Testing
+** DBScan
+The script =scripts/dbscan_benchmark.bash= simulates inputs from an event based camera to six DBScan networks. These networks are generated using the [[https://github.com/TENNLab-UTK/dbscan][TENNLab DBSCan Repo]].
+
+If you build the apps to support vector processing run the following:
+#+begin_src bash
+bash scripts/dbscan_benchmark.bash vector
+#+end_src
+
+Otherwise:
+#+begin_src bash
+bash scripts/dbscan_benchmark.bash
+#+end_src
+
+*** Parameters
+| Epsilon | Min. Pts. | Neurons | Synapses | Average Fan-out |
+|---------+-----------+---------+----------+-----------------|
+|       / |         < |       < |        < |               < |
+|       1 |         7 |    2340 |     6488 |            2.77 |
+|       2 |        18 |    3380 |    15800 |            4.67 |
+|       3 |        36 |    4420 |    29212 |            6.91 |
+|       4 |        60 |    5460 |    46700 |            8.55 |
+|       5 |        90 |    6500 |    68240 |           10.50 |
+|       6 |       120 |    7540 |    93808 |           12.44 |
+
+** Connectivity
+#+begin_src bash
+$ bash scripts/connectivity_benchmark.bash
+usage: scripts/connectivity_benchmark.bash empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]
+#+end_src
+
+The script =scripts/connectivity_benchmark.bash= generates networks with a specified number of neurons, a connectivity change, and the number of input neurons. The network is then tested on all processors for a given number of time steps, with activity ranging from 0-=activity_max=. You can use the script to test specific network parameters or a range of different networks.
+
+#+begin_src bash
+$ bash scripts/connectivity_benchmark.bash networks/risp_1.json 100 2 3 5 5 vector
+Total Sim Time: Neurons: 100, Synapses: 169, Average Fan-out: 1.69, Connectivity Chance: 2%, Timesteps: 5
+| _  | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
+| 0% | 0.00059929 | 0.00035017 | 0.00090468 | 0.00093811 | 0.00047756  |
+| 1% | 0.00059340 | 0.00034584 | 0.00071904 | 0.00079502 | 0.00045998  |
+| 2% | 0.00052557 | 0.00034834 | 0.00072579 | 0.00101188 | 0.00047948  |
+| 3% | 0.00050354 | 0.00034848 | 0.00099544 | 0.00092406 | 0.00039611  |
+| 4% | 0.00058849 | 0.00048198 | 0.00069715 | 0.00088300 | 0.00038349  |
+| 5% | 0.00049121 | 0.00035676 | 0.00100672 | 0.00073501 | 0.00037580  |
+#+end_src
+
+The script =scripts/connectivity_benchmark_full.bash= is an example of a simple wrapper around the previous script. It generates networks with neuron counts ranging from =5-250=, and connectivity chances ranging from =5-100%=. Feel free to write your own simple wrapper, or modify the existing one to suit your needs.

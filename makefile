@@ -19,16 +19,14 @@ VRISP_RVV_SYNAPSES_OBJ = framework-open/obj/vrisp_rvv_synapses.o framework-open/
 FRAMEWORK_DIR = framework-open/
 DBSCAN_DIR = dbscan/
 
-all: dirs \
-	 dbscan/bin/dbscan_systolic_full \
+all: dbscan/bin/dbscan_systolic_full \
 	 framework-open/bin/network_tool \
 	 bin/dbscan_app_risp \
 	 bin/dbscan_app_vrisp \
 	 bin/connectivity_app_risp \
 	 bin/connectivity_app_vrisp \
 
-riscv_vector: dirs \
-	 		  dbscan/bin/dbscan_systolic_full \
+riscv_vector: dbscan/bin/dbscan_systolic_full \
 	 		  framework-open/bin/network_tool \
 			  bin/dbscan_app_risp \
 			  bin/dbscan_app_vrisp \
@@ -114,11 +112,6 @@ dbscan/bin/dbscan_systolic_full:
 
 framework-open/bin/network_tool:
 	( cd $(FRAMEWORK_DIR) && make bin/network_tool )
-
-dirs:
-	mkdir -p bin
-
-.PHONY: dirs
 
 # Clean up #####################################################################
 clean:

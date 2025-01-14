@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-readonly PROCESSORS=(risp vrisp vr_full vr_fired vr_synapses)
+PROCESSORS=(risp vrisp)
 
 # `generate_network` takes an empty network, a total number of neurons,
 #  a connectivity chance, and a number of input neurons, returning a
@@ -67,8 +67,8 @@ generate_network() {
 }
 
 main() {
-    if [ $# -ne 5 ] && [ $# -ne 6 ]; then
-        printf 'usage: %s empty_network num_neurons connectivity_chance num_inputs total_timesteps [activity_max]' "${0}"
+    if [ $# -ne 6 ] && [ $# -ne 7 ]; then
+        printf 'usage: %s empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]\n' "${0}"
         exit 1
     fi
 
@@ -77,7 +77,12 @@ main() {
     local connectivity_chance="${3}"
     local num_inputs="${4}"
     local total_timesteps="${5}"
-    local activity_max="${6:-100}"
+    local activity_max="${6}"
+    local vector="${7:-}"
+
+    if [ -n "${vector}" ]; then
+        PROCESSORS+=(vr_full vr_fired vr_synapses)
+    fi
 
     generate_network "${empty_network}" "${num_neurons}" "${connectivity_chance}" "${num_inputs}" >"${temp_file}"
 
@@ -91,19 +96,21 @@ main() {
         bin/connectivity_app_vrisp "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
     done))
 
-    vr_full=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
-        bin/connectivity_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
-    done))
+    if [ -n "${vector}" ]; then
+        vr_full=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
+            bin/connectivity_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
+        done))
 
-    vr_fired=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
-        bin/connectivity_app_vrisp_vector_fired "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
-    done))
+        vr_fired=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
+            bin/connectivity_app_vrisp_vector_fired "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
+        done))
 
-    vr_synapses=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
-        bin/connectivity_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
-    done))
+        vr_synapses=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
+            bin/connectivity_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
+        done))
+    fi
 
-    printf 'Connectivity Testing Sim Time (Seconds): Neurons: %s, Synapses: %s, Average Fan-out: %.2f, Connectivity Chance: %s%%, Timesteps: %s\n' "${num_neurons}" "$(jq '.Edges | length' "${temp_file}")" "$(jq '(.Edges | length) / (.Nodes | length)' "${temp_file}")" "${connectivity_chance}" "${total_timesteps}"
+    printf 'Total Sim Time: Neurons: %s, Synapses: %s, Average Fan-out: %.2f, Connectivity Chance: %s%%, Timesteps: %s\n' "${num_neurons}" "$(jq '.Edges | length' "${temp_file}")" "$(jq '(.Edges | length) / (.Nodes | length)' "${temp_file}")" "${connectivity_chance}" "${total_timesteps}"
     {
         printf '| _ '
         for proc in "${PROCESSORS[@]}"; do
@@ -118,9 +125,11 @@ main() {
 
             printf '%s ' "${risp[${i}]}"
             printf '%s ' "${vrisp[${i}]}"
-            printf '%s ' "${vr_full[${i}]}"
-            printf '%s ' "${vr_fired[${i}]}"
-            printf '%s ' "${vr_synapses[${i}]}"
+            if [ -n "${vector}" ]; then
+                printf '%s ' "${vr_full[${i}]}"
+                printf '%s ' "${vr_fired[${i}]}"
+                printf '%s ' "${vr_synapses[${i}]}"
+            fi
 
             printf '|\n'
         done

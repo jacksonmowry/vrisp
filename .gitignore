@@ -32,5 +32,5 @@
 *.app
 
 compile_flags.txt
-bin/
+bin/*
 *tmp*
