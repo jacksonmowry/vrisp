@@ -34,3 +34,5 @@
 compile_flags.txt
 bin/*
 *tmp*
+
+paper.*
