@@ -47,6 +47,7 @@ generate_network() {
 
         printf 'SNP_ALL Threshold 1\n'
 
+        local total_synapses=0
         for ((i = 0; i < total_neurons; i++)); do
             for ((j = 0; j < total_neurons; j++)); do
                 if ((i == j)); then
@@ -55,9 +56,14 @@ generate_network() {
 
                 if (((RANDOM % 100 + 1) <= connectivity_chance)); then
                     printf 'AE %d %d\n' "${i}" "${j}"
+                    total_synapses=$((total_synapses + 1))
                 fi
             done
         done
+
+        if [ "${total_synapses}" -eq 0 ]; then
+            printf 'AE %d %d\n' 0 "$((total_neurons - 1))"
+        fi
 
         printf 'SEP_ALL Weight 1\n'
         printf 'SEP_ALL Delay 1\n'

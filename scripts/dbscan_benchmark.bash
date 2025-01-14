@@ -22,35 +22,30 @@ main() {
 
         dbscan/bin/dbscan_systolic_full "${NUM_ROWS}" "${epsilon}" "${min_pts}" networks/risp_127.json | framework-open/bin/network_tool >"${temp_file}"
 
-        risp=($(for activity_percentage in {0..1}; do
+        risp=($(for activity_percentage in {0..100}; do
             bin/dbscan_app_risp "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
         done))
 
         sed -i -e 's/risp/vrisp/' -e 's/"discrete": true,/"tracked_timesteps": 16,/' "${temp_file}"
 
-        vrisp=($(for activity_percentage in {0..1}; do
+        vrisp=($(for activity_percentage in {0..100}; do
             bin/dbscan_app_vrisp "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
         done))
 
         if [ -n "${1:-}" ]; then
-            vr_full=($(for activity_percentage in {0..1}; do
+            vr_full=($(for activity_percentage in {0..100}; do
                 bin/dbscan_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
             done))
 
-            vr_fired=($(for activity_percentage in {0..1}; do
+            vr_fired=($(for activity_percentage in {0..100}; do
                 bin/dbscan_app_vrisp_vector_fired "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
             done))
 
-            vr_synapses=($(for activity_percentage in {0..1}; do
+            vr_synapses=($(for activity_percentage in {0..100}; do
                 bin/dbscan_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
             done))
         fi
 
-        neurons=$(jq '.Nodes | length' "${temp_file}")
-        synapses=$(jq '.Edges | length' "${temp_file}")
-        fan_out=$(echo "${synapses}"/"${neurons}" | bc -l)
-
-        printf 'Neurons: %s, Synapses: %s, Average Connectivity: %s\n' "${neurons}" "${synapses}" "${fan_out}"
         printf 'DBScan Epsilon: %s, Min. Pts.: %s\n' "${epsilon}" "${min_pts}"
         {
             printf '| _ '
