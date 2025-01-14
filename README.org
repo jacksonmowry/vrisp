@@ -63,9 +63,11 @@ bash scripts/dbscan_benchmark.bash
 
 *** Example Plots
 Epsilon 1, Min. Pts. 7
+
 [[results/dbscan_1_7.svg]]
 
 Epsilon 2, Min. Pts. 18
+
 [[results/dbscan_2_18.svg]]
 
 ** Connectivity
@@ -92,7 +94,9 @@ The script =scripts/connectivity_benchmark_full.bash= is an example of a simple 
 
 *** Example Plots
 15 Neurons, 20% Connectivity Chance
+
 [[results/con_p5_52_3.47_20percent.svg]]
 
 250 Neurons, 15% Connectivity Chance
+
 [[results/con_p50_9383_37.53_15percent.svg]]
