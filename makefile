@@ -26,18 +26,13 @@ all: dbscan/bin/dbscan_systolic_full \
 	 bin/connectivity_app_risp \
 	 bin/connectivity_app_vrisp \
 
-riscv_vector: dbscan/bin/dbscan_systolic_full \
-	 		  framework-open/bin/network_tool \
-			  bin/dbscan_app_risp \
-			  bin/dbscan_app_vrisp \
-			  bin/dbscan_app_vrisp_vector_full \
-			  bin/dbscan_app_vrisp_vector_fired \
-			  bin/dbscan_app_vrisp_vector_synapses \
-			  bin/connectivity_app_risp \
-			  bin/connectivity_app_vrisp \
-			  bin/connectivity_app_vrisp_vector_full \
-			  bin/connectivity_app_vrisp_vector_fired \
-			  bin/connectivity_app_vrisp_vector_synapses
+riscv_vector: all \
+						  bin/dbscan_app_vrisp_vector_full \
+						  bin/dbscan_app_vrisp_vector_fired \
+						  bin/dbscan_app_vrisp_vector_synapses \
+						  bin/connectivity_app_vrisp_vector_full \
+						  bin/connectivity_app_vrisp_vector_fired \
+						  bin/connectivity_app_vrisp_vector_synapses
 
 # Applications ################################################################
 bin/dbscan_app_risp: src/dbscan_app.cpp $(RISP_OBJ) $(FR_LIB)
@@ -114,7 +109,7 @@ framework-open/bin/network_tool:
 	( cd $(FRAMEWORK_DIR) && make bin/network_tool )
 
 # Clean up #####################################################################
-clean:
+clean: clean_dbscan clean_framework
 	 rm -f bin/*
 
 clean_dbscan:
@@ -123,5 +118,5 @@ clean_dbscan:
 clean_framework:
 	( cd framework-open/ ; make clean )
 
-clean_all: clean clean_dbscan clean_framework
+# clean_all: clean clean_dbscan clean_framework
 # end

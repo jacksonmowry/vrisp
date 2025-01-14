@@ -16,7 +16,7 @@ The makefile does nothing fancy, it simply makes the dependencies and then the a
 If you're building for any platform that is not RISCV64 with the 1.0 vector extension, you should compile with the following.
 
 #+begin_src sh
-make CXX='g++' CFLAGS='-O3'
+make
 #+end_src
 
 ** Building Natively for RV64GCV
