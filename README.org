@@ -38,8 +38,8 @@ make riscv_vector CXX=riscv64-linux-gnu-g++ CFLAGS='-march=rv64gcv -Ofast -stati
 You can of course substitute whichever particular compiler is present on your platform.
 
 * Testing
-** DBScan
-The script =scripts/dbscan_benchmark.bash= simulates inputs from an event based camera to six DBScan networks. These networks are generated using the [[https://github.com/TENNLab-UTK/dbscan][TENNLab DBSCan Repo]].
+** dbscan
+The script =scripts/dbscan_benchmark.bash= simulates inputs from an event based camera to six dbscan networks. These networks are generated using the [[https://github.com/TENNLab-UTK/dbscan][TENNLab dbscan Repo]].
 
 If you build the apps to support vector processing run the following:
 #+begin_src bash
