@@ -2,9 +2,19 @@
 set -euo pipefail
 
 readonly NUM_ROWS=260
-readonly PROCESSORS=(risp vrisp vr_full vr_fired vr_synapses)
+PROCESSORS=(risp vrisp)
+# readonly PROCESSORS=(risp vrisp vr_full vr_fired vr_synapses)
 
 main() {
+    if [ $# -gt 1 ]; then
+        echo "usage: $0 [vector]"
+        exit 1
+    fi
+
+    if [ -n "${1:-}" ]; then
+        PROCESSORS+=(vr_full vr_fired vr_synapses)
+    fi
+
     local -a dbscan_params=(1_7 2_18 3_36 4_60 5_90 6_120)
 
     for test_case in "${dbscan_params[@]}"; do
@@ -23,17 +33,19 @@ main() {
             bin/dbscan_app_vrisp "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
         done))
 
-        vr_full=($(for activity_percentage in {0..100}; do
-            bin/dbscan_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
-        done))
+        if [ -n "${1:-}" ]; then
+            vr_full=($(for activity_percentage in {0..100}; do
+                bin/dbscan_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
+            done))
 
-        vr_fired=($(for activity_percentage in {0..100}; do
-            bin/dbscan_app_vrisp_vector_fired "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
-        done))
+            vr_fired=($(for activity_percentage in {0..100}; do
+                bin/dbscan_app_vrisp_vector_fired "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
+            done))
 
-        vr_synapses=($(for activity_percentage in {0..100}; do
-            bin/dbscan_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
-        done))
+            vr_synapses=($(for activity_percentage in {0..100}; do
+                bin/dbscan_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
+            done))
+        fi
 
         printf 'DBScan Epsilon: %s, Min. Pts.: %s\n' "${epsilon}" "${min_pts}"
         {
@@ -50,16 +62,15 @@ main() {
 
                 printf '%s ' "${risp[${i}]}"
                 printf '%s ' "${vrisp[${i}]}"
-                printf '%s ' "${vr_full[${i}]}"
-                printf '%s ' "${vr_fired[${i}]}"
-                printf '%s ' "${vr_synapses[${i}]}"
+                if [ -n "${1:-}" ]; then
+                    printf '%s ' "${vr_full[${i}]}"
+                    printf '%s ' "${vr_fired[${i}]}"
+                    printf '%s ' "${vr_synapses[${i}]}"
+                fi
 
                 printf '|\n'
             done
         } | column --table -o ' | ' | sed 's/| //;s/ |$//'
-
-        # # TODO remove this, just testing 1_7 for now
-        # exit 1
     done
 
     return 0

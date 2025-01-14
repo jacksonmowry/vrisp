@@ -20,17 +20,26 @@ FRAMEWORK_DIR = framework-open/
 DBSCAN_DIR = dbscan/
 
 all: dirs \
-	 dbscan \
+	 dbscan/bin/dbscan_systolic_full \
+	 framework-open/bin/network_tool \
 	 bin/dbscan_app_risp \
 	 bin/dbscan_app_vrisp \
-	 bin/dbscan_app_vrisp_vector_full \
-	 bin/dbscan_app_vrisp_vector_fired \
-	 bin/dbscan_app_vrisp_vector_synapses \
 	 bin/connectivity_app_risp \
 	 bin/connectivity_app_vrisp \
-	 bin/connectivity_app_vrisp_vector_full \
-	 bin/connectivity_app_vrisp_vector_fired \
-	 bin/connectivity_app_vrisp_vector_synapses
+
+riscv_vector: dirs \
+	 		  dbscan/bin/dbscan_systolic_full \
+	 		  framework-open/bin/network_tool \
+			  bin/dbscan_app_risp \
+			  bin/dbscan_app_vrisp \
+			  bin/dbscan_app_vrisp_vector_full \
+			  bin/dbscan_app_vrisp_vector_fired \
+			  bin/dbscan_app_vrisp_vector_synapses \
+			  bin/connectivity_app_risp \
+			  bin/connectivity_app_vrisp \
+			  bin/connectivity_app_vrisp_vector_full \
+			  bin/connectivity_app_vrisp_vector_fired \
+			  bin/connectivity_app_vrisp_vector_synapses
 
 # Applications ################################################################
 bin/dbscan_app_risp: src/dbscan_app.cpp $(RISP_OBJ) $(FR_LIB)
@@ -99,13 +108,13 @@ framework-open/obj/vrisp_rvv_synapses.o: framework-open/src/vrisp.cpp $(FR_INC) 
 framework-open/obj/vrisp_static.o: framework-open/src/vrisp_static.cpp $(FR_INC) $(VRISP_INC)
 	$(CXX) -c $(FR_CFLAGS) -o framework-open/obj/vrisp_static.o framework-open/src/vrisp_static.cpp
 
-# dbscan:
-# 	( cd $(DBSCAN_DIR); make )
-
-# framework:
-# 	( cd $(FRAMEWORK_DIR); make )
-
 # Utility ######################################################################
+dbscan/bin/dbscan_systolic_full:
+	( cd $(DBSCAN_DIR) && make bin/dbscan_systolic_full )
+
+framework-open/bin/network_tool:
+	( cd $(FRAMEWORK_DIR) && make bin/network_tool )
+
 dirs:
 	mkdir -p bin
 

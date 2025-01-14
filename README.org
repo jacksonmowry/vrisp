@@ -11,8 +11,28 @@ git clone --recurse-submodules https://github.com/jacksonmowry/vrisp.git
 * Buidling
 The makefile does nothing fancy, it simply makes all of the dependencies and then the actual apps for the processors we will be testing. It will always rebuild the apps even if nothing has changed, but you shouldn't need to run =make= more than once anyways.
 
-**
+** Building Natively
+
+If you're building for any platform that is not RISCV64 with the 1.0 vector extension, you should compile with the following.
 
 #+begin_src console
 make
 #+end_src
+
+** Building Natively for RV64GCV
+
+To build the full suite of processors you can use the full makefile.
+
+#+begin_src console
+make riscv_vector
+#+end_src
+
+** Building for RV64GCV on QEMU Static
+
+Due to the lack of hardware supporting the RISCV Vector 1.0 extension it is more approachable to develop with an emulator. I won't go into detail on setting up QEMU but they should have plenty of documentation for your platform.
+
+#+begin_src console
+make riscv_vector CXX=riscv64-linux-gnu-g++ CFLAGS='-march=rv64gcv -Ofast -static'
+#+end_src
+
+You can of course substitute whichever particular compiler is present on your platform.

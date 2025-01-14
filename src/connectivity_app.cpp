@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
   std::chrono::duration<double, std::ratio<1>> d =
       std::chrono::duration<double, std::ratio<1>>::zero();
 
-  for (int timestep = 0; timestep < total_timesteps; timestep++) {
+  for (size_t timestep = 0; timestep < total_timesteps; timestep++) {
     chrono::time_point<chrono::steady_clock> tp = chrono::steady_clock::now();
 
     for (int i = 0; i < n->num_inputs(); i++) {

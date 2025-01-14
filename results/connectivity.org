@@ -1,6 +1,20 @@
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 1, Average Fan-out: 0.20, Connectivity Chance: 5%, Timesteps: 1000"
+# (while (not (eobp))
+
+# (org-plot/goto-nearest-table)
+
+# (forward-line -1)
+
+# (if (string-match-p "#\\+PLOT" (thing-at-point 'line))
+
+# (org-plot/gnuplot))
+
+# (forward-line 1)
+
+# (goto-char (org-table-end)))
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 1, Average Fan-out: 0.20, Connectivity Chance: 5%"
+#+PLOT: file:"con_p_1_0.20_5percent.svg"
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below horizontal"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00048108 | 0.00067530 | 0.00064230 | 0.00058433 | 0.00068205  |
@@ -104,9 +118,10 @@
 | 98%  | 0.00165733 | 0.00084496 | 0.00087741 | 0.00082037 | 0.00091486  |
 | 99%  | 0.00174469 | 0.00085248 | 0.00099900 | 0.00081326 | 0.00102730  |
 | 100% | 0.00170926 | 0.00097497 | 0.00087837 | 0.00093851 | 0.00091586  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 10%"
+#+PLOT: file:"con_p_3_0.60_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00048226 | 0.00058455 | 0.00057675 | 0.00056511 | 0.00060821  |
@@ -210,9 +225,10 @@
 | 98%  | 0.00181006 | 0.00092403 | 0.00113241 | 0.00087340 | 0.00110523  |
 | 99%  | 0.00181804 | 0.00103637 | 0.00106181 | 0.00101370 | 0.00111414  |
 | 100% | 0.00197134 | 0.00094148 | 0.00106637 | 0.00088526 | 0.00110453  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 1, Average Fan-out: 0.20, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 1, Average Fan-out: 0.20, Connectivity Chance: 15%"
+#+PLOT: file:"con_p_1_0.20_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00047584 | 0.00059156 | 0.00056841 | 0.00065152 | 0.00060478  |
@@ -316,9 +332,10 @@
 | 98%  | 0.00196545 | 0.00085344 | 0.00087252 | 0.00082488 | 0.00091296  |
 | 99%  | 0.00170690 | 0.00098285 | 0.00091344 | 0.00080956 | 0.00091234  |
 | 100% | 0.00161741 | 0.00086222 | 0.00100433 | 0.00081993 | 0.00092162  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 20%"
+#+PLOT: file:"con_p_3_0.60_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00048315 | 0.00059178 | 0.00057455 | 0.00056940 | 0.00070646  |
@@ -422,9 +439,10 @@
 | 98%  | 0.00185807 | 0.00088229 | 0.00088103 | 0.00084185 | 0.00100867  |
 | 99%  | 0.00173993 | 0.00087148 | 0.00099163 | 0.00084859 | 0.00092022  |
 | 100% | 0.00192833 | 0.00089511 | 0.00088700 | 0.00096586 | 0.00092444  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 3, Average Fan-out: 0.60, Connectivity Chance: 25%"
+#+PLOT: file:"con_p_3_0.60_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00048911 | 0.00063096 | 0.00056804 | 0.00057679 | 0.00066967  |
@@ -528,9 +546,10 @@
 | 98%  | 0.00179075 | 0.00092474 | 0.00109386 | 0.00088422 | 0.00113822  |
 | 99%  | 0.00192248 | 0.00094100 | 0.00098016 | 0.00088674 | 0.00101859  |
 | 100% | 0.00188518 | 0.00091426 | 0.00098697 | 0.00100234 | 0.00109156  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 9, Average Fan-out: 1.80, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 9, Average Fan-out: 1.80, Connectivity Chance: 50%"
+#+PLOT: file:"con_p_9_1.80_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00049215 | 0.00059851 | 0.00057404 | 0.00056863 | 0.00061193  |
@@ -634,9 +653,10 @@
 | 98%  | 0.00225086 | 0.00107707 | 0.00116004 | 0.00102855 | 0.00119922  |
 | 99%  | 0.00220378 | 0.00119819 | 0.00116566 | 0.00102311 | 0.00119811  |
 | 100% | 0.00233648 | 0.00108340 | 0.00117734 | 0.00101448 | 0.00120059  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 15, Average Fan-out: 3.00, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 15, Average Fan-out: 3.00, Connectivity Chance: 75%"
+#+PLOT: file:"con_p_15_3.00_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00048731 | 0.00059366 | 0.00057663 | 0.00057363 | 0.00060253  |
@@ -740,9 +760,10 @@
 | 98%  | 0.00273418 | 0.00121344 | 0.00125478 | 0.00116401 | 0.00140363  |
 | 99%  | 0.00276018 | 0.00120649 | 0.00132506 | 0.00117722 | 0.00129281  |
 | 100% | 0.00268722 | 0.00122060 | 0.00124944 | 0.00116412 | 0.00137278  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 5, Synapses: 20, Average Fan-out: 4.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 5, Synapses: 20, Average Fan-out: 4.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p_20_4.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00049363 | 0.00059670 | 0.00057166 | 0.00064859 | 0.00060959  |
@@ -846,9 +867,10 @@
 | 98%  | 0.00288607 | 0.00145244 | 0.00134537 | 0.00129379 | 0.00136918  |
 | 99%  | 0.00293697 | 0.00133966 | 0.00125677 | 0.00135963 | 0.00128953  |
 | 100% | 0.00293245 | 0.00132874 | 0.00134185 | 0.00127123 | 0.00141559  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 4, Average Fan-out: 0.40, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 4, Average Fan-out: 0.40, Connectivity Chance: 5%"
+#+PLOT: file:"con_p0_4_0.40_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00055934 | 0.00077937 | 0.00068367 | 0.00068889 | 0.00076177  |
@@ -952,9 +974,10 @@
 | 98%  | 0.00170935 | 0.00105245 | 0.00109929 | 0.00108041 | 0.00111356  |
 | 99%  | 0.00181162 | 0.00112137 | 0.00102663 | 0.00096991 | 0.00119507  |
 | 100% | 0.00180282 | 0.00105623 | 0.00103085 | 0.00105857 | 0.00112363  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 8, Average Fan-out: 0.80, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 8, Average Fan-out: 0.80, Connectivity Chance: 10%"
+#+PLOT: file:"con_p0_8_0.80_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00055637 | 0.00076355 | 0.00069148 | 0.00076733 | 0.00084278  |
@@ -1058,9 +1081,10 @@
 | 98%  | 0.00201644 | 0.00104689 | 0.00109489 | 0.00096458 | 0.00117161  |
 | 99%  | 0.00193401 | 0.00106585 | 0.00108967 | 0.00096839 | 0.00117851  |
 | 100% | 0.00187659 | 0.00106107 | 0.00117657 | 0.00105817 | 0.00118548  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 15, Average Fan-out: 1.50, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 15, Average Fan-out: 1.50, Connectivity Chance: 15%"
+#+PLOT: file:"con_p0_15_1.50_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00057452 | 0.00076178 | 0.00070000 | 0.00077930 | 0.00077004  |
@@ -1164,9 +1188,10 @@
 | 98%  | 0.00215681 | 0.00119945 | 0.00138993 | 0.00114064 | 0.00140370  |
 | 99%  | 0.00230323 | 0.00128775 | 0.00131553 | 0.00111752 | 0.00151648  |
 | 100% | 0.00227130 | 0.00120559 | 0.00139290 | 0.00111481 | 0.00140375  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 15, Average Fan-out: 1.50, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 15, Average Fan-out: 1.50, Connectivity Chance: 20%"
+#+PLOT: file:"con_p0_15_1.50_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00054252 | 0.00075970 | 0.00067989 | 0.00069566 | 0.00076291  |
@@ -1270,9 +1295,10 @@
 | 98%  | 0.00185493 | 0.00103363 | 0.00101292 | 0.00093404 | 0.00112191  |
 | 99%  | 0.00169263 | 0.00111666 | 0.00099596 | 0.00094571 | 0.00108956  |
 | 100% | 0.00174748 | 0.00101996 | 0.00113474 | 0.00094582 | 0.00110411  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 23, Average Fan-out: 2.30, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 23, Average Fan-out: 2.30, Connectivity Chance: 25%"
+#+PLOT: file:"con_p0_23_2.30_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00054733 | 0.00076369 | 0.00068967 | 0.00069330 | 0.00076689  |
@@ -1376,9 +1402,10 @@
 | 98%  | 0.00312224 | 0.00167677 | 0.00175378 | 0.00155550 | 0.00192596  |
 | 99%  | 0.00316303 | 0.00160258 | 0.00183170 | 0.00148697 | 0.00192990  |
 | 100% | 0.00306360 | 0.00159959 | 0.00184029 | 0.00161269 | 0.00187225  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 47, Average Fan-out: 4.70, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 47, Average Fan-out: 4.70, Connectivity Chance: 50%"
+#+PLOT: file:"con_p0_47_4.70_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062886 | 0.00076626 | 0.00068541 | 0.00069641 | 0.00076307  |
@@ -1482,9 +1509,10 @@
 | 98%  | 0.00462474 | 0.00225760 | 0.00186489 | 0.00214708 | 0.00203693  |
 | 99%  | 0.00447982 | 0.00226763 | 0.00185464 | 0.00211382 | 0.00206778  |
 | 100% | 0.00468304 | 0.00226297 | 0.00193681 | 0.00212022 | 0.00203622  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 66, Average Fan-out: 6.60, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 66, Average Fan-out: 6.60, Connectivity Chance: 75%"
+#+PLOT: file:"con_p0_66_6.60_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00066177 | 0.00076359 | 0.00069430 | 0.00069048 | 0.00082778  |
@@ -1588,9 +1616,10 @@
 | 98%  | 0.00609727 | 0.00272207 | 0.00188415 | 0.00247089 | 0.00205161  |
 | 99%  | 0.00617255 | 0.00264441 | 0.00188674 | 0.00249007 | 0.00204534  |
 | 100% | 0.00642226 | 0.00271560 | 0.00188270 | 0.00247744 | 0.00205466  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 10, Synapses: 90, Average Fan-out: 9.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 10, Synapses: 90, Average Fan-out: 9.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p0_90_9.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00055307 | 0.00084255 | 0.00076289 | 0.00076574 | 0.00076303  |
@@ -1694,9 +1723,10 @@
 | 98%  | 0.00723923 | 0.00324618 | 0.00185567 | 0.00304911 | 0.00196224  |
 | 99%  | 0.00726752 | 0.00327448 | 0.00186463 | 0.00298704 | 0.00196511  |
 | 100% | 0.00729001 | 0.00317678 | 0.00187290 | 0.00305418 | 0.00204921  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 8, Average Fan-out: 0.53, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 8, Average Fan-out: 0.53, Connectivity Chance: 5%"
+#+PLOT: file:"con_p5_8_0.53_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00060899 | 0.00101514 | 0.00079657 | 0.00080289 | 0.00093970  |
@@ -1800,9 +1830,10 @@
 | 98%  | 0.00177444 | 0.00118530 | 0.00110592 | 0.00105067 | 0.00136670  |
 | 99%  | 0.00185078 | 0.00118830 | 0.00111891 | 0.00117844 | 0.00124877  |
 | 100% | 0.00176484 | 0.00118852 | 0.00112077 | 0.00105437 | 0.00125015  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 22, Average Fan-out: 1.47, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 22, Average Fan-out: 1.47, Connectivity Chance: 10%"
+#+PLOT: file:"con_p5_22_1.47_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00065100 | 0.00101167 | 0.00088006 | 0.00080345 | 0.00093022  |
@@ -1906,9 +1937,10 @@
 | 98%  | 0.00311290 | 0.00170170 | 0.00210456 | 0.00161408 | 0.00229313  |
 | 99%  | 0.00300559 | 0.00181286 | 0.00202222 | 0.00154404 | 0.00228860  |
 | 100% | 0.00301017 | 0.00181544 | 0.00203136 | 0.00153956 | 0.00227164  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 32, Average Fan-out: 2.13, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 32, Average Fan-out: 2.13, Connectivity Chance: 15%"
+#+PLOT: file:"con_p5_32_2.13_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062642 | 0.00093970 | 0.00087722 | 0.00080163 | 0.00093018  |
@@ -2012,9 +2044,10 @@
 | 98%  | 0.00394215 | 0.00214930 | 0.00243470 | 0.00195430 | 0.00251168  |
 | 99%  | 0.00403685 | 0.00212514 | 0.00243778 | 0.00187104 | 0.00259700  |
 | 100% | 0.00395611 | 0.00213178 | 0.00237014 | 0.00187255 | 0.00252030  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 52, Average Fan-out: 3.47, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 52, Average Fan-out: 3.47, Connectivity Chance: 20%"
+#+PLOT: file:"con_p5_52_3.47_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062160 | 0.00092970 | 0.00080911 | 0.00080856 | 0.00093486  |
@@ -2118,9 +2151,10 @@
 | 98%  | 0.00485540 | 0.00267934 | 0.00246200 | 0.00239623 | 0.00264277  |
 | 99%  | 0.00490256 | 0.00265677 | 0.00249181 | 0.00240335 | 0.00262177  |
 | 100% | 0.00502944 | 0.00266404 | 0.00246244 | 0.00241819 | 0.00265592  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 51, Average Fan-out: 3.40, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 51, Average Fan-out: 3.40, Connectivity Chance: 25%"
+#+PLOT: file:"con_p5_51_3.40_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062097 | 0.00092626 | 0.00081405 | 0.00080122 | 0.00100888  |
@@ -2224,9 +2258,10 @@
 | 98%  | 0.00481345 | 0.00258599 | 0.00245327 | 0.00238692 | 0.00254612  |
 | 99%  | 0.00484784 | 0.00260392 | 0.00246270 | 0.00234059 | 0.00257493  |
 | 100% | 0.00498822 | 0.00259564 | 0.00248311 | 0.00237889 | 0.00263070  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 111, Average Fan-out: 7.40, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 111, Average Fan-out: 7.40, Connectivity Chance: 50%"
+#+PLOT: file:"con_p5_111_7.40_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062178 | 0.00100179 | 0.00080437 | 0.00080722 | 0.00093266  |
@@ -2330,9 +2365,10 @@
 | 98%  | 0.00813232 | 0.00402419 | 0.00257192 | 0.00368893 | 0.00270626  |
 | 99%  | 0.00814573 | 0.00399796 | 0.00248929 | 0.00369828 | 0.00271749  |
 | 100% | 0.00817130 | 0.00401866 | 0.00259101 | 0.00369484 | 0.00268769  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 158, Average Fan-out: 10.53, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 158, Average Fan-out: 10.53, Connectivity Chance: 75%"
+#+PLOT: file:"con_p5_158_10.53_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00062352 | 0.00092856 | 0.00080101 | 0.00087482 | 0.00093404  |
@@ -2436,9 +2472,10 @@
 | 98%  | 0.01132063 | 0.00511341 | 0.00259978 | 0.00474515 | 0.00266275  |
 | 99%  | 0.01111041 | 0.00511713 | 0.00250423 | 0.00473737 | 0.00274548  |
 | 100% | 0.01143049 | 0.00509652 | 0.00257191 | 0.00474578 | 0.00273586  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 15, Synapses: 210, Average Fan-out: 14.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 15, Synapses: 210, Average Fan-out: 14.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p5_210_14.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00061797 | 0.00100556 | 0.00081082 | 0.00081226 | 0.00094277  |
@@ -2542,9 +2579,10 @@
 | 98%  | 0.01456489 | 0.00628541 | 0.00258240 | 0.00606710 | 0.00274606  |
 | 99%  | 0.01465846 | 0.00628774 | 0.00255619 | 0.00585315 | 0.00264766  |
 | 100% | 0.01454764 | 0.00625667 | 0.00256634 | 0.00579981 | 0.00263726  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 15, Average Fan-out: 0.75, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 15, Average Fan-out: 0.75, Connectivity Chance: 5%"
+#+PLOT: file:"con_p0_15_0.75_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00069827 | 0.00111206 | 0.00095600 | 0.00102863 | 0.00119922  |
@@ -2648,9 +2686,10 @@
 | 98%  | 0.00250066 | 0.00165003 | 0.00169285 | 0.00148175 | 0.00194107  |
 | 99%  | 0.00256164 | 0.00172666 | 0.00176837 | 0.00145575 | 0.00193508  |
 | 100% | 0.00246541 | 0.00165463 | 0.00169137 | 0.00155595 | 0.00186312  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 40, Average Fan-out: 2.00, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 40, Average Fan-out: 2.00, Connectivity Chance: 10%"
+#+PLOT: file:"con_p0_40_2.00_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00077925 | 0.00112530 | 0.00103066 | 0.00103564 | 0.00120379  |
@@ -2754,9 +2793,10 @@
 | 98%  | 0.00433643 | 0.00247660 | 0.00260289 | 0.00223677 | 0.00288571  |
 | 99%  | 0.00436282 | 0.00249678 | 0.00260729 | 0.00223846 | 0.00288440  |
 | 100% | 0.00446066 | 0.00248135 | 0.00263861 | 0.00223674 | 0.00287870  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 52, Average Fan-out: 2.60, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 52, Average Fan-out: 2.60, Connectivity Chance: 15%"
+#+PLOT: file:"con_p0_52_2.60_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00076130 | 0.00111122 | 0.00095765 | 0.00095923 | 0.00112029  |
@@ -2860,9 +2900,10 @@
 | 98%  | 0.00472177 | 0.00265889 | 0.00291767 | 0.00241195 | 0.00310226  |
 | 99%  | 0.00464847 | 0.00266064 | 0.00292866 | 0.00241902 | 0.00310187  |
 | 100% | 0.00466563 | 0.00265770 | 0.00292771 | 0.00241638 | 0.00310973  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 66, Average Fan-out: 3.30, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 66, Average Fan-out: 3.30, Connectivity Chance: 20%"
+#+PLOT: file:"con_p0_66_3.30_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00076851 | 0.00111500 | 0.00099724 | 0.00096589 | 0.00112078  |
@@ -2966,9 +3007,10 @@
 | 98%  | 0.00638665 | 0.00304763 | 0.00312229 | 0.00277967 | 0.00319867  |
 | 99%  | 0.00623620 | 0.00315229 | 0.00311225 | 0.00285405 | 0.00328021  |
 | 100% | 0.00633329 | 0.00313645 | 0.00308331 | 0.00286182 | 0.00328674  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 100, Average Fan-out: 5.00, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 100, Average Fan-out: 5.00, Connectivity Chance: 25%"
+#+PLOT: file:"con_p0_100_5.00_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00068478 | 0.00112259 | 0.00095703 | 0.00095915 | 0.00111560  |
@@ -3072,9 +3114,10 @@
 | 98%  | 0.00796203 | 0.00402196 | 0.00321159 | 0.00376200 | 0.00347789  |
 | 99%  | 0.00820064 | 0.00403360 | 0.00320248 | 0.00370701 | 0.00338833  |
 | 100% | 0.00817133 | 0.00412802 | 0.00319923 | 0.00370670 | 0.00342631  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 178, Average Fan-out: 8.90, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 178, Average Fan-out: 8.90, Connectivity Chance: 50%"
+#+PLOT: file:"con_p0_178_8.90_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00068330 | 0.00112527 | 0.00096295 | 0.00097305 | 0.00112608  |
@@ -3178,9 +3221,10 @@
 | 98%  | 0.01309201 | 0.00586103 | 0.00322171 | 0.00540592 | 0.00342389  |
 | 99%  | 0.01349172 | 0.00582734 | 0.00315677 | 0.00544360 | 0.00342545  |
 | 100% | 0.01316278 | 0.00577207 | 0.00324622 | 0.00538230 | 0.00341949  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 286, Average Fan-out: 14.30, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 286, Average Fan-out: 14.30, Connectivity Chance: 75%"
+#+PLOT: file:"con_p0_286_14.30_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00076333 | 0.00112133 | 0.00103859 | 0.00104486 | 0.00118690  |
@@ -3284,9 +3328,10 @@
 | 98%  | 0.02396023 | 0.00829400 | 0.00343167 | 0.00775152 | 0.00369737  |
 | 99%  | 0.02375730 | 0.00834545 | 0.00348181 | 0.00773956 | 0.00365704  |
 | 100% | 0.02387025 | 0.00826508 | 0.00351837 | 0.00774503 | 0.00369848  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 20, Synapses: 380, Average Fan-out: 19.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 20, Synapses: 380, Average Fan-out: 19.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p0_380_19.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00068923 | 0.00112400 | 0.00096171 | 0.00095947 | 0.00111989  |
@@ -3390,9 +3435,10 @@
 | 98%  | 0.03163277 | 0.01042411 | 0.00488859 | 0.00974388 | 0.00508501  |
 | 99%  | 0.03165817 | 0.01041188 | 0.00489555 | 0.00976010 | 0.00506550  |
 | 100% | 0.03197336 | 0.01044454 | 0.00491353 | 0.00976893 | 0.00507845  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 29, Average Fan-out: 1.16, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 29, Average Fan-out: 1.16, Connectivity Chance: 5%"
+#+PLOT: file:"con_p5_29_1.16_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 |    _ |       risp |      vrisp |    vr_full |   vr_fired | vr_synapses |
 |   0% | 0.00076537 | 0.00127877 | 0.00115067 | 0.00108049 |  0.00128437 |
@@ -3496,9 +3542,10 @@
 |  98% | 0.00360602 | 0.00234982 | 0.00268739 | 0.00197429 |  0.00296553 |
 |  99% | 0.00353459 | 0.00227777 | 0.00268849 | 0.00197618 |  0.00296101 |
 | 100% | 0.00354111 | 0.00225119 | 0.00269623 | 0.00207783 |  0.00293821 |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 70, Average Fan-out: 2.80, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 70, Average Fan-out: 2.80, Connectivity Chance: 10%"
+#+PLOT: file:"con_p5_70_2.80_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00075681 | 0.00128371 | 0.00107845 | 0.00108985 | 0.00128600  |
@@ -3602,9 +3649,10 @@
 | 98%  | 0.00641488 | 0.00344556 | 0.00355067 | 0.00302938 | 0.00375901  |
 | 99%  | 0.00655902 | 0.00343635 | 0.00346433 | 0.00310072 | 0.00376348  |
 | 100% | 0.00652440 | 0.00342723 | 0.00353776 | 0.00311069 | 0.00377168  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 94, Average Fan-out: 3.76, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 94, Average Fan-out: 3.76, Connectivity Chance: 15%"
+#+PLOT: file:"con_p5_94_3.76_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00074755 | 0.00127696 | 0.00107667 | 0.00115344 | 0.00128804  |
@@ -3708,9 +3756,10 @@
 | 98%  | 0.00776663 | 0.00416180 | 0.00376466 | 0.00376331 | 0.00396968  |
 | 99%  | 0.00805131 | 0.00416254 | 0.00370689 | 0.00374734 | 0.00399889  |
 | 100% | 0.00787899 | 0.00412750 | 0.00373456 | 0.00381097 | 0.00399041  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 124, Average Fan-out: 4.96, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 124, Average Fan-out: 4.96, Connectivity Chance: 20%"
+#+PLOT: file:"con_p5_124_4.96_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00078570 | 0.00128845 | 0.00108194 | 0.00107856 | 0.00135581  |
@@ -3814,9 +3863,10 @@
 | 98%  | 0.00952329 | 0.00490682 | 0.00381282 | 0.00443045 | 0.00405837  |
 | 99%  | 0.00923512 | 0.00492153 | 0.00383611 | 0.00447219 | 0.00402389  |
 | 100% | 0.00959256 | 0.00495341 | 0.00383062 | 0.00441944 | 0.00410396  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 148, Average Fan-out: 5.92, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 148, Average Fan-out: 5.92, Connectivity Chance: 25%"
+#+PLOT: file:"con_p5_148_5.92_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00076908 | 0.00135352 | 0.00108099 | 0.00116041 | 0.00129119  |
@@ -3920,9 +3970,10 @@
 | 98%  | 0.01186769 | 0.00532726 | 0.00384060 | 0.00494927 | 0.00409113  |
 | 99%  | 0.01188340 | 0.00538119 | 0.00382880 | 0.00495208 | 0.00408838  |
 | 100% | 0.01137466 | 0.00537907 | 0.00385188 | 0.00498071 | 0.00413113  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 310, Average Fan-out: 12.40, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 310, Average Fan-out: 12.40, Connectivity Chance: 50%"
+#+PLOT: file:"con_p5_310_12.40_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00075370 | 0.00136560 | 0.00110086 | 0.00111144 | 0.00136967  |
@@ -4026,9 +4077,10 @@
 | 98%  | 0.02720467 | 0.00919031 | 0.00389292 | 0.00848855 | 0.00409830  |
 | 99%  | 0.02700581 | 0.00912262 | 0.00384734 | 0.00845900 | 0.00413259  |
 | 100% | 0.02744707 | 0.00915500 | 0.00385904 | 0.00843209 | 0.00414960  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 453, Average Fan-out: 18.12, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 453, Average Fan-out: 18.12, Connectivity Chance: 75%"
+#+PLOT: file:"con_p5_453_18.12_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00077693 | 0.00137511 | 0.00111443 | 0.00112597 | 0.00128671  |
@@ -4132,9 +4184,10 @@
 | 98%  | 0.03827785 | 0.01241711 | 0.00557411 | 0.01159702 | 0.00585729  |
 | 99%  | 0.03850467 | 0.01241800 | 0.00559781 | 0.01160515 | 0.00580629  |
 | 100% | 0.03868985 | 0.01241371 | 0.00563904 | 0.01160326 | 0.00583689  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 25, Synapses: 600, Average Fan-out: 24.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 25, Synapses: 600, Average Fan-out: 24.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p5_600_24.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00079900 | 0.00135037 | 0.00111215 | 0.00107331 | 0.00135638  |
@@ -4238,9 +4291,10 @@
 | 98%  | 0.05643895 | 0.01578077 | 0.00599223 | 0.01477866 | 0.00622267  |
 | 99%  | 0.05524656 | 0.01584129 | 0.00596503 | 0.01480159 | 0.00627795  |
 | 100% | 0.05343828 | 0.01580551 | 0.00594915 | 0.01484870 | 0.00622334  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 124, Average Fan-out: 2.48, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 124, Average Fan-out: 2.48, Connectivity Chance: 5%"
+#+PLOT: file:"con_p0_124_2.48_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00110345 | 0.00212152 | 0.00177925 | 0.00171197 | 0.00220519  |
@@ -4344,9 +4398,10 @@
 | 98%  | 0.01023915 | 0.00565605 | 0.00607434 | 0.00509684 | 0.00656115  |
 | 99%  | 0.01038614 | 0.00575656 | 0.00600685 | 0.00510373 | 0.00648830  |
 | 100% | 0.01023808 | 0.00575515 | 0.00606815 | 0.00506482 | 0.00655996  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 212, Average Fan-out: 4.24, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 212, Average Fan-out: 4.24, Connectivity Chance: 10%"
+#+PLOT: file:"con_p0_212_4.24_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00111434 | 0.00216222 | 0.00172418 | 0.00170689 | 0.00219830  |
@@ -4450,9 +4505,10 @@
 | 98%  | 0.01949318 | 0.00839905 | 0.00682252 | 0.00754393 | 0.00731019  |
 | 99%  | 0.01907143 | 0.00844922 | 0.00686544 | 0.00755671 | 0.00731144  |
 | 100% | 0.01959225 | 0.00835856 | 0.00681163 | 0.00755641 | 0.00736602  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 371, Average Fan-out: 7.42, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 371, Average Fan-out: 7.42, Connectivity Chance: 15%"
+#+PLOT: file:"con_p0_371_7.42_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00111745 | 0.00217230 | 0.00170619 | 0.00170429 | 0.00217133  |
@@ -4556,9 +4612,10 @@
 | 98%  | 0.03498288 | 0.01189210 | 0.00703963 | 0.01088211 | 0.00752760  |
 | 99%  | 0.03512166 | 0.01181543 | 0.00700123 | 0.01093979 | 0.00749173  |
 | 100% | 0.03499774 | 0.01186668 | 0.00709488 | 0.01094025 | 0.00753672  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 473, Average Fan-out: 9.46, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 473, Average Fan-out: 9.46, Connectivity Chance: 20%"
+#+PLOT: file:"con_p0_473_9.46_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00110844 | 0.00214815 | 0.00176300 | 0.00171718 | 0.00219863  |
@@ -4662,9 +4719,10 @@
 | 98%  | 0.04363277 | 0.01415930 | 0.00699171 | 0.01306519 | 0.00747230  |
 | 99%  | 0.04392559 | 0.01421519 | 0.00703315 | 0.01308385 | 0.00747232  |
 | 100% | 0.04367226 | 0.01419530 | 0.00698741 | 0.01299430 | 0.00754646  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 592, Average Fan-out: 11.84, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 592, Average Fan-out: 11.84, Connectivity Chance: 25%"
+#+PLOT: file:"con_p0_592_11.84_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00112540 | 0.00213915 | 0.00173992 | 0.00174070 | 0.00215364  |
@@ -4768,9 +4826,10 @@
 | 98%  | 0.05757804 | 0.01687985 | 0.00702122 | 0.01563252 | 0.00755934  |
 | 99%  | 0.06201351 | 0.01698215 | 0.00707482 | 0.01556518 | 0.00756998  |
 | 100% | 0.05784308 | 0.01697445 | 0.00706793 | 0.01558744 | 0.00758739  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 1215, Average Fan-out: 24.30, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 1215, Average Fan-out: 24.30, Connectivity Chance: 50%"
+#+PLOT: file:"con_p0_1215_24.30_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00117163 | 0.00222360 | 0.00174781 | 0.00175385 | 0.00214412  |
@@ -4874,9 +4933,10 @@
 | 98%  | 0.11574303 | 0.03164668 | 0.01150933 | 0.02942788 | 0.01195260  |
 | 99%  | 0.11569604 | 0.03162245 | 0.01142877 | 0.02952799 | 0.01188796  |
 | 100% | 0.11535837 | 0.03153768 | 0.01169982 | 0.02947356 | 0.01194876  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 1887, Average Fan-out: 37.74, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 1887, Average Fan-out: 37.74, Connectivity Chance: 75%"
+#+PLOT: file:"con_p0_1887_37.74_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00112478 | 0.00237310 | 0.00172573 | 0.00171415 | 0.00219128  |
@@ -4980,9 +5040,10 @@
 | 98%  | 0.17356867 | 0.04790836 | 0.01626573 | 0.04499614 | 0.01666479  |
 | 99%  | 0.17400509 | 0.04793312 | 0.01665851 | 0.04478038 | 0.01677229  |
 | 100% | 0.17424039 | 0.04773562 | 0.01648168 | 0.04472504 | 0.01657208  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 50, Synapses: 2450, Average Fan-out: 49.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 50, Synapses: 2450, Average Fan-out: 49.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p0_2450_49.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00114544 | 0.00214169 | 0.00170923 | 0.00171048 | 0.00216522  |
@@ -5086,9 +5147,10 @@
 | 98%  | 0.27277997 | 0.05982743 | 0.02055812 | 0.05648680 | 0.02070400  |
 | 99%  | 0.27011019 | 0.06005585 | 0.02040440 | 0.05621196 | 0.02045611  |
 | 100% | 0.27411048 | 0.05982023 | 0.02051534 | 0.05675593 | 0.02073586  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 245, Average Fan-out: 3.27, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 245, Average Fan-out: 3.27, Connectivity Chance: 5%"
+#+PLOT: file:"con_p5_245_3.27_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00147787 | 0.00303012 | 0.00234937 | 0.00239446 | 0.00301371  |
@@ -5192,9 +5254,10 @@
 | 98%  | 0.02290193 | 0.01031147 | 0.00994004 | 0.00916160 | 0.01066319  |
 | 99%  | 0.02302481 | 0.01008841 | 0.00979434 | 0.00920670 | 0.01083077  |
 | 100% | 0.02281995 | 0.01015382 | 0.00990674 | 0.00906108 | 0.01070707  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 557, Average Fan-out: 7.43, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 557, Average Fan-out: 7.43, Connectivity Chance: 10%"
+#+PLOT: file:"con_p5_557_7.43_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00152807 | 0.00307490 | 0.00234410 | 0.00232798 | 0.00299380  |
@@ -5298,9 +5361,10 @@
 | 98%  | 0.05988185 | 0.01778667 | 0.01060282 | 0.01615722 | 0.01118122  |
 | 99%  | 0.06026507 | 0.01776156 | 0.01048556 | 0.01629381 | 0.01126197  |
 | 100% | 0.05991590 | 0.01765547 | 0.01046665 | 0.01627478 | 0.01117552  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 846, Average Fan-out: 11.28, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 846, Average Fan-out: 11.28, Connectivity Chance: 15%"
+#+PLOT: file:"con_p5_846_11.28_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00147048 | 0.00306012 | 0.00236764 | 0.00238318 | 0.00302588  |
@@ -5404,9 +5468,10 @@
 | 98%  | 0.08319783 | 0.02455492 | 0.01107443 | 0.02256559 | 0.01178825  |
 | 99%  | 0.08330004 | 0.02459533 | 0.01089209 | 0.02254811 | 0.01169527  |
 | 100% | 0.08329766 | 0.02450962 | 0.01093600 | 0.02267818 | 0.01173322  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 1109, Average Fan-out: 14.79, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 1109, Average Fan-out: 14.79, Connectivity Chance: 20%"
+#+PLOT: file:"con_p5_1109_14.79_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00149139 | 0.00310169 | 0.00233784 | 0.00234527 | 0.00307219  |
@@ -5510,9 +5575,10 @@
 | 98%  | 0.11428062 | 0.03087519 | 0.01270960 | 0.02837455 | 0.01329812  |
 | 99%  | 0.11426096 | 0.03074283 | 0.01259274 | 0.02847873 | 0.01332107  |
 | 100% | 0.11428568 | 0.03063782 | 0.01268255 | 0.02841860 | 0.01333086  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 1380, Average Fan-out: 18.40, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 1380, Average Fan-out: 18.40, Connectivity Chance: 25%"
+#+PLOT: file:"con_p5_1380_18.40_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00152144 | 0.00302479 | 0.00236459 | 0.00233347 | 0.00299179  |
@@ -5616,9 +5682,10 @@
 | 98%  | 0.13731777 | 0.03729300 | 0.01531428 | 0.03472815 | 0.01607396  |
 | 99%  | 0.13778741 | 0.03747730 | 0.01560756 | 0.03461552 | 0.01610030  |
 | 100% | 0.14157177 | 0.03748681 | 0.01559098 | 0.03470251 | 0.01612589  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 2768, Average Fan-out: 36.91, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 2768, Average Fan-out: 36.91, Connectivity Chance: 50%"
+#+PLOT: file:"con_p5_2768_36.91_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00156008 | 0.00302201 | 0.00237557 | 0.00236830 | 0.00301815  |
@@ -5722,9 +5789,10 @@
 | 98%  | 0.35608914 | 0.07217596 | 0.02626859 | 0.06783464 | 0.02584970  |
 | 99%  | 0.36549300 | 0.07201197 | 0.02622170 | 0.06763708 | 0.02617078  |
 | 100% | 0.36154878 | 0.07192409 | 0.02623251 | 0.06769411 | 0.02603356  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 4156, Average Fan-out: 55.41, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 4156, Average Fan-out: 55.41, Connectivity Chance: 75%"
+#+PLOT: file:"con_p5_4156_55.41_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00148552 | 0.00303496 | 0.00233531 | 0.00237212 | 0.00303693  |
@@ -5828,9 +5896,10 @@
 | 98%  | 0.68413030 | 0.10664625 | 0.03648470 | 0.10052227 | 0.03546337  |
 | 99%  | 0.69101470 | 0.10656999 | 0.03646731 | 0.10050849 | 0.03560106  |
 | 100% | 0.68635229 | 0.10671736 | 0.03648339 | 0.10043780 | 0.03556315  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 75, Synapses: 5550, Average Fan-out: 74.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 75, Synapses: 5550, Average Fan-out: 74.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p5_5550_74.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00149622 | 0.00304317 | 0.00233571 | 0.00234337 | 0.00304782  |
@@ -5934,9 +6003,10 @@
 | 98%  | 1.01385418 | 0.13956668 | 0.04593291 | 0.13190081 | 0.04459358  |
 | 99%  | 1.01182315 | 0.13963564 | 0.04580067 | 0.13171618 | 0.04426399  |
 | 100% | 1.01784975 | 0.13965433 | 0.04588134 | 0.13188592 | 0.04425478  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 486, Average Fan-out: 4.86, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 486, Average Fan-out: 4.86, Connectivity Chance: 5%"
+#+PLOT: file:"con_p00_486_4.86_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00192127 | 0.00392529 | 0.00300865 | 0.00304811 | 0.00389973  |
@@ -6040,9 +6110,10 @@
 | 98%  | 0.05419973 | 0.01821818 | 0.01471489 | 0.01663526 | 0.01541077  |
 | 99%  | 0.05335031 | 0.01830364 | 0.01471179 | 0.01654924 | 0.01535563  |
 | 100% | 0.05327842 | 0.01828885 | 0.01476178 | 0.01653200 | 0.01539084  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 938, Average Fan-out: 9.38, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 938, Average Fan-out: 9.38, Connectivity Chance: 10%"
+#+PLOT: file:"con_p00_938_9.38_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00187993 | 0.00393559 | 0.00303938 | 0.00305511 | 0.00390092  |
@@ -6146,9 +6217,10 @@
 | 98%  | 0.09840393 | 0.02896629 | 0.01484459 | 0.02661459 | 0.01554363  |
 | 99%  | 0.09970481 | 0.02887464 | 0.01498608 | 0.02647607 | 0.01545926  |
 | 100% | 0.09807604 | 0.02897603 | 0.01484071 | 0.02653182 | 0.01556977  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 1472, Average Fan-out: 14.72, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 1472, Average Fan-out: 14.72, Connectivity Chance: 15%"
+#+PLOT: file:"con_p00_1472_14.72_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00192684 | 0.00389788 | 0.00304757 | 0.00302188 | 0.00391107  |
@@ -6252,9 +6324,10 @@
 | 98%  | 0.15387812 | 0.04186859 | 0.01776052 | 0.03898160 | 0.01819563  |
 | 99%  | 0.15386478 | 0.04201166 | 0.01775685 | 0.03902071 | 0.01810350  |
 | 100% | 0.15373343 | 0.04206242 | 0.01779468 | 0.03898408 | 0.01807888  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 2015, Average Fan-out: 20.15, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 2015, Average Fan-out: 20.15, Connectivity Chance: 20%"
+#+PLOT: file:"con_p00_2015_20.15_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00185496 | 0.00393004 | 0.00306538 | 0.00305496 | 0.00391829  |
@@ -6358,9 +6431,10 @@
 | 98%  | 0.20805459 | 0.05645635 | 0.02421633 | 0.05247790 | 0.02457302  |
 | 99%  | 0.20971030 | 0.05606979 | 0.02440901 | 0.05231264 | 0.02463859  |
 | 100% | 0.20776055 | 0.05601019 | 0.02433058 | 0.05238656 | 0.02441483  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 2364, Average Fan-out: 23.64, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 2364, Average Fan-out: 23.64, Connectivity Chance: 25%"
+#+PLOT: file:"con_p00_2364_23.64_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00192419 | 0.00391530 | 0.00304329 | 0.00306460 | 0.00391886  |
@@ -6464,9 +6538,10 @@
 | 98%  | 0.28844636 | 0.06487926 | 0.02686251 | 0.06080471 | 0.02679030  |
 | 99%  | 0.28895009 | 0.06490368 | 0.02690804 | 0.06082452 | 0.02680455  |
 | 100% | 0.29709347 | 0.06487521 | 0.02690063 | 0.06087283 | 0.02673304  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 4921, Average Fan-out: 49.21, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 4921, Average Fan-out: 49.21, Connectivity Chance: 50%"
+#+PLOT: file:"con_p00_4921_49.21_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00182696 | 0.00392369 | 0.00304731 | 0.00310010 | 0.00391793  |
@@ -6570,9 +6645,10 @@
 | 98%  | 0.88136559 | 0.12661337 | 0.04469997 | 0.11944467 | 0.04337341  |
 | 99%  | 0.87822968 | 0.12649379 | 0.04456279 | 0.11942331 | 0.04365882  |
 | 100% | 0.87888744 | 0.12664766 | 0.04447455 | 0.11929562 | 0.04335237  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 7489, Average Fan-out: 74.89, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 7489, Average Fan-out: 74.89, Connectivity Chance: 75%"
+#+PLOT: file:"con_p00_7489_74.89_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00188562 | 0.00391104 | 0.00302916 | 0.00305687 | 0.00395412  |
@@ -6676,9 +6752,10 @@
 | 98%  | 1.49551655 | 0.19276067 | 0.06736507 | 0.18229513 | 0.06399998  |
 | 99%  | 1.50083919 | 0.19273222 | 0.06741294 | 0.18249755 | 0.06421288  |
 | 100% | 1.49968306 | 0.19245370 | 0.06748033 | 0.18235424 | 0.06398682  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 100, Synapses: 9900, Average Fan-out: 99.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 100, Synapses: 9900, Average Fan-out: 99.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p00_9900_99.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00182807 | 0.00392089 | 0.00304373 | 0.00303684 | 0.00392389  |
@@ -6782,9 +6859,10 @@
 | 98%  | 2.00842358 | 0.25259369 | 0.09030284 | 0.23705618 | 0.08559998  |
 | 99%  | 2.00929398 | 0.25085680 | 0.09032636 | 0.23750969 | 0.08628370  |
 | 100% | 2.01706280 | 0.25090302 | 0.09048640 | 0.23692800 | 0.08534456  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 1096, Average Fan-out: 7.31, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 1096, Average Fan-out: 7.31, Connectivity Chance: 5%"
+#+PLOT: file:"con_p50_1096_7.31_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00262209 | 0.00568936 | 0.00430844 | 0.00429655 | 0.00562225  |
@@ -6888,9 +6966,10 @@
 | 98%  | 0.13277897 | 0.04069289 | 0.02918604 | 0.03786825 | 0.02850408  |
 | 99%  | 0.13252344 | 0.04095533 | 0.02891534 | 0.03787159 | 0.02831281  |
 | 100% | 0.13263569 | 0.04084491 | 0.02910301 | 0.03793218 | 0.02845316  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 2206, Average Fan-out: 14.71, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 2206, Average Fan-out: 14.71, Connectivity Chance: 10%"
+#+PLOT: file:"con_p50_2206_14.71_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00315396 | 0.00560554 | 0.00429329 | 0.00430916 | 0.00561559  |
@@ -6994,9 +7073,10 @@
 | 98%  | 0.30774373 | 0.06870557 | 0.03607238 | 0.06443920 | 0.03502247  |
 | 99%  | 0.29678817 | 0.06899833 | 0.03588744 | 0.06428573 | 0.03501826  |
 | 100% | 0.32834178 | 0.06840171 | 0.03600648 | 0.06426929 | 0.03762282  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 3372, Average Fan-out: 22.48, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 3372, Average Fan-out: 22.48, Connectivity Chance: 15%"
+#+PLOT: file:"con_p50_3372_22.48_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00265828 | 0.00561150 | 0.00432640 | 0.00428896 | 0.00559996  |
@@ -7100,9 +7180,10 @@
 | 98%  | 0.58306399 | 0.09469347 | 0.04204241 | 0.08893234 | 0.04104659  |
 | 99%  | 0.58150725 | 0.09463104 | 0.04222115 | 0.09121629 | 0.04107562  |
 | 100% | 0.57938555 | 0.09465378 | 0.04203137 | 0.08913781 | 0.04104997  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 4329, Average Fan-out: 28.86, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 4329, Average Fan-out: 28.86, Connectivity Chance: 20%"
+#+PLOT: file:"con_p50_4329_28.86_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00260299 | 0.00559551 | 0.00429052 | 0.00433704 | 0.00563205  |
@@ -7206,9 +7287,10 @@
 | 98%  | 0.83948319 | 0.12254579 | 0.05448378 | 0.11611167 | 0.05182894  |
 | 99%  | 0.84082381 | 0.12256216 | 0.05445523 | 0.11601665 | 0.05173551  |
 | 100% | 0.84173059 | 0.12283398 | 0.05453911 | 0.11564486 | 0.05180296  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 5579, Average Fan-out: 37.19, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 5579, Average Fan-out: 37.19, Connectivity Chance: 25%"
+#+PLOT: file:"con_p50_5579_37.19_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00275748 | 0.00559663 | 0.00428656 | 0.00427059 | 0.00558670  |
@@ -7312,9 +7394,10 @@
 | 98%  | 1.12411592 | 0.15023811 | 0.06137762 | 0.14153655 | 0.05873671  |
 | 99%  | 1.11896544 | 0.15205252 | 0.06130138 | 0.14401530 | 0.05873706  |
 | 100% | 1.12230636 | 0.15005444 | 0.06134442 | 0.14147663 | 0.05869267  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 11227, Average Fan-out: 74.85, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 11227, Average Fan-out: 74.85, Connectivity Chance: 50%"
+#+PLOT: file:"con_p50_11227_74.85_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00278501 | 0.00558859 | 0.00428741 | 0.00428233 | 0.00561537  |
@@ -7418,9 +7501,10 @@
 | 98%  | 2.52185229 | 0.29062840 | 0.10751214 | 0.27500684 | 0.10187981  |
 | 99%  | 2.52215130 | 0.28967540 | 0.10759962 | 0.27476709 | 0.10196581  |
 | 100% | 2.51708432 | 0.29321886 | 0.10753305 | 0.27499215 | 0.10185240  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 16774, Average Fan-out: 111.83, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 16774, Average Fan-out: 111.83, Connectivity Chance: 75%"
+#+PLOT: file:"con_p50_16774_111.83_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00271807 | 0.00558452 | 0.00428652 | 0.00428037 | 0.00560069  |
@@ -7524,9 +7608,10 @@
 | 98%  | 3.95243973 | 0.43384471 | 0.15480170 | 0.40903147 | 0.14481410  |
 | 99%  | 3.94094223 | 0.43304777 | 0.15787338 | 0.41385351 | 0.14364926  |
 | 100% | 3.94753528 | 0.43473093 | 0.15244375 | 0.41087542 | 0.14366862  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 150, Synapses: 22350, Average Fan-out: 149.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 150, Synapses: 22350, Average Fan-out: 149.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p50_22350_149.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00266315 | 0.00563632 | 0.00429022 | 0.00429086 | 0.00557969  |
@@ -7630,9 +7715,10 @@
 | 98%  | 5.41630517 | 0.30318107 | 0.10570525 | 0.28552670 | 0.10100559  |
 | 99%  | 5.41907599 | 0.30208515 | 0.10616618 | 0.28525553 | 0.10107795  |
 | 100% | 5.41878372 | 0.30423878 | 0.10577500 | 0.28815562 | 0.10105537  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 1503, Average Fan-out: 8.59, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 1503, Average Fan-out: 8.59, Connectivity Chance: 5%"
+#+PLOT: file:"con_p75_1503_8.59_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00289989 | 0.00648051 | 0.00494293 | 0.00492499 | 0.00645289  |
@@ -7736,9 +7822,10 @@
 | 98%  | 0.18322685 | 0.05503807 | 0.03712367 | 0.05145046 | 0.03567032  |
 | 99%  | 0.18244052 | 0.05505416 | 0.03716092 | 0.05389717 | 0.03568553  |
 | 100% | 0.17898182 | 0.05476693 | 0.03728275 | 0.05150959 | 0.03582374  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 2980, Average Fan-out: 17.03, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 2980, Average Fan-out: 17.03, Connectivity Chance: 10%"
+#+PLOT: file:"con_p75_2980_17.03_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00311981 | 0.00645570 | 0.00492529 | 0.00491853 | 0.00644738  |
@@ -7842,9 +7929,10 @@
 | 98%  | 0.49521119 | 0.09181025 | 0.04925101 | 0.08623396 | 0.04714127  |
 | 99%  | 0.55435689 | 0.09175625 | 0.04957155 | 0.08621485 | 0.04731089  |
 | 100% | 0.50353229 | 0.09173443 | 0.04986067 | 0.08661133 | 0.04742678  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 4553, Average Fan-out: 26.02, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 4553, Average Fan-out: 26.02, Connectivity Chance: 15%"
+#+PLOT: file:"con_p75_4553_26.02_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00350281 | 0.00644281 | 0.00495392 | 0.00491014 | 0.00644243  |
@@ -7948,9 +8036,10 @@
 | 98%  | 0.90516759 | 0.13124475 | 0.06180325 | 0.12412333 | 0.05871590  |
 | 99%  | 0.90875625 | 0.13143693 | 0.06159708 | 0.12401167 | 0.05907126  |
 | 100% | 0.90414930 | 0.13135748 | 0.06182211 | 0.12395323 | 0.05896481  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 6008, Average Fan-out: 34.33, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 6008, Average Fan-out: 34.33, Connectivity Chance: 20%"
+#+PLOT: file:"con_p75_6008_34.33_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00322888 | 0.00647250 | 0.00491530 | 0.00489063 | 0.00646134  |
@@ -8054,9 +8143,10 @@
 | 98%  | 1.25855403 | 0.17071184 | 0.07775946 | 0.16125571 | 0.07324293  |
 | 99%  | 1.25922473 | 0.17064678 | 0.07791152 | 0.16120281 | 0.07331963  |
 | 100% | 1.26082329 | 0.17276586 | 0.08117071 | 0.16235012 | 0.07330874  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 7673, Average Fan-out: 43.85, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 7673, Average Fan-out: 43.85, Connectivity Chance: 25%"
+#+PLOT: file:"con_p75_7673_43.85_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00334140 | 0.00645019 | 0.00491155 | 0.00491745 | 0.00645456  |
@@ -8160,9 +8250,10 @@
 | 98%  | 1.64720201 | 0.20986908 | 0.08862302 | 0.19880485 | 0.08281462  |
 | 99%  | 1.64119585 | 0.20958760 | 0.08859578 | 0.19834494 | 0.08274444  |
 | 100% | 1.64217364 | 0.20981590 | 0.08821493 | 0.19877797 | 0.08242271  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 15273, Average Fan-out: 87.27, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 15273, Average Fan-out: 87.27, Connectivity Chance: 50%"
+#+PLOT: file:"con_p75_15273_87.27_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00329201 | 0.00648714 | 0.00493941 | 0.00490833 | 0.00648262  |
@@ -8266,9 +8357,10 @@
 | 98%  | 3.51474600 | 0.39680367 | 0.14485971 | 0.37603519 | 0.13581738  |
 | 99%  | 3.51535480 | 0.39783608 | 0.14483920 | 0.37544178 | 0.13632000  |
 | 100% | 3.51517043 | 0.39866567 | 0.14450510 | 0.37573201 | 0.13649200  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 22827, Average Fan-out: 130.44, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 22827, Average Fan-out: 130.44, Connectivity Chance: 75%"
+#+PLOT: file:"con_p75_22827_130.44_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00320170 | 0.00646293 | 0.00493518 | 0.00492030 | 0.00645403  |
@@ -8372,9 +8464,10 @@
 | 98%  | 5.36008503 | 0.40372822 | 0.14312262 | 0.37949157 | 0.13528647  |
 | 99%  | 5.34341669 | 0.40218919 | 0.14283349 | 0.37964045 | 0.13826733  |
 | 100% | 5.34769524 | 0.40213108 | 0.14348652 | 0.37951400 | 0.13579122  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 175, Synapses: 30450, Average Fan-out: 174.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 175, Synapses: 30450, Average Fan-out: 174.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p75_30450_174.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp        | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00321204  | 0.00645846 | 0.00690222 | 0.00491642 | 0.00646005  |
@@ -8478,9 +8571,10 @@
 | 98%  | 7.56584908  | 0.40924852 | 0.13929566 | 0.38681545 | 0.13461607  |
 | 99%  | 7.54094945  | 0.40897340 | 0.14069952 | 0.38804742 | 0.13352484  |
 | 100% | 7.57327329  | 0.40853612 | 0.14090070 | 0.38806194 | 0.13365596  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 1950, Average Fan-out: 9.75, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 1950, Average Fan-out: 9.75, Connectivity Chance: 5%"
+#+PLOT: file:"con_p00_1950_9.75_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00371404 | 0.00734363 | 0.00552358 | 0.00558548 | 0.00729026  |
@@ -8584,9 +8678,10 @@
 | 98%  | 0.27830818 | 0.06912027 | 0.04514383 | 0.06510674 | 0.04235018  |
 | 99%  | 0.24287784 | 0.06900075 | 0.04572246 | 0.06484397 | 0.04242900  |
 | 100% | 0.27735712 | 0.06910745 | 0.04480836 | 0.06501311 | 0.04233281  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 4041, Average Fan-out: 20.20, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 4041, Average Fan-out: 20.20, Connectivity Chance: 10%"
+#+PLOT: file:"con_p00_4041_20.20_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00384725 | 0.00728785 | 0.00553545 | 0.00554573 | 0.00728893  |
@@ -8690,9 +8785,10 @@
 | 98%  | 0.78880318 | 0.11804914 | 0.06001529 | 0.11160932 | 0.05717874  |
 | 99%  | 0.79924144 | 0.11823378 | 0.05992532 | 0.11190124 | 0.05700907  |
 | 100% | 0.80296698 | 0.12073677 | 0.05969819 | 0.11165085 | 0.05705874  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 5938, Average Fan-out: 29.69, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 5938, Average Fan-out: 29.69, Connectivity Chance: 15%"
+#+PLOT: file:"con_p00_5938_29.69_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00397744 | 0.00730964 | 0.00554844 | 0.00553677 | 0.00728608  |
@@ -8796,9 +8892,10 @@
 | 98%  | 1.27781649 | 0.16304312 | 0.06826600 | 0.15396447 | 0.06564433  |
 | 99%  | 1.28035984 | 0.16293511 | 0.06818651 | 0.15389486 | 0.06578559  |
 | 100% | 1.27501866 | 0.16324241 | 0.06818422 | 0.15425867 | 0.06559182  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 8040, Average Fan-out: 40.20, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 8040, Average Fan-out: 40.20, Connectivity Chance: 20%"
+#+PLOT: file:"con_p00_8040_40.20_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00394286 | 0.00732215 | 0.00554562 | 0.00554955 | 0.00728733  |
@@ -8902,9 +8999,10 @@
 | 98%  | 1.77652566 | 0.22215444 | 0.09690863 | 0.21035403 | 0.09233767  |
 | 99%  | 1.77631571 | 0.22222123 | 0.09765952 | 0.21049564 | 0.09118829  |
 | 100% | 1.76940867 | 0.22228633 | 0.09708867 | 0.21037428 | 0.09136604  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 9994, Average Fan-out: 49.97, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 9994, Average Fan-out: 49.97, Connectivity Chance: 25%"
+#+PLOT: file:"con_p00_9994_49.97_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00331936 | 0.00727903 | 0.00553075 | 0.00558955 | 0.00732696  |
@@ -9008,9 +9106,10 @@
 | 98%  | 2.27937504 | 0.27460000 | 0.11347520 | 0.25753431 | 0.10759138  |
 | 99%  | 2.27101735 | 0.27226850 | 0.11282985 | 0.25759390 | 0.10848842  |
 | 100% | 2.27495940 | 0.27308110 | 0.11348677 | 0.25770685 | 0.10738052  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 19964, Average Fan-out: 99.82, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 19964, Average Fan-out: 99.82, Connectivity Chance: 50%"
+#+PLOT: file:"con_p00_19964_99.82_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00335119 | 0.00728584 | 0.00555297 | 0.00553218 | 0.00733756  |
@@ -9114,9 +9213,10 @@
 | 98%  | 4.82560730 | 0.51553697 | 0.17915788 | 0.48936414 | 0.17511805  |
 | 99%  | 4.82867993 | 0.51850619 | 0.17877452 | 0.48954972 | 0.17272755  |
 | 100% | 4.82549295 | 0.51776404 | 0.17953658 | 0.49213119 | 0.17272789  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 29787, Average Fan-out: 148.94, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 29787, Average Fan-out: 148.94, Connectivity Chance: 75%"
+#+PLOT: file:"con_p00_29787_148.94_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00397601 | 0.00726996 | 0.00553760 | 0.00556311 | 0.00730997  |
@@ -9220,9 +9320,10 @@
 | 98%  | 7.39555132 | 0.42422436 | 0.16662116 | 0.40116193 | 0.15874848  |
 | 99%  | 7.36576304 | 0.42519657 | 0.16601440 | 0.40141489 | 0.15935249  |
 | 100% | 7.37393864 | 0.42435127 | 0.16616841 | 0.40189103 | 0.15917992  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 200, Synapses: 39800, Average Fan-out: 199.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 200, Synapses: 39800, Average Fan-out: 199.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p00_39800_199.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp        | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00417505  | 0.00727956 | 0.00553567 | 0.00552314 | 0.00729381  |
@@ -9326,9 +9427,10 @@
 | 98%  | 10.41352060 | 0.54758433 | 0.19779915 | 0.51995833 | 0.19119355  |
 | 99%  | 10.42879094 | 0.54847000 | 0.19805981 | 0.52003207 | 0.19237670  |
 | 100% | 10.42785431 | 0.54814564 | 0.20124512 | 0.51970378 | 0.18994986  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 2494, Average Fan-out: 11.08, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 2494, Average Fan-out: 11.08, Connectivity Chance: 5%"
+#+PLOT: file:"con_p25_2494_11.08_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00517061 | 0.00820386 | 0.00621171 | 0.00618944 | 0.00816003  |
@@ -9432,9 +9534,10 @@
 | 98%  | 0.41217371 | 0.08605027 | 0.05193955 | 0.08074174 | 0.04903882  |
 | 99%  | 0.42349077 | 0.08535595 | 0.05225641 | 0.08049721 | 0.05035441  |
 | 100% | 0.43049071 | 0.08573384 | 0.05210679 | 0.08085658 | 0.04887134  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 5024, Average Fan-out: 22.33, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 5024, Average Fan-out: 22.33, Connectivity Chance: 10%"
+#+PLOT: file:"con_p25_5024_22.33_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00545234 | 0.00819608 | 0.00624707 | 0.00624222 | 0.00820234  |
@@ -9538,9 +9641,10 @@
 | 98%  | 1.10926514 | 0.14673585 | 0.06933447 | 0.13588107 | 0.06644330  |
 | 99%  | 1.09457479 | 0.14383460 | 0.06948482 | 0.13628322 | 0.06684468  |
 | 100% | 1.10093438 | 0.14400729 | 0.06993169 | 0.13597366 | 0.06638192  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 7544, Average Fan-out: 33.53, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 7544, Average Fan-out: 33.53, Connectivity Chance: 15%"
+#+PLOT: file:"con_p25_7544_33.53_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00556029 | 0.00819612 | 0.00626844 | 0.00622863 | 0.00818042  |
@@ -9644,9 +9748,10 @@
 | 98%  | 1.68355774 | 0.20947404 | 0.08958334 | 0.19889737 | 0.08485104  |
 | 99%  | 1.68395108 | 0.20737289 | 0.08921632 | 0.19554020 | 0.08433711  |
 | 100% | 1.69117545 | 0.20740703 | 0.08959381 | 0.19637975 | 0.08421933  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 10159, Average Fan-out: 45.15, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 10159, Average Fan-out: 45.15, Connectivity Chance: 20%"
+#+PLOT: file:"con_p25_10159_45.15_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00529894 | 0.00817212 | 0.00623811 | 0.00622392 | 0.00820913  |
@@ -9750,9 +9855,10 @@
 | 98%  | 2.37160755 | 0.26825119 | 0.10575159 | 0.25375627 | 0.10049677  |
 | 99%  | 2.37105614 | 0.26876186 | 0.10581586 | 0.25357515 | 0.10044800  |
 | 100% | 2.36639685 | 0.26915685 | 0.10570400 | 0.25368144 | 0.10043859  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 12613, Average Fan-out: 56.06, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 12613, Average Fan-out: 56.06, Connectivity Chance: 25%"
+#+PLOT: file:"con_p25_12613_56.06_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00548303 | 0.00819368 | 0.00626230 | 0.00625334 | 0.00820203  |
@@ -9856,9 +9962,10 @@
 | 98%  | 3.01546414 | 0.33801515 | 0.13625344 | 0.32046950 | 0.13056457  |
 | 99%  | 3.02274508 | 0.33810072 | 0.13619212 | 0.32137492 | 0.12744865  |
 | 100% | 3.01102642 | 0.33999349 | 0.13703846 | 0.32058611 | 0.12758530  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 25296, Average Fan-out: 112.43, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 25296, Average Fan-out: 112.43, Connectivity Chance: 50%"
+#+PLOT: file:"con_p25_25296_112.43_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00585126 | 0.00816900 | 0.00618663 | 0.00621237 | 0.00815207  |
@@ -9962,9 +10069,10 @@
 | 98%  | 6.10141210 | 0.64567932 | 0.22356564 | 0.61210157 | 0.21316923  |
 | 99%  | 6.12388824 | 0.64964750 | 0.22321040 | 0.61460821 | 0.21381763  |
 | 100% | 6.12392492 | 0.64576768 | 0.22286657 | 0.61588875 | 0.21681078  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 37772, Average Fan-out: 167.88, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 37772, Average Fan-out: 167.88, Connectivity Chance: 75%"
+#+PLOT: file:"con_p25_37772_167.88_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00497566 | 0.00820911 | 0.00623517 | 0.00624307 | 0.00821242  |
@@ -10068,9 +10176,10 @@
 | 98%  | 9.69084659 | 0.52239123 | 0.20558738 | 0.49584903 | 0.19753111  |
 | 99%  | 9.68621389 | 0.52454967 | 0.20782540 | 0.49732707 | 0.19779501  |
 | 100% | 9.68988155 | 0.52653666 | 0.20801178 | 0.49959032 | 0.19994639  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 225, Synapses: 50400, Average Fan-out: 224.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 225, Synapses: 50400, Average Fan-out: 224.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p25_50400_224.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp        | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00397641  | 0.00816724 | 0.00623330 | 0.00621296 | 0.00818956  |
@@ -10174,9 +10283,10 @@
 | 98%  | 12.45122972 | 0.69844505 | 0.25196494 | 0.66242815 | 0.24458297  |
 | 99%  | 12.52949173 | 0.70149367 | 0.25536155 | 0.66716581 | 0.24662599  |
 | 100% | 12.51794588 | 0.70217807 | 0.25246673 | 0.66308363 | 0.24466905  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 3179, Average Fan-out: 12.72, Connectivity Chance: 5%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 3179, Average Fan-out: 12.72, Connectivity Chance: 5%"
+#+PLOT: file:"con_p50_3179_12.72_5percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00506081 | 0.00903163 | 0.00683344 | 0.00684670 | 0.00900044  |
@@ -10280,9 +10390,10 @@
 | 98%  | 0.61547768 | 0.10509544 | 0.06349978 | 0.10033838 | 0.05916685  |
 | 99%  | 0.61816062 | 0.10634767 | 0.06311790 | 0.10051955 | 0.05800263  |
 | 100% | 0.62082774 | 0.10640077 | 0.06264124 | 0.10037251 | 0.05810026  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 6099, Average Fan-out: 24.40, Connectivity Chance: 10%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 6099, Average Fan-out: 24.40, Connectivity Chance: 10%"
+#+PLOT: file:"con_p50_6099_24.40_10percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00664124 | 0.00904265 | 0.00678041 | 0.00678037 | 0.00901375  |
@@ -10386,9 +10497,10 @@
 | 98%  | 1.38330467 | 0.17902893 | 0.08829193 | 0.16944496 | 0.08275872  |
 | 99%  | 1.38485042 | 0.17796795 | 0.09089923 | 0.16873943 | 0.08355088  |
 | 100% | 1.39452267 | 0.17810433 | 0.08827108 | 0.16868095 | 0.08280411  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 9383, Average Fan-out: 37.53, Connectivity Chance: 15%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 9383, Average Fan-out: 37.53, Connectivity Chance: 15%"
+#+PLOT: file:"con_p50_9383_37.53_15percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00569797 | 0.00900930 | 0.00679965 | 0.00680612 | 0.00901382  |
@@ -10492,9 +10604,10 @@
 | 98%  | 2.23630230 | 0.26441077 | 0.11592633 | 0.24803859 | 0.10861060  |
 | 99%  | 2.24068795 | 0.26266059 | 0.11546658 | 0.24712679 | 0.10860986  |
 | 100% | 2.23297853 | 0.26197581 | 0.11603656 | 0.25059039 | 0.10797286  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 12399, Average Fan-out: 49.60, Connectivity Chance: 20%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 12399, Average Fan-out: 49.60, Connectivity Chance: 20%"
+#+PLOT: file:"con_p50_12399_49.60_20percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00713604 | 0.00902216 | 0.00681668 | 0.00682951 | 0.00904388  |
@@ -10598,9 +10711,10 @@
 | 98%  | 2.99241451 | 0.33981550 | 0.13951011 | 0.32067066 | 0.13227066  |
 | 99%  | 2.99799934 | 0.33948483 | 0.13982975 | 0.32127723 | 0.13170797  |
 | 100% | 2.99696775 | 0.33957289 | 0.14292629 | 0.32052735 | 0.13178813  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 15594, Average Fan-out: 62.38, Connectivity Chance: 25%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 15594, Average Fan-out: 62.38, Connectivity Chance: 25%"
+#+PLOT: file:"con_p50_15594_62.38_25percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00511333 | 0.00903700 | 0.00716431 | 0.00683766 | 0.00901892  |
@@ -10704,9 +10818,10 @@
 | 98%  | 3.80354299 | 0.40689437 | 0.15418039 | 0.38716402 | 0.14736425  |
 | 99%  | 3.78882386 | 0.40700437 | 0.15438192 | 0.38933150 | 0.14674414  |
 | 100% | 3.80816759 | 0.40640947 | 0.15422325 | 0.38752403 | 0.14695113  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 31210, Average Fan-out: 124.84, Connectivity Chance: 50%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 31210, Average Fan-out: 124.84, Connectivity Chance: 50%"
+#+PLOT: file:"con_p50_31210_124.84_50percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00731956 | 0.00901885 | 0.00685385 | 0.00681089 | 0.00905930  |
@@ -10810,9 +10925,10 @@
 | 98%  | 7.58793895 | 0.68271874 | 0.24917497 | 0.64549028 | 0.23743345  |
 | 99%  | 7.61217945 | 0.68048342 | 0.24857917 | 0.64659287 | 0.23977892  |
 | 100% | 7.59387252 | 0.68061527 | 0.24844070 | 0.64898930 | 0.23753725  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 46616, Average Fan-out: 186.46, Connectivity Chance: 75%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 46616, Average Fan-out: 186.46, Connectivity Chance: 75%"
+#+PLOT: file:"con_p50_46616_186.46_75percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp        | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00722407  | 0.00904481 | 0.00682796 | 0.00686623 | 0.00904081  |
@@ -10916,9 +11032,10 @@
 | 98%  | 11.75151956 | 0.65355752 | 0.26194311 | 0.63087939 | 0.25292763  |
 | 99%  | 11.74819074 | 0.65537749 | 0.26165232 | 0.63384748 | 0.25255511  |
 | 100% | 11.75758847 | 0.65591557 | 0.26151632 | 0.63253653 | 0.25281123  |
-#+PLOT: title:"Connectivity Testing Sim Time (Seconds): Neurons: 250, Synapses: 62250, Average Fan-out: 249.00, Connectivity Chance: 100%, Timesteps: 1000"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"
-#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key right top"
+#+PLOT: title:"Sim Time : Neurons: 250, Synapses: 62250, Average Fan-out: 249.00, Connectivity Chance: 100%"
+#+PLOT: file:"con_p50_62250_249.00_100percent.svg"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" with:"lines linewidth 2"
+#+PLOT: set:"xlabel 'Activity Percent' " set:"ylabel 'Time (Seconds)'" ind:1 set:"key below"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp vector - full" "vrisp vector - fired" "vrisp vector - synapses")
 | _    | risp        | vrisp      | vr_full    | vr_fired   | vr_synapses |
 | 0%   | 0.00695749  | 0.00901318 | 0.00681578 | 0.00681545 | 0.00910582  |
