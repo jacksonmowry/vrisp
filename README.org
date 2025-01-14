@@ -69,7 +69,7 @@ usage: scripts/connectivity_benchmark.bash empty_network num_neurons connectivit
 
 The script =scripts/connectivity_benchmark.bash= generates networks with a specified number of neurons, a connectivity change, and the number of input neurons. The network is then tested on all processors for a given number of time steps, with activity ranging from =0-activity_max=. You can use the script to test specific network parameters or a range of different networks.
 
-#+begin_src bash
+#+begin_src console
 $ bash scripts/connectivity_benchmark.bash networks/risp_1.json 100 2 3 5 5 vector
 Total Sim Time: Neurons: 100, Synapses: 169, Average Fan-out: 1.69, Connectivity Chance: 2%, Timesteps: 5
 | _  | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
