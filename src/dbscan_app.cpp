@@ -49,16 +49,16 @@ Network *load_network(Processor **pp, const json &network_json) {
 }
 
 int main(int argc, char *argv[]) {
-  if (argc != 3) {
-    fprintf(stderr, "usage: %s network_json activity_denom\n", argv[0]);
+  if (argc != 4) {
+    fprintf(stderr, "usage: %s network_json activity_percent frames\n",
+            argv[0]);
     exit(1);
   }
   json network_json;
   vector<string> json_source = {argv[1]};
   int activity_denom = stoi(argv[2]);
-  if (activity_denom == 0) {
-    activity_denom = INT32_MAX;
-  }
+
+  size_t total_frames = stoull(argv[3]);
 
   ifstream fin(argv[1]);
   fin >> network_json;
@@ -69,20 +69,16 @@ int main(int argc, char *argv[]) {
   std::chrono::duration<double, std::ratio<1>> d =
       std::chrono::duration<double, std::ratio<1>>::zero();
 
-  for (int frames = 0; frames < 6; frames++) {
+  for (size_t frames = 0; frames < total_frames; frames++) {
     chrono::time_point<chrono::steady_clock> tp = chrono::steady_clock::now();
     for (int outer = 0; outer < 340; outer++) {
       for (int i = 0; i < n->num_inputs(); i++) {
-        if (rand() % activity_denom == 0) {
+        if ((int)(rand() % 100 + 1) <= activity_denom) {
           p->apply_spike(Spike(i, 0, 1));
         }
       }
 
       p->run(1);
-      // for (auto a : p->output_counts()) {
-      //     printf("%d", a);
-      // }
-      // putchar('\n');
     }
 
     d += std::chrono::duration_cast<
@@ -90,6 +86,5 @@ int main(int argc, char *argv[]) {
         chrono::steady_clock::now() - tp);
   }
 
-  printf("Total frame time:   %7.5f\n", d.count());
-  printf("Average frame time: %7.20f\n", d.count() / 6.0);
+  printf("Average frame time: %7.10f\n", d.count() / (double)total_frames);
 }

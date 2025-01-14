@@ -1,5 +1,5 @@
-#+title: vrisp
-This repo contains example applications utilizing the vrisp neuroprocess, along with benchmarks comparing it to the current risp implementation.
+#+title: VRISP
+This repo contains example applications utilizing the VRISP neuroprocesser, along with benchmarks comparing it to the current RISP implementation.
 
 * Cloning
 This repo utilizes git submodules, which require an additional flag when cloning.
@@ -10,6 +10,8 @@ git clone --recurse-submodules https://github.com/jacksonmowry/vrisp.git
 
 * Buidling
 The makefile does nothing fancy, it simply makes all of the dependencies and then the actual apps for the processors we will be testing. It will always rebuild the apps even if nothing has changed, but you shouldn't need to run =make= more than once anyways.
+
+**
 
 #+begin_src console
 make
