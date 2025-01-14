@@ -4,7 +4,7 @@ This repo contains example applications utilizing the VRISP neuroprocesser, alon
 * Cloning
 This repo utilizes git submodules, which require an additional flag when cloning.
 
-#+begin_src console
+#+begin_src sh
 git clone --recurse-submodules https://github.com/jacksonmowry/vrisp.git
 #+end_src
 
@@ -15,7 +15,7 @@ The makefile does nothing fancy, it simply makes all of the dependencies and the
 
 If you're building for any platform that is not RISCV64 with the 1.0 vector extension, you should compile with the following.
 
-#+begin_src console
+#+begin_src sh
 make
 #+end_src
 
@@ -23,7 +23,7 @@ make
 
 To build the full suite of processors you can use the full makefile.
 
-#+begin_src console
+#+begin_src sh
 make riscv_vector
 #+end_src
 
@@ -31,7 +31,7 @@ make riscv_vector
 
 Due to the lack of hardware supporting the RISCV Vector 1.0 extension it is more approachable to develop with an emulator. I won't go into detail on setting up QEMU but they should have plenty of documentation for your platform.
 
-#+begin_src console
+#+begin_src sh
 make riscv_vector CXX=riscv64-linux-gnu-g++ CFLAGS='-march=rv64gcv -Ofast -static'
 #+end_src
 
