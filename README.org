@@ -61,6 +61,13 @@ bash scripts/dbscan_benchmark.bash
 |       5 |        90 |    6500 |    68240 |           10.50 |
 |       6 |       120 |    7540 |    93808 |           12.44 |
 
+*** Example Plots
+Epsilon 1, Min. Pts. 7
+[[file:results/dbscan_1_7.svg][DBScan Epsilon 1 Min. Pts. 7]]
+
+Epsilon 2, Min. Pts. 18
+[[file:results/dbscan_2_18.svg][DBScan Epsilon 1 Min. Pts. 18]]
+
 ** Connectivity
 #+begin_src bash
 $ bash scripts/connectivity_benchmark.bash
@@ -69,7 +76,7 @@ usage: scripts/connectivity_benchmark.bash empty_network num_neurons connectivit
 
 The script =scripts/connectivity_benchmark.bash= generates networks with a specified number of neurons, a connectivity change, and the number of input neurons. The network is then tested on all processors for a given number of time steps, with activity ranging from =0-activity_max=. You can use the script to test specific network parameters or a range of different networks.
 
-#+begin_src console
+#+begin_src bash
 $ bash scripts/connectivity_benchmark.bash networks/risp_1.json 100 2 3 5 5 vector
 Total Sim Time: Neurons: 100, Synapses: 169, Average Fan-out: 1.69, Connectivity Chance: 2%, Timesteps: 5
 | _  | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
@@ -82,3 +89,10 @@ Total Sim Time: Neurons: 100, Synapses: 169, Average Fan-out: 1.69, Connectivity
 #+end_src
 
 The script =scripts/connectivity_benchmark_full.bash= is an example of a simple wrapper around the previous script. It generates networks with neuron counts ranging from =5-250=, and connectivity chances ranging from =5-100%=. Feel free to write your own simple wrapper, or modify the existing one to suit your needs.
+
+*** Example Plots
+15 Neurons, 20% Connectivity Chance
+[[file:results/con_p5_52_3.47_20percent.svg][15 Neurons, 20% Connectivity Chance]]
+
+250 Neurons, 15% Connectivity Chance
+[[file:results/con_p50_9383_37.53_15percent.svg][250 Neurons, 15% Connectivity Chance]]
