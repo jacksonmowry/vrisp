@@ -96,4 +96,4 @@ The script =scripts/connectivity_benchmark_full.bash= is an example of a simple 
 
 250 Neurons, 15% Connectivity Chance
 [[file:results/con_p50_9383_37.53_15percent.svg][250 Neurons, 15% Connectivity Chance]]
-[[ ./results/con_p3_0.60_25percent.svg]]
+[[ .results/con_p3_0.60_25percent.svg]]
