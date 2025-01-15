@@ -36,6 +36,8 @@ riscv_vector: all \
 
 tutorial: bin/tutorial_app_vrisp
 
+tutorial_pi: bin/tutorial_app_pi_vrisp
+
 # Applications ################################################################
 bin/dbscan_app_risp: src/dbscan_app.cpp $(RISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
@@ -69,6 +71,9 @@ bin/connectivity_app_vrisp_vector_synapses: src/connectivity_app.cpp $(VRISP_RVV
 
 bin/tutorial_app_vrisp: tutorial/src/tutorial_and_app.cpp $(VRISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/tutorial_app_pi_vrisp: tutorial/src/tutorial_pi_app.cpp $(VRISP_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^ -lwiringPi
 
 # Libraries ###################################################################
 framework-open/lib/libframework.a: $(FR_OBJ) framework-open/include/framework.hpp
