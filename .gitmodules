@@ -1,6 +1,6 @@
 [submodule "framework-open"]
 	path = framework-open
-	url = https://github.com:jacksonmowry/framework-open.git
+	url = https://github.com/jacksonmowry/framework-open.git
 [submodule "dbscan"]
 	path = dbscan
-	url = https://github.com:TENNLab-UTK/dbscan.git
+	url = https://github.com/TENNLab-UTK/dbscan.git
