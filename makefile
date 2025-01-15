@@ -34,6 +34,8 @@ riscv_vector: all \
 						  bin/connectivity_app_vrisp_vector_fired \
 						  bin/connectivity_app_vrisp_vector_synapses
 
+tutorial: bin/tutorial_app_vrisp
+
 # Applications ################################################################
 bin/dbscan_app_risp: src/dbscan_app.cpp $(RISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
@@ -63,6 +65,9 @@ bin/connectivity_app_vrisp_vector_fired: src/connectivity_app.cpp $(VRISP_RVV_FI
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
 bin/connectivity_app_vrisp_vector_synapses: src/connectivity_app.cpp $(VRISP_RVV_SYNAPSES_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/tutorial_app_vrisp: tutorial/src/tutorial_and_app.cpp $(VRISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
 # Libraries ###################################################################

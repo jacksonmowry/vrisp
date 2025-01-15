@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-15 Wed 09:52 -->
+<!-- 2025-01-15 Wed 16:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>First App</title>
@@ -20,24 +20,12 @@
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="content" class="content">
 <h1 class="title">First App</h1>
-<div id="outline-container-org5f0912c" class="outline-2">
-<h2 id="org5f0912c">Getting Started</h2>
-<div class="outline-text-2" id="text-org5f0912c">
+<div id="outline-container-org1f0a814" class="outline-2">
+<h2 id="org1f0a814">Getting Started</h2>
+<div class="outline-text-2" id="text-org1f0a814">
 <p>
-Hopefully you&rsquo;ve read the <a href="../README.html">README</a>, but I&rsquo;ll repeat the highlights here. We can make the entire project, including dependencies by simply running <code>make</code>. Additionally, you can override the compiler and any flags you wish to pass through to it.
+Hopefully you&rsquo;ve read the <a href="https://www.github.com/jacksonmowry/vrisp">README</a>, but I&rsquo;ll repeat the highlights here. We can make the entire project, including dependencies by simply running <code>make</code>. Additionally, you can override the compiler and any flags you wish to pass through to it.
 </p>
-
-<p>
-<a href="org:../README.org">README</a>
-</p>
-
-<p>
-<a href="../README.html">README</a>
-</p>
-
-<a href="../README.org">README</a>
-
-<a href="../">README</a>
 
 <div class="org-src-container">
 <pre class="src src-shell"><span style="color: #ECBE7B;">make</span>
@@ -54,11 +42,498 @@ Hopefully you&rsquo;ve read the <a href="../README.html">README</a>, but I&rsquo
 </div>
 </div>
 </div>
+<div id="outline-container-orgf7b03b3" class="outline-2">
+<h2 id="orgf7b03b3">Building a Network</h2>
+<div class="outline-text-2" id="text-orgf7b03b3">
+<p>
+We have two options for building networks, either by hand or through <code>network_tool</code>.
+</p>
+</div>
+<div id="outline-container-orge77beb8" class="outline-3">
+<h3 id="orge77beb8">By Hand</h3>
+<div class="outline-text-3" id="text-orge77beb8">
+<p>
+This is my preferred option for building small networks as you can get hands on with every bit of the network json.
+</p>
+
+<p>
+<i>This file can be found under <code>networks/vrisp_1.json</code></i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js">{
+  <span style="color: #98be65;">"Properties"</span>: {
+    <span style="color: #98be65;">"node_properties"</span>: [
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Threshold"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">0</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>
+      }
+    ],
+    <span style="color: #98be65;">"edge_properties"</span>: [
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Delay"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">1</span>
+      },
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Weight"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">0</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: -<span style="color: #da8548; font-weight: bold;">7</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>
+      }
+    ],
+    <span style="color: #98be65;">"network_properties"</span>: []
+  },
+  <span style="color: #98be65;">"Nodes"</span>: [],
+  <span style="color: #98be65;">"Edges"</span>: [],
+  <span style="color: #98be65;">"Inputs"</span>: [],
+  <span style="color: #98be65;">"Outputs"</span>: [],
+  <span style="color: #98be65;">"Network_Values"</span>: [],
+  <span style="color: #98be65;">"Associated_Data"</span>: {
+    <span style="color: #98be65;">"other"</span>: { <span style="color: #98be65;">"proc_name"</span>: <span style="color: #98be65;">"vrisp"</span> },
+    <span style="color: #98be65;">"proc_params"</span>: {
+      <span style="color: #98be65;">"leak_mode"</span>: <span style="color: #98be65;">"all"</span>,
+      <span style="color: #98be65;">"tracked_timesteps"</span>: <span style="color: #da8548; font-weight: bold;">8</span>,
+      <span style="color: #98be65;">"max_delay"</span>: <span style="color: #da8548; font-weight: bold;">7</span>,
+      <span style="color: #98be65;">"max_threshold"</span>: <span style="color: #da8548; font-weight: bold;">7</span>,
+      <span style="color: #98be65;">"max_weight"</span>: <span style="color: #da8548; font-weight: bold;">7</span>,
+      <span style="color: #98be65;">"min_potential"</span>: <span style="color: #da8548; font-weight: bold;">0</span>,
+      <span style="color: #98be65;">"min_threshold"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+      <span style="color: #98be65;">"min_weight"</span>: -<span style="color: #da8548; font-weight: bold;">7</span>,
+      <span style="color: #98be65;">"spike_value_factor"</span>: <span style="color: #da8548; font-weight: bold;">1.0</span>
+    }
+  }
+}
+</pre>
+</div>
+
+<p>
+Here is an empty VRISP network, in this case names <code>vrisp_7.json</code>, which indicates that weights may range from -7 to 7, and the max threshold of a neuron is also 7. This is a simple setup with small values for easy exploration. This class of network is helpful for modeling binary tasks like common logic gates.
+</p>
+
+<p>
+If we were to try and load this network as it sit we won&rsquo;t accomplish much. Instead, we need to add neurons and synapses to form our network, which is just like a typical graph data structure.
+</p>
+</div>
+<div id="outline-container-orgdc1e0bd" class="outline-4">
+<h4 id="orgdc1e0bd">Neuron Object</h4>
+<div class="outline-text-4" id="text-orgdc1e0bd">
+<p>
+Each neuron has 3 fields, an <code>id</code>, a <code>name</code>, and its <code>values</code> (configuration properties). IDs must be integers, and names can be any string. Values come from the small section at the top of our network json <code>Properties::node_properties</code>, which described the configurable properties of each neuron. In this case we can set the <code>threshold</code> of a neuron from 1 to 7.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js">{
+  <span style="color: #98be65;">"Properties"</span>: {
+    <span style="color: #98be65;">"node_properties"</span>: [
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Threshold"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">0</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>
+      }
+    ],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #98be65;">"Nodes"</span>: [
+      {<span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"A"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>]}
+  ],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2259c0a" class="outline-4">
+<h4 id="org2259c0a">Synapse Object</h4>
+<div class="outline-text-4" id="text-org2259c0a">
+<p>
+Similarly, a synapse has 3 fields, <code>from</code>, <code>to</code>, and <code>values</code>. From and to reference the <code>id</code> fields of the neurons to be connected, and once again <code>values</code> are the configurable properties for a synapse. In this example we can configure <code>delay</code> and <code>weight</code>.
+</p>
+
+<p>
+<i>The order of elements <code>values</code> matches their order in the <code>edge_properties</code> array.</i>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js">{
+  <span style="color: #98be65;">"Properties"</span>: {
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+    <span style="color: #98be65;">"edge_properties"</span>: [
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Delay"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>
+      },
+      {
+        <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"Weight"</span>,
+        <span style="color: #98be65;">"type"</span>: <span style="color: #da8548; font-weight: bold;">73</span>,
+        <span style="color: #98be65;">"index"</span>: <span style="color: #da8548; font-weight: bold;">0</span>,
+        <span style="color: #98be65;">"size"</span>: <span style="color: #da8548; font-weight: bold;">1</span>,
+        <span style="color: #98be65;">"min_value"</span>: -<span style="color: #da8548; font-weight: bold;">7</span>,
+        <span style="color: #98be65;">"max_value"</span>: <span style="color: #da8548; font-weight: bold;">7</span>
+      }
+    ],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #98be65;">"Edges"</span>: [
+      {<span style="color: #98be65;">"from"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"to"</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">1</span>]}
+  ],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org459c523" class="outline-4">
+<h4 id="org459c523">Inputs/Outputs</h4>
+<div class="outline-text-4" id="text-org459c523">
+<p>
+The <code>inputs</code> and <code>outputs</code> array simply specify the <code>id</code> of each input/output neuron. Do note that the order matters here when it comes to interacting with the processor, which we will see in more detail once we get to the <code>C++</code> side of things.
+</p>
+</div>
+</div>
+<div id="outline-container-orga2da67a" class="outline-4">
+<h4 id="orga2da67a">Creating a Graph</h4>
+<div class="outline-text-4" id="text-orga2da67a">
+<p>
+Lets build our first network! We&rsquo;ll keep things simple by building an AND gate, which has 2 input neurons and 1 output neuron.
+</p>
+
+<p>
+We&rsquo;ll take the original empty network and make the following changes.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #98be65;">"Nodes"</span>: [
+      {<span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"A"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>]},
+      {<span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"B"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>]},
+      {<span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"A&amp;B"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">2</span>]}
+  ],
+  <span style="color: #98be65;">"Edges"</span>: [
+      {<span style="color: #98be65;">"from"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"to"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">1</span>]},
+      {<span style="color: #98be65;">"from"</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">"to"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">1</span>]}
+  ],
+  <span style="color: #98be65;">"Inputs"</span>: [<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">1</span>],
+  <span style="color: #98be65;">"Outputs"</span>: [<span style="color: #da8548; font-weight: bold;">2</span>],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+
+
+<div id="orga34cd3e" class="figure">
+<p><img src="and_network.png" alt="and_network.png" />
+</p>
+</div>
+
+<p>
+Here is the bash one-liner I used to generate the graph visualization. It requires having <code>jq</code> installed.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">jq <span style="color: #98be65;">'.Nodes as $Nodes</span>
+<span style="color: #98be65;">   | [[.Edges[].from],[.Edges[].to], [.Edges[].values[1]]]</span>
+<span style="color: #98be65;">   | transpose</span>
+<span style="color: #98be65;">   | map (.[0] as $zero</span>
+<span style="color: #98be65;">     | .[1] as $one</span>
+<span style="color: #98be65;">     | .[2] as $weight</span>
+<span style="color: #98be65;">     | [($Nodes[] | select(.id == $zero)).name, ($Nodes[] | select(.id == $one)).name, $weight])</span>
+<span style="color: #98be65;">   | map ( "\(. [0]),\(. [1]) | (color=\(. [2] | if . &gt;= 0 then "black" else "red" end));")'</span> networks/and_vrisp.json |
+    sed -E -e <span style="color: #98be65;">'s/\[/digraph G \{/'</span> -e <span style="color: #98be65;">'s/\]/}/'</span> -e <span style="color: #98be65;">'s/,/" -&gt; "/'</span> -e <span style="color: #98be65;">'s/ \|/"/'</span> -e <span style="color: #98be65;">'s/,//'</span> -e <span style="color: #98be65;">'s/"$//'</span> -e <span style="color: #98be65;">'s/\(/\[/'</span> -e <span style="color: #98be65;">'s/\)/\]/'</span>
+</pre>
+</div>
+
+<pre class="example">
+digraph G {
+  "A" -&gt; "A&amp;B" [color=black];
+  "B" -&gt; "A&amp;B" [color=black];
+}
+</pre>
+
+
+<p>
+Now we have our final network. The explanation was long winded, but hopefully you now know just about everything there is to know about creating a network from scratch.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff20d3b" class="outline-3">
+<h3 id="orgff20d3b">Using Network Tool</h3>
+<div class="outline-text-3" id="text-orgff20d3b">
+<p>
+The easier way to create these networks is to use <code>network_tool</code> from the framework. The actual process is much less involved, but it does require some initial setup that I&rsquo;ve taken care of for you here. In order to use <code>network_tool</code> you will need an empty network, which can be generated via the <code>processor_tool</code>. A few empty networks are provided in the <code>vrisp/networks</code> directory.
+</p>
+
+<p>
+Here we walk through of creating the same network from above using network tool commands.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ framework-open/bin/network_tool <span style="color: #98be65;">'&gt;'</span>
+&gt; FJ networks/vrisp_7.json
+&gt; AN <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span>
+&gt; AI <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; AO <span style="color: #da8548; font-weight: bold;">2</span>
+&gt; SETNAME <span style="color: #da8548; font-weight: bold;">0</span> A
+&gt; SETNAME <span style="color: #da8548; font-weight: bold;">1</span> B
+&gt; SETNAME <span style="color: #da8548; font-weight: bold;">2</span> A&amp;B
+&gt; AE <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">2</span>
+&gt; AE <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span>
+&gt; SNP_ALL Threshold <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; SNP <span style="color: #da8548; font-weight: bold;">2</span> Threshold <span style="color: #da8548; font-weight: bold;">2</span>
+&gt; SEP_ALL Weight <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; SEP_ALL Delay <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; TJ tutorial/networks/tutorial_and.json
+&gt; Q
+</pre>
+</div>
+
+<p>
+If we now look in <code>tutorial/networks/tutorial_and.json</code> we should see the following (omitting what we&rsquo;ve already gone over)&#x2026;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+  <span style="color: #98be65;">"Nodes"</span>: [
+    { <span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"A"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1.0</span>] },
+    { <span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"A&amp;B"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">2.0</span>] },
+    { <span style="color: #98be65;">"id"</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">"name"</span>: <span style="color: #98be65;">"B"</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1.0</span>] }
+  ],
+  <span style="color: #98be65;">"Edges"</span>: [
+    { <span style="color: #98be65;">"from"</span>: <span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #98be65;">"to"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1.0</span>, <span style="color: #da8548; font-weight: bold;">1.0</span>] },
+    { <span style="color: #98be65;">"from"</span>: <span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #98be65;">"to"</span>: <span style="color: #da8548; font-weight: bold;">2</span>, <span style="color: #98be65;">"values"</span>: [<span style="color: #da8548; font-weight: bold;">1.0</span>, <span style="color: #da8548; font-weight: bold;">1.0</span>] }
+  ],
+  <span style="color: #98be65;">"Inputs"</span>: [<span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">1</span>],
+  <span style="color: #98be65;">"Outputs"</span>: [<span style="color: #da8548; font-weight: bold;">2</span>],
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+
+<p>
+Now you know both ways we can create the network json files we will be working with.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org74084e7" class="outline-2">
+<h2 id="org74084e7">Testing the Network</h2>
+<div class="outline-text-2" id="text-org74084e7">
+<p>
+We have a network, but no real way to interact with it yet. Let&rsquo;s take a quick moment to discuss the <code>processor_tool</code>.
+</p>
+
+<p>
+In order to <i>run</i> the network we need to load it onto a processor. In our case this will be <code>processor_tool_vrisp</code>. The processor is bundled directly into the tool so that the overhead of the framework is kept as minimal as possible.
+</p>
+
+<p>
+We can use the processor tool to apply spikes to our network, and see which of the output neurons spikes as a result. Here is the help info for the command we will use.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ <span style="color: #51afef;">(</span><span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"?"</span><span style="color: #51afef;">)</span> | framework-open/bin/processor_tool_vrisp | <span style="color: #ECBE7B;">grep</span> -E <span style="color: #98be65;">"(AS |ML |RUN |OC |OLF )"</span>
+ML network_json                     - Make a new processor from the network &amp; load the network.
+AS node_id spike_time spike_val ... - Apply normalized spikes to the network <span style="color: #51afef;">(</span>note: node_id, not input_id<span style="color: #51afef;">)</span>
+RUN simulation_time                 - Run the network for <span style="color: #98be65;">"simulation_time"</span> cycles
+OC <span style="color: #51afef;">[</span>node_id<span style="color: #51afef;">]</span> <span style="color: #51afef;">[</span>...<span style="color: #51afef;">]</span>                  - Output the spike count for the given output or all outputs
+OLF <span style="color: #51afef;">[</span>node_id<span style="color: #51afef;">]</span> <span style="color: #51afef;">[</span>...<span style="color: #51afef;">]</span>                 - Output the last fire time for the given output or all outputs
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-shell">&gt; ML tutorial/networks/tutorial_and.json
+&gt; AS <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; AS <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; AS <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; AS <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">2</span> <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; RUN <span style="color: #da8548; font-weight: bold;">4</span>
+&gt; OC
+node <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #51afef;">(</span>A&amp;B<span style="color: #51afef;">)</span> spike counts: <span style="color: #da8548; font-weight: bold;">1</span>
+&gt; OLF
+node <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #51afef;">(</span>A&amp;B<span style="color: #51afef;">)</span> last fire time: <span style="color: #da8548; font-weight: bold;">3.0</span>
+</pre>
+</div>
+
+
+<div id="orgb5b87cf" class="figure">
+<p><img src="images/tutorial_and.png" alt="tutorial_and.png" />
+</p>
+</div>
+
+<p>
+Great! We can see that when either neuron spikes alone (time steps 0 or 1) that the output neuron does not fire. Once both input neurons spike (time step 2) the output neuron spikes a time step later (time step 3).
+</p>
+
+<pre class="example" id="org43de309">
+Another aspect of network design we have neglected to talk about thus far is leak. The concept is simple in VRISP, when a neuron doesn't fire it either leaks away all of its charge each timestep, or it carrys its charge over to the next timestep. These modes are called "all" and "none" respectively. For the network shown here we are choosing to leak away all charge at every time step.
+</pre>
+</div>
+</div>
+<div id="outline-container-org2ed00ae" class="outline-2">
+<h2 id="org2ed00ae">Building our App</h2>
+<div class="outline-text-2" id="text-org2ed00ae">
+<p>
+Now we can start building the standalone app that will run our network. To keep things simple, we will write everything in a single <code>C++</code> source file so that you can see and understand the entire program. The entire file can be found <a href="src/tutorial_and_app.cpp">here</a>.
+</p>
+</div>
+<div id="outline-container-orgc111232" class="outline-3">
+<h3 id="orgc111232">Includes</h3>
+<div class="outline-text-3" id="text-orgc111232">
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">"framework.hpp"</span>
+<span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #51afef;">&lt;</span><span style="color: #98be65;">fstream</span><span style="color: #51afef;">&gt;</span>
+
+using <span style="color: #ECBE7B;">namespace</span> <span style="color: #dcaeea;">std</span>;
+using <span style="color: #ECBE7B;">namespace</span> <span style="color: #dcaeea;">neuro</span>;
+using <span style="color: #ECBE7B;">nlohmann</span>::json;
+</pre>
+</div>
+
+<p>
+Other than the framework header file itself we only need to include <code>fstream</code> so that we can read in our network json from a file.
+</p>
+</div>
+</div>
+<div id="outline-container-org14de4c8" class="outline-3">
+<h3 id="org14de4c8">Load Network</h3>
+<div class="outline-text-3" id="text-org14de4c8">
+<p>
+Due to the framework being a general purpose piece of software it has many different ways to accomplish what you intend to do. To keep things simple we are going copy the code for loading a network out of the <code>processor_tool</code> code.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">Network</span> *<span style="color: #c678dd;">load_network</span><span style="color: #51afef;">(</span><span style="color: #ECBE7B;">Processor</span> **<span style="color: #dcaeea;">pp</span>, <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">json</span> &amp;network_json<span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+  <span style="color: #ECBE7B;">Network</span> *<span style="color: #dcaeea;">net</span>;
+  <span style="color: #ECBE7B;">json</span> <span style="color: #dcaeea;">proc_params</span>;
+  <span style="color: #ECBE7B;">string</span> <span style="color: #dcaeea;">proc_name</span>;
+  <span style="color: #ECBE7B;">Processor</span> *<span style="color: #dcaeea;">p</span>;
+
+  net = new Network<span style="color: #c678dd;">()</span>;
+  net-&gt;from_json<span style="color: #c678dd;">(</span>network_json<span style="color: #c678dd;">)</span>;
+
+  p = *pp;
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>p == nullptr<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    proc_params = net-&gt;get_data<span style="color: #98be65;">(</span><span style="color: #98be65;">"proc_params"</span><span style="color: #98be65;">)</span>;
+    proc_name = net-&gt;get_data<span style="color: #98be65;">(</span><span style="color: #98be65;">"other"</span><span style="color: #98be65;">)[</span><span style="color: #98be65;">"proc_name"</span><span style="color: #98be65;">]</span>;
+    p = Processor::make<span style="color: #98be65;">(</span>proc_name, proc_params<span style="color: #98be65;">)</span>;
+    *pp = p;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>p-&gt;get_network_properties<span style="color: #98be65;">()</span>.as_json<span style="color: #98be65;">()</span> !=
+      net-&gt;get_properties<span style="color: #98be65;">()</span>.as_json<span style="color: #98be65;">()</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>
+        stderr,
+        <span style="color: #98be65;">"%s: load_network: Network and processor properties do not match.\n"</span>,
+        <span style="color: #a9a1e1;">__FILE__</span><span style="color: #98be65;">)</span>;
+    <span style="color: #51afef;">return</span> nullptr;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span><span style="color: #51afef; font-weight: bold;">!</span>p-&gt;load_network<span style="color: #98be65;">(</span>net<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>stderr, <span style="color: #98be65;">"%s: load_network: Failed to load network.\n"</span>, <span style="color: #a9a1e1;">__FILE__</span><span style="color: #98be65;">)</span>;
+    <span style="color: #51afef;">return</span> nullptr;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #51afef;">return</span> net;
+<span style="color: #51afef;">}</span>
+</pre>
+</div>
+
+<p>
+The network json has already been read in, so we can treat it like a map and access the keys we are interested in. We first extract the processor parameters so that we can construct a new processor. Then we check the network parameters and ensure that it is compatible with the processor. Lastly, we tell the processor to load the network so that it is ready to run.
+</p>
+</div>
+</div>
+<div id="outline-container-org91a487c" class="outline-3">
+<h3 id="org91a487c">Main</h3>
+<div class="outline-text-3" id="text-org91a487c">
+<p>
+For the purposes of this tutorial we will keep the user interface simple. Our app will accept 3 command line arguments: the network json, a value for input neuron A, and a value for input neuron B. These 2 values will be spiked into the network and our processor will report back if they caused the output neuron (<code>A&amp;B</code>) to spike.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span><span style="color: #51afef;">(</span><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">argc</span>, <span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">argv</span><span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>argc != <span style="color: #da8548; font-weight: bold;">4</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>stderr, <span style="color: #98be65;">"usage: %s network_json A B\n"</span>, argv<span style="color: #a9a1e1;">[</span><span style="color: #da8548; font-weight: bold;">0</span><span style="color: #a9a1e1;">]</span><span style="color: #98be65;">)</span>;
+    <span style="color: #51afef;">return</span> <span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #ECBE7B;">json</span> <span style="color: #dcaeea;">network_json</span>;
+  vector&lt;string&gt; json_source = <span style="color: #c678dd;">{</span>argv<span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">}</span>;
+  <span style="color: #ECBE7B;">bool</span> <span style="color: #dcaeea;">A</span> = stoi<span style="color: #c678dd;">(</span>argv<span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">2</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">)</span>;
+  <span style="color: #ECBE7B;">bool</span> <span style="color: #dcaeea;">B</span> = stoi<span style="color: #c678dd;">(</span>argv<span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">3</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">)</span>;
+
+  <span style="color: #ECBE7B;">ifstream</span> <span style="color: #c678dd;">fin</span><span style="color: #c678dd;">(</span><span style="color: #ECBE7B;">argv</span><span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">)</span>;
+  fin &gt;&gt; network_json;
+
+  <span style="color: #ECBE7B;">Processor</span> *<span style="color: #dcaeea;">p</span> = nullptr;
+  <span style="color: #ECBE7B;">Network</span> *<span style="color: #dcaeea;">n</span> = load_network<span style="color: #c678dd;">(</span>&amp;p, network_json<span style="color: #c678dd;">)</span>;
+
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span><span style="color: #51afef; font-weight: bold;">!</span>n<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>stderr, <span style="color: #98be65;">"%s: main: Unable to load network.\n"</span>, <span style="color: #a9a1e1;">__FILE__</span><span style="color: #98be65;">)</span>;
+  <span style="color: #c678dd;">}</span>
+
+  p-&gt;apply_spike<span style="color: #c678dd;">(</span>Spike<span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, A<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>;
+  p-&gt;apply_spike<span style="color: #c678dd;">(</span>Spike<span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>, B<span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span>;
+
+  p-&gt;run<span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">2</span><span style="color: #c678dd;">)</span>;
+
+  <span style="color: #ECBE7B;">bool</span> <span style="color: #dcaeea;">output</span> = p-&gt;output_count<span style="color: #c678dd;">(</span><span style="color: #da8548; font-weight: bold;">0</span><span style="color: #c678dd;">)</span>;
+  printf<span style="color: #c678dd;">(</span><span style="color: #98be65;">"Result: %d\n"</span>, output<span style="color: #c678dd;">)</span>;
+<span style="color: #51afef;">}</span>
+</pre>
+</div>
+
+<p>
+To apply input to the processor we call <code>p-&gt;apply_spike</code>, which takes a spike literal consisting of <code>id</code>, <code>time</code>, and <code>value</code>. We can pass <code>A</code> and <code>B</code> directly, as a spike with <code>value</code> 0 does not effect the neuron.
+</p>
+
+<p>
+Just as we saw before we run the network for a few time steps and then use <code>p-&gt;output_count(0)</code> to see how many times the 0th output neuron spikes. This is why the ordering of inputs/outputs in the network json matters, as we can now reference them by index in their respective array.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9d7db8b" class="outline-2">
+<h2 id="org9d7db8b">Using our App</h2>
+<div class="outline-text-2" id="text-org9d7db8b">
+<p>
+I&rsquo;ve written a makefile rule that should allow you to just run <code>make tutorial</code> and it should produce a binary under <code>bin/tutorial_app_vrisp</code>. Let&rsquo;s try running it a few times.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">{PWD}</span><span style="color: #98be65;">"</span>
+bin/tutorial_app_vrisp tutorial/networks/tutorial_and.json <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">0</span>
+bin/tutorial_app_vrisp tutorial/networks/tutorial_and.json <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">0</span>
+bin/tutorial_app_vrisp tutorial/networks/tutorial_and.json <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #da8548; font-weight: bold;">1</span>
+bin/tutorial_app_vrisp tutorial/networks/tutorial_and.json <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #da8548; font-weight: bold;">1</span>
+</pre>
+</div>
+
+<pre class="example">
+~/vrisp
+Result: 0
+Result: 0
+Result: 0
+Result: 1
+</pre>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 1/15/25</p>
 <p class="author">Author: Jackson Mowry</p>
-<p class="date">Created: 2025-01-15 Wed 09:52</p>
+<p class="date">Created: 2025-01-15 Wed 16:16</p>
 </div>
 </body>
 </html>

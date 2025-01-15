@@ -1,0 +1,59 @@
+{
+  "Properties": {
+    "node_properties": [
+      {
+        "name": "Threshold",
+        "type": 73,
+        "index": 0,
+        "size": 1,
+        "min_value": 1,
+        "max_value": 1
+      }
+    ],
+    "edge_properties": [
+      {
+        "name": "Delay",
+        "type": 73,
+        "index": 1,
+        "size": 1,
+        "min_value": 1,
+        "max_value": 1
+      },
+      {
+        "name": "Weight",
+        "type": 73,
+        "index": 0,
+        "size": 1,
+        "min_value": -1,
+        "max_value": 1
+      }
+    ],
+    "network_properties": []
+  },
+  "Nodes": [
+    { "id": 0, "name": "A", "values": [1] },
+    { "id": 1, "name": "B", "values": [1] },
+    { "id": 2, "name": "A&B", "values": [1] }
+  ],
+  "Edges": [
+    { "from": 0, "to": 2, "values": [1, 1] },
+    { "from": 1, "to": 2, "values": [1, 1] }
+  ],
+  "Inputs": [0, 1],
+  "Outputs": [2],
+  "Network_Values": [],
+  "Associated_Data": {
+    "other": { "proc_name": "vrisp" },
+    "proc_params": {
+      "leak_mode": "all",
+      "tracked_timesteps": 2,
+      "max_delay": 1,
+      "max_threshold": 1,
+      "max_weight": 1,
+      "min_potential": 0,
+      "min_threshold": 1,
+      "min_weight": -1,
+      "spike_value_factor": 1.0
+    }
+  }
+}
