@@ -17,6 +17,10 @@ Hopefully you've read the [[file:../README.org][README]], but I'll repeat the hi
 <a href="../README.org">README</a>
 #+END_EXPORT
 
+#+BEGIN_EXPORT html
+<a href="../">README</a>
+#+END_EXPORT
+
 #+begin_src shell
 make
 #+end_src
