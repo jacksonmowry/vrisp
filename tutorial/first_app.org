@@ -1,0 +1,28 @@
+#+HTML_LINK_HOME: index.html
+#+HTML_LINK_UP: index.html
+#+title: First App
+#+author: Jackson Mowry
+#+date: 1/15/25
+#+setupfile: retro_dark.theme
+#+options: toc:nil num:nil html-style:nil
+
+* Getting Started
+Hopefully you've read the [[file:../README.org][README]], but I'll repeat the highlights here. We can make the entire project, including dependencies by simply running =make=. Additionally, you can override the compiler and any flags you wish to pass through to it.
+
+[[org:../README.org][README]]
+
+[[file:../README.org][README]]
+
+#+BEGIN_EXPORT html
+<a href="../README.org">README</a>
+#+END_EXPORT
+
+#+begin_src shell
+make
+#+end_src
+
+/The make rule =riscv_vector= should only be provided when building for a platform that supports the RISCV Vector Extension version 1.0./
+
+#+begin_src shell
+make riscv_vector CXX='riscv64-linux-gnu-g++' CFLAGS='-march=rv64gcv -Ofast -static'
+#+end_src

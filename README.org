@@ -32,7 +32,7 @@ make riscv_vector
 Due to the lack of hardware supporting the RISCV Vector 1.0 extension it is more approachable to develop with an emulator. I won't go into detail on setting up QEMU but they should have plenty of documentation for your platform.
 
 #+begin_src sh
-make riscv_vector CXX=riscv64-linux-gnu-g++ CFLAGS='-march=rv64gcv -Ofast -static'
+make riscv_vector CXX='riscv64-linux-gnu-g++' CFLAGS='-march=rv64gcv -Ofast -static'
 #+end_src
 
 You can of course substitute whichever particular compiler is present on your platform.
