@@ -43,13 +43,15 @@ The script =scripts/dbscan_benchmark.bash= simulates inputs from an event based 
 
 If you build the apps to support vector processing run the following:
 #+begin_src bash
-bash scripts/dbscan_benchmark.bash vector
+bash scripts/dbscan_benchmark.bash $HOSTNAME vector
 #+end_src
 
 Otherwise:
 #+begin_src bash
-bash scripts/dbscan_benchmark.bash
+bash scripts/dbscan_benchmark.bash $HOSTNAME
 #+end_src
+
+The script requires an experiment prefix, which is added to the beginning of all output files to help organize results. If you're only concerned about which machine is running the tests you can supply =$HOSTNAME= as the argument.
 
 *** Parameters
 | Epsilon | Min. Pts. | Neurons | Synapses | Average Fan-out |
@@ -73,21 +75,28 @@ Epsilon 2, Min. Pts. 18
 ** Connectivity
 #+begin_src bash
 $ bash scripts/connectivity_benchmark.bash
-usage: scripts/connectivity_benchmark.bash empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]
+usage: scripts/connectivity_benchmark.bash experiment_prefix empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]
 #+end_src
 
 The script =scripts/connectivity_benchmark.bash= generates networks with a specified number of neurons, a connectivity change, and the number of input neurons. The network is then tested on all processors for a given number of time steps, with activity ranging from =0-activity_max=. You can use the script to test specific network parameters or a range of different networks.
 
+The script requires an experiment prefix, which is added to the beginning of all output files to help organize results. If you're only concerned about which machine is running the tests you can supply =$HOSTNAME= as the argument.
+
 #+begin_src bash
-$ bash scripts/connectivity_benchmark.bash networks/risp_1.json 100 2 3 5 5 vector
-Total Sim Time: Neurons: 100, Synapses: 169, Average Fan-out: 1.69, Connectivity Chance: 2%, Timesteps: 5
+$ bash scripts/connectivity_benchmark.bash $HOSTNAME networks/risp_1.json 100 2 3 5 5 vector
+#+PLOT: title:"5 Time Steps: Neurons: 100, Synapses: 186, Mean Fan-out: 1.86, Connectivity Chance: 2%"
+#+PLOT: file:"hostname_100_186_1p86_2percent.svg"
+#+PLOT: set:"rmargin 8" set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"
+#+PLOT: set:"xlabel 'Activity Percent'" set:"ylabel 'Time (Seconds)'"
+#+PLOT: ind:1 set:"key below horizontal"
+#+PLOT: labels:("x" "risp" "vrisp" "vr_full" "vr_fired" "vr_synapses" )
 | _  | risp       | vrisp      | vr_full    | vr_fired   | vr_synapses |
-| 0% | 0.00059929 | 0.00035017 | 0.00090468 | 0.00093811 | 0.00047756  |
-| 1% | 0.00059340 | 0.00034584 | 0.00071904 | 0.00079502 | 0.00045998  |
-| 2% | 0.00052557 | 0.00034834 | 0.00072579 | 0.00101188 | 0.00047948  |
-| 3% | 0.00050354 | 0.00034848 | 0.00099544 | 0.00092406 | 0.00039611  |
-| 4% | 0.00058849 | 0.00048198 | 0.00069715 | 0.00088300 | 0.00038349  |
-| 5% | 0.00049121 | 0.00035676 | 0.00100672 | 0.00073501 | 0.00037580  |
+| 0% | 0.00048030 | 0.00038873 | 0.00075584 | 0.00072111 | 0.00037042  |
+| 1% | 0.00047348 | 0.00034136 | 0.00075009 | 0.00063839 | 0.00034012  |
+| 2% | 0.00045733 | 0.00032405 | 0.00075986 | 0.00063398 | 0.00033554  |
+| 3% | 0.00043043 | 0.00032630 | 0.00064985 | 0.00078074 | 0.00036983  |
+| 4% | 0.00041081 | 0.00032519 | 0.00073086 | 0.00074261 | 0.00035851  |
+| 5% | 0.00041206 | 0.00035779 | 0.00067448 | 0.00076324 | 0.00036853  |
 #+end_src
 
 The script =scripts/connectivity_benchmark_full.bash= is an example of a simple wrapper around the previous script. It generates networks with neuron counts ranging from =5-250=, and connectivity chances ranging from =5-100%=. Feel free to write your own simple wrapper, or modify the existing one to suit your needs.

@@ -5,12 +5,14 @@ readonly NUM_ROWS=260
 PROCESSORS=(risp vrisp)
 
 main() {
-    if [ $# -gt 1 ]; then
-        echo "usage: $0 [vector]"
+    if [ $# -ne 1 ] && [ $# -ne 2 ]; then
+        echo "usage: $0 experiment_prefix [vector]"
         exit 1
     fi
 
-    if [ -n "${1:-}" ]; then
+    local experiment_prefix="${1}"
+
+    if [ -n "${2:-}" ]; then
         PROCESSORS+=(vr_full vr_fired vr_synapses)
     fi
 
@@ -32,7 +34,7 @@ main() {
             bin/dbscan_app_vrisp "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
         done))
 
-        if [ -n "${1:-}" ]; then
+        if [ -n "${2:-}" ]; then
             vr_full=($(for activity_percentage in {0..100}; do
                 bin/dbscan_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
             done))
@@ -46,7 +48,16 @@ main() {
             done))
         fi
 
-        printf 'DBScan Epsilon: %s, Min. Pts.: %s\n' "${epsilon}" "${min_pts}"
+        printf '#+PLOT: title:"DBScan Epsilon: %s, Min. Pts.: %s"\n' "${epsilon}" "${min_pts}"
+        printf '#+PLOT: file:"%s_dbscan_%s_%s.svg"\n' "${experiment_prefix}" "${epsilon}" "${min_pts}"
+        printf '#+PLOT: set:"rmargin 8" set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"\n'
+        printf '#+PLOT: set:"xlabel %s" set:"ylabel %s"\n' "'Activity Percent'" "'Frames per Second'"
+        printf '#+PLOT: ind:1 set:"key below horizontal"\n'
+        printf '#+PLOT: labels:("x" '
+        for proc in "${PROCESSORS[@]}"; do
+            printf '"%s" ' "${proc}"
+        done
+        printf ')\n'
         {
             printf '| _ '
             for proc in "${PROCESSORS[@]}"; do
@@ -61,7 +72,7 @@ main() {
 
                 printf '%s ' "${risp[${i}]}"
                 printf '%s ' "${vrisp[${i}]}"
-                if [ -n "${1:-}" ]; then
+                if [ -n "${2:-}" ]; then
                     printf '%s ' "${vr_full[${i}]}"
                     printf '%s ' "${vr_fired[${i}]}"
                     printf '%s ' "${vr_synapses[${i}]}"

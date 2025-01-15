@@ -73,18 +73,19 @@ generate_network() {
 }
 
 main() {
-    if [ $# -ne 6 ] && [ $# -ne 7 ]; then
-        printf 'usage: %s empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]\n' "${0}"
+    if [ $# -ne 7 ] && [ $# -ne 8 ]; then
+        printf 'usage: %s experiment_prefix empty_network num_neurons connectivity_chance num_inputs total_timesteps activity_max [vector_mode]\n' "${0}"
         exit 1
     fi
 
-    local empty_network="${1}"
-    local num_neurons="${2}"
-    local connectivity_chance="${3}"
-    local num_inputs="${4}"
-    local total_timesteps="${5}"
-    local activity_max="${6}"
-    local vector="${7:-}"
+    local experiment_prefix="${1}"
+    local empty_network="${2}"
+    local num_neurons="${3}"
+    local connectivity_chance="${4}"
+    local num_inputs="${5}"
+    local total_timesteps="${6}"
+    local activity_max="${7}"
+    local vector="${8:-}"
 
     if [ -n "${vector}" ]; then
         PROCESSORS+=(vr_full vr_fired vr_synapses)
@@ -116,7 +117,18 @@ main() {
         done))
     fi
 
-    printf 'Total Sim Time: Neurons: %s, Synapses: %s, Average Fan-out: %.2f, Connectivity Chance: %s%%, Timesteps: %s\n' "${num_neurons}" "$(jq '.Edges | length' "${temp_file}")" "$(jq '(.Edges | length) / (.Nodes | length)' "${temp_file}")" "${connectivity_chance}" "${total_timesteps}"
+    readonly synapses="$(jq '.Edges | length' "${temp_file}")"
+    readonly fan_out="$(jq '(.Edges | length) / (.Nodes | length)' "${temp_file}")"
+    printf '#+PLOT: title:"%s Time Steps: Neurons: %s, Synapses: %s, Mean Fan-out: %.2f, Connectivity Chance: %s%%"\n' "${total_timesteps}" "${num_neurons}" "${synapses}" "${fan_out}" "${connectivity_chance}"
+    printf '#+PLOT: file:"%s_%s_%s_%s_%s.svg"\n' "${experiment_prefix}" "${num_neurons}" "${synapses}" "${fan_out/\./p}" "${connectivity_chance}percent"
+    printf '#+PLOT: set:"rmargin 8" set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"\n'
+    printf '#+PLOT: set:"xlabel %s" set:"ylabel %s"\n' "'Activity Percent'" "'Time (Seconds)'"
+    printf '#+PLOT: ind:1 set:"key below horizontal"\n'
+    printf '#+PLOT: labels:("x" '
+    for proc in "${PROCESSORS[@]}"; do
+        printf '"%s" ' "${proc}"
+    done
+    printf ')\n'
     {
         printf '| _ '
         for proc in "${PROCESSORS[@]}"; do
