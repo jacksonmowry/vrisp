@@ -6,7 +6,7 @@
 #+setupfile: retro_dark.theme
 #+options: toc:nil num:nil html-style:nil
 
-* Getting Started
+* /_Getting Started_/
 Hopefully you've read the @@html:<a href="https://www.github.com/jacksonmowry/vrisp">@@README@@html:</a>@@, but I'll repeat the highlights here. We can make the entire project, including dependencies by simply running =make=. Additionally, you can override the compiler and any flags you wish to pass through to it.
 
 #+begin_src shell
@@ -191,7 +191,7 @@ If we now look in =tutorial/networks/tutorial_and.json= we should see the follow
 Now you know both ways we can create the network json files we will be working with.
 
 
-* Testing the Network
+* /_Testing the Network_/
 We have a network, but no real way to interact with it yet. Let's take a quick moment to discuss the =processor_tool=.
 
 In order to /run/ the network we need to load it onto a processor. In our case this will be =processor_tool_vrisp=. The processor is bundled directly into the tool so that the overhead of the framework is kept as minimal as possible.
@@ -228,7 +228,7 @@ Great! We can see that when either neuron spikes alone (time steps 0 or 1) that 
 Another aspect of network design we have neglected to talk about thus far is leak. The concept is simple in VRISP, when a neuron doesn't fire it either leaks away all of its charge each timestep, or it carrys its charge over to the next timestep. These modes are called "all" and "none" respectively. For the network shown here we are choosing to leak away all charge at every time step.
 #+end_example
 
-* Building our App
+* /_Building our App_/
 Now we can start building the standalone app that will run our network. To keep things simple, we will write everything in a single =C++= source file so that you can see and understand the entire program. The entire file can be found [[file:src/tutorial_and_app.cpp][here]].
 
 ** Includes
@@ -323,7 +323,7 @@ To apply input to the processor we call =p->apply_spike=, which takes a spike li
 
 Just as we saw before we run the network for a few time steps and then use =p->output_count(0)= to see how many times the 0th output neuron spikes. This is why the ordering of inputs/outputs in the network json matters, as we can now reference them by index in their respective array.
 
-* Using our App
+* /_Using our App_/
 I've written a makefile rule that should allow you to just run =make tutorial= and it should produce a binary under =bin/tutorial_app_vrisp=. Let's try running it a few times.
 
 #+begin_src bash :dir .. :exports both :results verbatim :var PWD="~/vrisp"
@@ -343,7 +343,7 @@ bin/tutorial_app_vrisp tutorial/networks/tutorial_and.json 1 1
 
 We can see that our app correctly produces the truth table for an =AND= gate! Now time to see if we can do anything useful with it.
 
-* Extra Credit
+* /_Extra Credit_/
 Let's go one step further and get this app running on a raspberry pi, with real world inputs to our processor. We can wire up 2 buttons to act as the =A= and =B= inputs to the logic gate.
 
 Most of the code will stay the same, so I will only show differences here. To begin include the =WiringPi= header.
@@ -390,8 +390,8 @@ int main(int argc, char *argv[]) {
       int AState = digitalRead(APin);
       int BState = digitalRead(BPin);
 
-      p->apply_spike(Spike(0, 0, AState));
-      p->apply_spike(Spike(1, 0, BState));
+      p->apply_spike(Spike(0, 0, AState==LOW));
+      p->apply_spike(Spike(1, 0, BState==LOW));
 
       p->run(2);
 
@@ -402,3 +402,26 @@ int main(int argc, char *argv[]) {
   }
 }
 #+end_src
+
+Feel free to change the pins used for either button, but for convenience they are set to GPIO 17 and 23 (Physical pins 11 and 16).
+
+You can now compile and run the app on your pi by running =make tutorial_pi=. The result is a binary in =bin/tutorial_app_pi_vrisp=. If we run that we should initially see a stream of "A&B: 0", which will stay zero when holding either button, but not both. As soon as we hold down both buttons "A&B: 1" should appear. If you see this behavior you now have an embedded neuroprocessor running and accept input from the real world!
+
+#+begin_src shell
+#...
+A&B: 0 # no buttons held
+A&B: 0
+A&B: 0 # A button held
+A&B: 0
+A&B: 0 # B button held
+A&B: 0
+A&B: 0
+A&B: 1 # Both buttons held!
+A&B: 1
+A&B: 1
+A&B: 1
+#...
+#+end_src
+
+* /_Next Steps_/
+Now that we've covered the entire process end-to-end I hope you've begun to think of other application ideas. Naturally, neuromorphic computing is an attractive platform for control applications, which we'll take a look at building in the next tutorial. The key here is that the platform is a solid base to build upon, that should be able to support a wide range of applications

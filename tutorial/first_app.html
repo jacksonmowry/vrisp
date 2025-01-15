@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-01-15 Wed 16:16 -->
+<!-- 2025-01-15 Wed 18:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>First App</title>
@@ -20,9 +20,9 @@
  <a accesskey="H" href="index.html"> HOME </a>
 </div><div id="content" class="content">
 <h1 class="title">First App</h1>
-<div id="outline-container-org1f0a814" class="outline-2">
-<h2 id="org1f0a814">Getting Started</h2>
-<div class="outline-text-2" id="text-org1f0a814">
+<div id="outline-container-org334a760" class="outline-2">
+<h2 id="org334a760"><i><span class="underline">Getting Started</span></i></h2>
+<div class="outline-text-2" id="text-org334a760">
 <p>
 Hopefully you&rsquo;ve read the <a href="https://www.github.com/jacksonmowry/vrisp">README</a>, but I&rsquo;ll repeat the highlights here. We can make the entire project, including dependencies by simply running <code>make</code>. Additionally, you can override the compiler and any flags you wish to pass through to it.
 </p>
@@ -42,16 +42,16 @@ Hopefully you&rsquo;ve read the <a href="https://www.github.com/jacksonmowry/vri
 </div>
 </div>
 </div>
-<div id="outline-container-orgf7b03b3" class="outline-2">
-<h2 id="orgf7b03b3">Building a Network</h2>
-<div class="outline-text-2" id="text-orgf7b03b3">
+<div id="outline-container-orge8d687f" class="outline-2">
+<h2 id="orge8d687f">Building a Network</h2>
+<div class="outline-text-2" id="text-orge8d687f">
 <p>
 We have two options for building networks, either by hand or through <code>network_tool</code>.
 </p>
 </div>
-<div id="outline-container-orge77beb8" class="outline-3">
-<h3 id="orge77beb8">By Hand</h3>
-<div class="outline-text-3" id="text-orge77beb8">
+<div id="outline-container-orge2bc508" class="outline-3">
+<h3 id="orge2bc508">By Hand</h3>
+<div class="outline-text-3" id="text-orge2bc508">
 <p>
 This is my preferred option for building small networks as you can get hands on with every bit of the network json.
 </p>
@@ -124,9 +124,9 @@ Here is an empty VRISP network, in this case names <code>vrisp_7.json</code>, wh
 If we were to try and load this network as it sit we won&rsquo;t accomplish much. Instead, we need to add neurons and synapses to form our network, which is just like a typical graph data structure.
 </p>
 </div>
-<div id="outline-container-orgdc1e0bd" class="outline-4">
-<h4 id="orgdc1e0bd">Neuron Object</h4>
-<div class="outline-text-4" id="text-orgdc1e0bd">
+<div id="outline-container-org6a76feb" class="outline-4">
+<h4 id="org6a76feb">Neuron Object</h4>
+<div class="outline-text-4" id="text-org6a76feb">
 <p>
 Each neuron has 3 fields, an <code>id</code>, a <code>name</code>, and its <code>values</code> (configuration properties). IDs must be integers, and names can be any string. Values come from the small section at the top of our network json <code>Properties::node_properties</code>, which described the configurable properties of each neuron. In this case we can set the <code>threshold</code> of a neuron from 1 to 7.
 </p>
@@ -153,9 +153,9 @@ Each neuron has 3 fields, an <code>id</code>, a <code>name</code>, and its <code
 </div>
 </div>
 </div>
-<div id="outline-container-org2259c0a" class="outline-4">
-<h4 id="org2259c0a">Synapse Object</h4>
-<div class="outline-text-4" id="text-org2259c0a">
+<div id="outline-container-orgd1aded5" class="outline-4">
+<h4 id="orgd1aded5">Synapse Object</h4>
+<div class="outline-text-4" id="text-orgd1aded5">
 <p>
 Similarly, a synapse has 3 fields, <code>from</code>, <code>to</code>, and <code>values</code>. From and to reference the <code>id</code> fields of the neurons to be connected, and once again <code>values</code> are the configurable properties for a synapse. In this example we can configure <code>delay</code> and <code>weight</code>.
 </p>
@@ -195,17 +195,17 @@ Similarly, a synapse has 3 fields, <code>from</code>, <code>to</code>, and <code
 </div>
 </div>
 </div>
-<div id="outline-container-org459c523" class="outline-4">
-<h4 id="org459c523">Inputs/Outputs</h4>
-<div class="outline-text-4" id="text-org459c523">
+<div id="outline-container-org8046f0e" class="outline-4">
+<h4 id="org8046f0e">Inputs/Outputs</h4>
+<div class="outline-text-4" id="text-org8046f0e">
 <p>
 The <code>inputs</code> and <code>outputs</code> array simply specify the <code>id</code> of each input/output neuron. Do note that the order matters here when it comes to interacting with the processor, which we will see in more detail once we get to the <code>C++</code> side of things.
 </p>
 </div>
 </div>
-<div id="outline-container-orga2da67a" class="outline-4">
-<h4 id="orga2da67a">Creating a Graph</h4>
-<div class="outline-text-4" id="text-orga2da67a">
+<div id="outline-container-org0184684" class="outline-4">
+<h4 id="org0184684">Creating a Graph</h4>
+<div class="outline-text-4" id="text-org0184684">
 <p>
 Lets build our first network! We&rsquo;ll keep things simple by building an AND gate, which has 2 input neurons and 1 output neuron.
 </p>
@@ -232,7 +232,7 @@ We&rsquo;ll take the original empty network and make the following changes.
 </div>
 
 
-<div id="orga34cd3e" class="figure">
+<div id="orgc9d81b6" class="figure">
 <p><img src="and_network.png" alt="and_network.png" />
 </p>
 </div>
@@ -268,9 +268,9 @@ Now we have our final network. The explanation was long winded, but hopefully yo
 </div>
 </div>
 </div>
-<div id="outline-container-orgff20d3b" class="outline-3">
-<h3 id="orgff20d3b">Using Network Tool</h3>
-<div class="outline-text-3" id="text-orgff20d3b">
+<div id="outline-container-orgb0b709d" class="outline-3">
+<h3 id="orgb0b709d">Using Network Tool</h3>
+<div class="outline-text-3" id="text-orgb0b709d">
 <p>
 The easier way to create these networks is to use <code>network_tool</code> from the framework. The actual process is much less involved, but it does require some initial setup that I&rsquo;ve taken care of for you here. In order to use <code>network_tool</code> you will need an empty network, which can be generated via the <code>processor_tool</code>. A few empty networks are provided in the <code>vrisp/networks</code> directory.
 </p>
@@ -326,9 +326,9 @@ Now you know both ways we can create the network json files we will be working w
 </div>
 </div>
 </div>
-<div id="outline-container-org74084e7" class="outline-2">
-<h2 id="org74084e7">Testing the Network</h2>
-<div class="outline-text-2" id="text-org74084e7">
+<div id="outline-container-org655b983" class="outline-2">
+<h2 id="org655b983"><i><span class="underline">Testing the Network</span></i></h2>
+<div class="outline-text-2" id="text-org655b983">
 <p>
 We have a network, but no real way to interact with it yet. Let&rsquo;s take a quick moment to discuss the <code>processor_tool</code>.
 </p>
@@ -366,7 +366,7 @@ node <span style="color: #da8548; font-weight: bold;">2</span><span style="color
 </div>
 
 
-<div id="orgb5b87cf" class="figure">
+<div id="orga724a8e" class="figure">
 <p><img src="images/tutorial_and.png" alt="tutorial_and.png" />
 </p>
 </div>
@@ -375,21 +375,21 @@ node <span style="color: #da8548; font-weight: bold;">2</span><span style="color
 Great! We can see that when either neuron spikes alone (time steps 0 or 1) that the output neuron does not fire. Once both input neurons spike (time step 2) the output neuron spikes a time step later (time step 3).
 </p>
 
-<pre class="example" id="org43de309">
+<pre class="example" id="org7bfc7cb">
 Another aspect of network design we have neglected to talk about thus far is leak. The concept is simple in VRISP, when a neuron doesn't fire it either leaks away all of its charge each timestep, or it carrys its charge over to the next timestep. These modes are called "all" and "none" respectively. For the network shown here we are choosing to leak away all charge at every time step.
 </pre>
 </div>
 </div>
-<div id="outline-container-org2ed00ae" class="outline-2">
-<h2 id="org2ed00ae">Building our App</h2>
-<div class="outline-text-2" id="text-org2ed00ae">
+<div id="outline-container-org017214a" class="outline-2">
+<h2 id="org017214a"><i><span class="underline">Building our App</span></i></h2>
+<div class="outline-text-2" id="text-org017214a">
 <p>
 Now we can start building the standalone app that will run our network. To keep things simple, we will write everything in a single <code>C++</code> source file so that you can see and understand the entire program. The entire file can be found <a href="src/tutorial_and_app.cpp">here</a>.
 </p>
 </div>
-<div id="outline-container-orgc111232" class="outline-3">
-<h3 id="orgc111232">Includes</h3>
-<div class="outline-text-3" id="text-orgc111232">
+<div id="outline-container-orgd3ea772" class="outline-3">
+<h3 id="orgd3ea772">Includes</h3>
+<div class="outline-text-3" id="text-orgd3ea772">
 <div class="org-src-container">
 <pre class="src src-C"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #98be65;">"framework.hpp"</span>
 <span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #51afef;">&lt;</span><span style="color: #98be65;">fstream</span><span style="color: #51afef;">&gt;</span>
@@ -405,9 +405,9 @@ Other than the framework header file itself we only need to include <code>fstrea
 </p>
 </div>
 </div>
-<div id="outline-container-org14de4c8" class="outline-3">
-<h3 id="org14de4c8">Load Network</h3>
-<div class="outline-text-3" id="text-org14de4c8">
+<div id="outline-container-org898fe66" class="outline-3">
+<h3 id="org898fe66">Load Network</h3>
+<div class="outline-text-3" id="text-org898fe66">
 <p>
 Due to the framework being a general purpose piece of software it has many different ways to accomplish what you intend to do. To keep things simple we are going copy the code for loading a network out of the <code>processor_tool</code> code.
 </p>
@@ -454,9 +454,9 @@ The network json has already been read in, so we can treat it like a map and acc
 </p>
 </div>
 </div>
-<div id="outline-container-org91a487c" class="outline-3">
-<h3 id="org91a487c">Main</h3>
-<div class="outline-text-3" id="text-org91a487c">
+<div id="outline-container-orgd78cf7d" class="outline-3">
+<h3 id="orgd78cf7d">Main</h3>
+<div class="outline-text-3" id="text-orgd78cf7d">
 <p>
 For the purposes of this tutorial we will keep the user interface simple. Our app will accept 3 command line arguments: the network json, a value for input neuron A, and a value for input neuron B. These 2 values will be spiked into the network and our processor will report back if they caused the output neuron (<code>A&amp;B</code>) to spike.
 </p>
@@ -504,9 +504,9 @@ Just as we saw before we run the network for a few time steps and then use <code
 </div>
 </div>
 </div>
-<div id="outline-container-org9d7db8b" class="outline-2">
-<h2 id="org9d7db8b">Using our App</h2>
-<div class="outline-text-2" id="text-org9d7db8b">
+<div id="outline-container-org515de88" class="outline-2">
+<h2 id="org515de88"><i><span class="underline">Using our App</span></i></h2>
+<div class="outline-text-2" id="text-org515de88">
 <p>
 I&rsquo;ve written a makefile rule that should allow you to just run <code>make tutorial</code> and it should produce a binary under <code>bin/tutorial_app_vrisp</code>. Let&rsquo;s try running it a few times.
 </p>
@@ -527,13 +527,122 @@ Result: 0
 Result: 0
 Result: 1
 </pre>
+
+
+<p>
+We can see that our app correctly produces the truth table for an <code>AND</code> gate! Now time to see if we can do anything useful with it.
+</p>
+</div>
+</div>
+<div id="outline-container-org1e195b4" class="outline-2">
+<h2 id="org1e195b4"><i><span class="underline">Extra Credit</span></i></h2>
+<div class="outline-text-2" id="text-org1e195b4">
+<p>
+Let&rsquo;s go one step further and get this app running on a raspberry pi, with real world inputs to our processor. We can wire up 2 buttons to act as the <code>A</code> and <code>B</code> inputs to the logic gate.
+</p>
+
+<p>
+Most of the code will stay the same, so I will only show differences here. To begin include the <code>WiringPi</code> header.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #51afef; font-weight: bold;">#include</span> <span style="color: #51afef;">&lt;</span><span style="color: #98be65;">wiringPi.h</span><span style="color: #51afef;">&gt;</span>
+<span style="color: #5B6268;">// </span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+
+<p>
+Then we need to initialize the GPIO state on the pi.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-C"><span style="color: #ECBE7B;">int</span> <span style="color: #c678dd;">main</span><span style="color: #51afef;">(</span><span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">argc</span>, <span style="color: #ECBE7B;">char</span> *<span style="color: #dcaeea;">argv</span><span style="color: #c678dd;">[]</span><span style="color: #51afef;">)</span> <span style="color: #51afef;">{</span>
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span>argc != <span style="color: #da8548; font-weight: bold;">2</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>stderr, <span style="color: #98be65;">"usage: %s network_json\n"</span>, argv<span style="color: #a9a1e1;">[</span><span style="color: #da8548; font-weight: bold;">0</span><span style="color: #a9a1e1;">]</span><span style="color: #98be65;">)</span>;
+    <span style="color: #51afef;">return</span> <span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #ECBE7B;">json</span> <span style="color: #dcaeea;">network_json</span>;
+  vector&lt;string&gt; json_source = <span style="color: #c678dd;">{</span>argv<span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">}</span>;
+
+  wiringPiSetupGpio<span style="color: #c678dd;">()</span>;
+
+  <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">APin</span> = <span style="color: #da8548; font-weight: bold;">17</span>;
+  <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">BPin</span> = <span style="color: #da8548; font-weight: bold;">23</span>;
+
+  pinMode<span style="color: #c678dd;">(</span>APin, <span style="color: #a9a1e1;">INPUT</span><span style="color: #c678dd;">)</span>;
+  pinMode<span style="color: #c678dd;">(</span>BPin, <span style="color: #a9a1e1;">INPUT</span><span style="color: #c678dd;">)</span>;
+
+  pullUpDnControl<span style="color: #c678dd;">(</span>APin, <span style="color: #a9a1e1;">PUD_UP</span><span style="color: #c678dd;">)</span>;
+  pullUpDnControl<span style="color: #c678dd;">(</span>BPin, <span style="color: #a9a1e1;">PUD_UP</span><span style="color: #c678dd;">)</span>;
+
+  <span style="color: #ECBE7B;">ifstream</span> <span style="color: #c678dd;">fin</span><span style="color: #c678dd;">(</span><span style="color: #ECBE7B;">argv</span><span style="color: #98be65;">[</span><span style="color: #da8548; font-weight: bold;">1</span><span style="color: #98be65;">]</span><span style="color: #c678dd;">)</span>;
+  fin &gt;&gt; network_json;
+
+  <span style="color: #ECBE7B;">Processor</span> *<span style="color: #dcaeea;">p</span> = nullptr;
+  <span style="color: #ECBE7B;">Network</span> *<span style="color: #dcaeea;">n</span> = load_network<span style="color: #c678dd;">(</span>&amp;p, network_json<span style="color: #c678dd;">)</span>;
+
+  <span style="color: #51afef;">if</span> <span style="color: #c678dd;">(</span><span style="color: #51afef; font-weight: bold;">!</span>n<span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+    fprintf<span style="color: #98be65;">(</span>stderr, <span style="color: #98be65;">"%s: main: Unable to load network.\n"</span>, <span style="color: #a9a1e1;">__FILE__</span><span style="color: #98be65;">)</span>;
+  <span style="color: #c678dd;">}</span>
+
+  <span style="color: #51afef;">while</span> <span style="color: #c678dd;">(</span><span style="color: #a9a1e1;">true</span><span style="color: #c678dd;">)</span> <span style="color: #c678dd;">{</span>
+      <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">AState</span> = digitalRead<span style="color: #98be65;">(</span>APin<span style="color: #98be65;">)</span>;
+      <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">BState</span> = digitalRead<span style="color: #98be65;">(</span>BPin<span style="color: #98be65;">)</span>;
+
+      p-&gt;apply_spike<span style="color: #98be65;">(</span>Spike<span style="color: #a9a1e1;">(</span><span style="color: #da8548; font-weight: bold;">0</span>, <span style="color: #da8548; font-weight: bold;">0</span>, AState==<span style="color: #a9a1e1;">LOW</span><span style="color: #a9a1e1;">)</span><span style="color: #98be65;">)</span>;
+      p-&gt;apply_spike<span style="color: #98be65;">(</span>Spike<span style="color: #a9a1e1;">(</span><span style="color: #da8548; font-weight: bold;">1</span>, <span style="color: #da8548; font-weight: bold;">0</span>, BState==<span style="color: #a9a1e1;">LOW</span><span style="color: #a9a1e1;">)</span><span style="color: #98be65;">)</span>;
+
+      p-&gt;run<span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">2</span><span style="color: #98be65;">)</span>;
+
+      <span style="color: #ECBE7B;">bool</span> <span style="color: #dcaeea;">output</span> = p-&gt;output_count<span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">0</span><span style="color: #98be65;">)</span>;
+      printf<span style="color: #98be65;">(</span><span style="color: #98be65;">"A&amp;B: %d\n"</span>, output<span style="color: #98be65;">)</span>;
+
+      delay<span style="color: #98be65;">(</span><span style="color: #da8548; font-weight: bold;">100</span><span style="color: #98be65;">)</span>;
+  <span style="color: #c678dd;">}</span>
+<span style="color: #51afef;">}</span>
+</pre>
+</div>
+
+<p>
+Feel free to change the pins used for either button, but for conveniece they are set to GPIO 17 and 23 (Physical pins 11 and 16).
+</p>
+
+<p>
+You can now compile and run the app on your pi by running <code>make tutorial_pi</code>. The result is a binary in <code>bin/tutorial_app_pi_vrisp</code>. If we run that we should initially see a stream of &ldquo;A&amp;B: 0&rdquo;, which will stay zero when holding either button, but not both. As soon as we hold down both buttons &ldquo;A&amp;B: 1&rdquo; should appear. If you see this behavior you now have an embedded neuroprocessor running and accept input from the real world!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell"><span style="color: #5B6268;">#</span><span style="color: #5B6268;">...</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #5B6268;"># </span><span style="color: #5B6268;">no buttons held</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #5B6268;"># </span><span style="color: #5B6268;">A button held</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span> <span style="color: #5B6268;"># </span><span style="color: #5B6268;">B button held</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">0</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">1</span> <span style="color: #5B6268;"># </span><span style="color: #5B6268;">Both buttons held!</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">1</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">1</span>
+A&amp;B: <span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">...</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9b6e124" class="outline-2">
+<h2 id="org9b6e124"><i><span class="underline">Next Steps</span></i></h2>
+<div class="outline-text-2" id="text-org9b6e124">
+<p>
+Now that we&rsquo;ve covered the entire process end-to-end I hope you&rsquo;ve begun to think of other application ideas. Naturally, neuromorphic computing is an attractive platform for control applications, which we&rsquo;ll take a look at building in the next tutorial. The key here is that the platform is a solid base to build upon, that should be able to support a wide range of applications
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 1/15/25</p>
 <p class="author">Author: Jackson Mowry</p>
-<p class="date">Created: 2025-01-15 Wed 16:16</p>
+<p class="date">Created: 2025-01-15 Wed 18:42</p>
 </div>
 </body>
 </html>
