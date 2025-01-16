@@ -72,7 +72,7 @@ bin/connectivity_app_vrisp_vector_synapses: src/connectivity_app.cpp $(VRISP_RVV
 bin/tutorial_app_vrisp: tutorial/src/tutorial_and_app.cpp $(VRISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
-bin/tutorial_app_pi_vrisp: tutorial/src/tutorial_pi_app.cpp $(VRISP_OBJ) $(FR_LIB)
+bin/tutorial_app_pi_vrisp: tutorial/src/tutorial_and_pi_app.cpp $(VRISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^ -lwiringPi
 
 # Libraries ###################################################################

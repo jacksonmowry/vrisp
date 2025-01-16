@@ -74,8 +74,8 @@ int main(int argc, char *argv[]) {
     int AState = digitalRead(APin);
     int BState = digitalRead(BPin);
 
-    p->apply_spike(Spike(0, 0, AState));
-    p->apply_spike(Spike(1, 0, BState));
+    p->apply_spike(Spike(0, 0, AState == LOW));
+    p->apply_spike(Spike(1, 0, BState == LOW));
 
     p->run(2);
 

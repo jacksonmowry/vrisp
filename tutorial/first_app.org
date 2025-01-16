@@ -131,9 +131,9 @@ jq '.Nodes as $Nodes
    | [[.Edges[].from],[.Edges[].to], [.Edges[].values[1]]]
    | transpose
    | map (.[0] as $zero
-     | .[1] as $one
-     | .[2] as $weight
-     | [($Nodes[] | select(.id == $zero)).name, ($Nodes[] | select(.id == $one)).name, $weight])
+        | .[1] as $one
+        | .[2] as $weight
+        | [($Nodes[] | select(.id == $zero)).name, ($Nodes[] | select(.id == $one)).name, $weight])
    | map ( "\(. [0]),\(. [1]) | (color=\(. [2] | if . >= 0 then "black" else "red" end));")' networks/and_vrisp.json |
     sed -E -e 's/\[/digraph G \{/' -e 's/\]/}/' -e 's/,/" -> "/' -e 's/ \|/"/' -e 's/,//' -e 's/"$//' -e 's/\(/\[/' -e 's/\)/\]/'
 #+end_src
@@ -346,16 +346,58 @@ We can see that our app correctly produces the truth table for an =AND= gate! No
 * /_Extra Credit_/
 Let's go one step further and get this app running on a raspberry pi, with real world inputs to our processor. We can wire up 2 buttons to act as the =A= and =B= inputs to the logic gate.
 
-Most of the code will stay the same, so I will only show differences here. To begin include the =WiringPi= header.
+Most of the code will stay the same, so I will only show differences here, although the full source file can be found under =tutorial/src/tutorial_and_pi_app.cpp=. To begin include the =WiringPi= header.
 
-#+begin_src C
+#+begin_src C :tangle "src/tutorial_and_pi_app.cpp" :main no
 #include <wiringPi.h>
-// ...
+#+end_src
+
+#+begin_src C :tangle "src/tutorial_and_pi_app.cpp" :main no :exports none
+#include <fstream>
+#include "framework.hpp"
+
+using namespace std;
+using namespace neuro;
+using nlohmann::json;
+
+Network *load_network(Processor **pp, const json &network_json) {
+  Network *net;
+  json proc_params;
+  string proc_name;
+  Processor *p;
+
+  net = new Network();
+  net->from_json(network_json);
+
+  p = *pp;
+  if (p == nullptr) {
+    proc_params = net->get_data("proc_params");
+    proc_name = net->get_data("other")["proc_name"];
+    p = Processor::make(proc_name, proc_params);
+    *pp = p;
+  }
+
+  if (p->get_network_properties().as_json() !=
+      net->get_properties().as_json()) {
+    fprintf(
+        stderr,
+        "%s: load_network: Network and processor properties do not match.\n",
+        __FILE__);
+    return nullptr;
+  }
+
+  if (!p->load_network(net)) {
+    fprintf(stderr, "%s: load_network: Failed to load network.\n", __FILE__);
+    return nullptr;
+  }
+
+  return net;
+}
 #+end_src
 
 Then we need to initialize the GPIO state on the pi.
 
-#+begin_src C
+#+begin_src C :tangle "src/tutorial_and_pi_app.cpp" :main no
 int main(int argc, char *argv[]) {
   if (argc != 2) {
     fprintf(stderr, "usage: %s network_json\n", argv[0]);
