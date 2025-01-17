@@ -13,7 +13,7 @@ main() {
     local experiment_prefix="${1}"
 
     if [ -n "${2:-}" ]; then
-        PROCESSORS+=(vr_full vr_fired vr_synapses)
+        PROCESSORS+=(vr_full vr_fired vr_synapses vr_dvlen)
     fi
 
     local -a dbscan_params=(1_7 2_18 3_36 4_60 5_90 6_120)
@@ -46,6 +46,10 @@ main() {
             vr_synapses=($(for activity_percentage in {0..100}; do
                 bin/dbscan_app_vrisp_vector_synapses "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
             done))
+
+            vr_dvlen=($(for activity_percentage in {0..100}; do
+                bin/dbscan_app_vrisp_vector_dvlen "${temp_file}" "${activity_percentage}" 10 | awk -F':' '{ printf("%.8f ", 1/$2) }'
+            done))
         fi
 
         printf '#+PLOT: title:"DBScan Epsilon: %s, Min. Pts.: %s"\n' "${epsilon}" "${min_pts}"
@@ -76,6 +80,7 @@ main() {
                     printf '%s ' "${vr_full[${i}]}"
                     printf '%s ' "${vr_fired[${i}]}"
                     printf '%s ' "${vr_synapses[${i}]}"
+                    printf '%s ' "${vr_dvlen[${i}]}"
                 fi
 
                 printf '|\n'

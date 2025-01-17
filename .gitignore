@@ -36,3 +36,8 @@ bin/*
 *tmp*
 
 paper.*
+ieee.csl
+two.setup
+risp_eventbased.png
+risp_ringbuffer.png
+effective_neuromorphic_sim.bib
