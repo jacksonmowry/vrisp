@@ -15,7 +15,6 @@ VRISP_OBJ = framework-open/obj/vrisp.o  framework-open/obj/vrisp_static.o
 VRISP_RVV_FULL_OBJ = framework-open/obj/vrisp_rvv_full.o framework-open/obj/vrisp_static.o
 VRISP_RVV_FIRED_OBJ = framework-open/obj/vrisp_rvv_fired.o framework-open/obj/vrisp_static.o
 VRISP_RVV_SYNAPSES_OBJ = framework-open/obj/vrisp_rvv_synapses.o framework-open/obj/vrisp_static.o
-VRISP_RVV_DVLEN_OBJ = framework-open/obj/vrisp_rvv_dvlen.o framework-open/obj/vrisp_static.o
 
 FRAMEWORK_DIR = framework-open/
 DBSCAN_DIR = dbscan/
@@ -26,16 +25,20 @@ all: dbscan/bin/dbscan_systolic_full \
 	 bin/dbscan_app_vrisp \
 	 bin/connectivity_app_risp \
 	 bin/connectivity_app_vrisp \
+	 bin/bars_stripes_app_risp \
+	 bin/bars_stripes_app_vrisp
+
 
 riscv_vector: all \
 			  bin/dbscan_app_vrisp_vector_full \
 			  bin/dbscan_app_vrisp_vector_fired \
 			  bin/dbscan_app_vrisp_vector_synapses \
-			  bin/dbscan_app_vrisp_vector_dvlen \
 			  bin/connectivity_app_vrisp_vector_full \
 			  bin/connectivity_app_vrisp_vector_fired \
 			  bin/connectivity_app_vrisp_vector_synapses \
-			  bin/connectivity_app_vrisp_vector_dvlen
+			  bin/bars_stripes_app_vrisp_vector_full \
+			  bin/bars_stripes_app_vrisp_vector_fired \
+			  bin/bars_stripes_app_vrisp_vector_synapses
 
 tutorial: bin/tutorial_app_vrisp
 
@@ -57,9 +60,6 @@ bin/dbscan_app_vrisp_vector_fired: src/dbscan_app.cpp $(VRISP_RVV_FIRED_OBJ) $(F
 bin/dbscan_app_vrisp_vector_synapses: src/dbscan_app.cpp $(VRISP_RVV_SYNAPSES_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
-bin/dbscan_app_vrisp_vector_dvlen: src/dbscan_app.cpp $(VRISP_RVV_DVLEN_OBJ) $(FR_LIB)
-	$(CXX) $(FR_CFLAGS) -o $@ $^
-
 bin/connectivity_app_risp: src/connectivity_app.cpp $(RISP_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
@@ -75,7 +75,19 @@ bin/connectivity_app_vrisp_vector_fired: src/connectivity_app.cpp $(VRISP_RVV_FI
 bin/connectivity_app_vrisp_vector_synapses: src/connectivity_app.cpp $(VRISP_RVV_SYNAPSES_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
-bin/connectivity_app_vrisp_vector_dvlen: src/connectivity_app.cpp $(VRISP_RVV_DVLEN_OBJ) $(FR_LIB)
+bin/bars_stripes_app_risp: src/bars_stripes_app.cpp $(RISP_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/bars_stripes_app_vrisp: src/bars_stripes_app.cpp $(VRISP_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/bars_stripes_app_vrisp_vector_full: src/bars_stripes_app.cpp $(VRISP_RVV_FULL_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/bars_stripes_app_vrisp_vector_fired: src/bars_stripes_app.cpp $(VRISP_RVV_FIRED_OBJ) $(FR_LIB)
+	$(CXX) $(FR_CFLAGS) -o $@ $^
+
+bin/bars_stripes_app_vrisp_vector_synapses: src/bars_stripes_app.cpp $(VRISP_RVV_SYNAPSES_OBJ) $(FR_LIB)
 	$(CXX) $(FR_CFLAGS) -o $@ $^
 
 bin/tutorial_app_vrisp: tutorial/src/tutorial_and_app.cpp $(VRISP_OBJ) $(FR_LIB)
@@ -116,9 +128,6 @@ framework-open/obj/vrisp_rvv_fired.o: framework-open/src/vrisp.cpp $(FR_INC) $(V
 
 framework-open/obj/vrisp_rvv_synapses.o: framework-open/src/vrisp.cpp $(FR_INC) $(VRISP_INC)
 	$(CXX) -c $(FR_CFLAGS) -DRISCVV_SYNAPSES -o framework-open/obj/vrisp_rvv_synapses.o framework-open/src/vrisp.cpp
-
-framework-open/obj/vrisp_rvv_dvlen.o: framework-open/src/vrisp.cpp $(FR_INC) $(VRISP_INC)
-	$(CXX) -c $(FR_CFLAGS) -DRISCVV_DVLEN -o framework-open/obj/vrisp_rvv_dvlen.o framework-open/src/vrisp.cpp
 
 framework-open/obj/vrisp_static.o: framework-open/src/vrisp_static.cpp $(FR_INC) $(VRISP_INC)
 	$(CXX) -c $(FR_CFLAGS) -o framework-open/obj/vrisp_static.o framework-open/src/vrisp_static.cpp
