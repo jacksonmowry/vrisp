@@ -109,3 +109,41 @@ The script =scripts/connectivity_benchmark_full.bash= is an example of a simple 
 250 Neurons, 15% Connectivity Chance
 
 [[file:results/con_desktop_200_9998_49p99_25percent.svg]]
+
+** Bars & Stripes
+#+begin_src bash
+scrips/bars_stripes_benchmark.bash experiment_prefix [vector]
+#+end_src
+
+#+begin_src bash
+$ bash scripts/bars_stripes_benchmark.bash $HOSTNAME
+#+PLOT: title:"Bars Stripes Calculations per Second 4x4"
+#+PLOT: file:"hostname_bar_stripe_4.svg"
+#+PLOT: set:"rmargin 8" set:"size ratio 0.5" set:"yrange [0:*]" with:"lines lw 2"
+#+PLOT: set:"xlabel 'Activity Percent'" set:"ylabel 'Calculations per Second'"
+#+PLOT: ind:1 set:"key below horizontal"
+#+PLOT: labels:("x" "risp" "vrisp")
+| _    | risp               | vrisp              |
+| 0%   | 4106776.1806981522 | 2132650.8850501170 |
+| 1%   | 3711952.4870081660 | 1838573.2671446956 |
+| 2%   | 3491620.1117318431 | 2195389.6816684962 |
+| 3%   | 3469812.6301179738 | 2145922.7467811159 |
+...
+#+end_src
+
+The script =scripts/bars_stripes_benchmark.bash= runs through various square networks which compute if there is either a full bar, full stripe, or both in the input data. This equates to a full row, column, or both respectively.
+
+The script requires and experiment prefix which helps identify which machine or environment the test is being run on.
+
+#+begin_example
+The data from the desktop run is very dirty, even when averaging across 1000 simulation attempts. I'll take a look at this in the future to see what can be done to eliminate these inconsistencies.
+#+end_example
+
+*** Example Plots
+22x22 Bar Stripe Network
+
+[[file:results/k230_bar_stripe_22.svg]]
+
+100x100 Bar Stripe Network
+
+[[file:results/k230_bar_stripe_100.svg]]
