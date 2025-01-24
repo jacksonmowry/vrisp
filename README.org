@@ -144,6 +144,6 @@ The data from the desktop run is very dirty, even when averaging across 1000 sim
 
 [[file:results/k230_bar_stripe_22.svg]]
 
-100x100 Bar Stripe Network
+1000x1000 Bar Stripe Network
 
-[[file:results/k230_bar_stripe_100.svg]]
+[[file:results/desktop_big_bar_stripe_1000.svg]]

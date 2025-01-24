@@ -14,7 +14,7 @@ main() {
 
     local experiment_prefix="${1}"
 
-    for size in {2..100..2}; do
+    for size in {100..1000..50}; do
         local risp_network
         local vrisp_network
         local -a risp=()
@@ -45,7 +45,7 @@ main() {
             fi
 
             if ! mapfile -t "${processor}" < <(for activity in {0..100}; do
-                bin/bars_stripes_app_"${processor}" <(echo "${network}") "${activity}" 1000 | tail -1 | sed 's/.*: //' | awk '{printf("%.10f ", 1/$1)}'
+                bin/bars_stripes_app_"${processor}" <(echo "${network}") "${activity}" 100 | tail -1 | sed 's/.*: //' | awk '{printf("%.10f ", 1/$1)}'
                 printf '\n'
             done); then
                 printf 'Unable to run bars_stipes_app on %s.\n' "${processor}" >&2
