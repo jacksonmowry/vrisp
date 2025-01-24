@@ -1,0 +1,65 @@
+{
+  "Properties": {
+    "node_properties": [
+      {
+        "name": "Threshold",
+        "type": 73,
+        "index": 0,
+        "size": 1,
+        "min_value": 1.0,
+        "max_value": 127.0
+      }
+    ],
+    "edge_properties": [
+      {
+        "name": "Delay",
+        "type": 73,
+        "index": 1,
+        "size": 1,
+        "min_value": 1.0,
+        "max_value": 15.0
+      },
+      {
+        "name": "Weight",
+        "type": 73,
+        "index": 0,
+        "size": 1,
+        "min_value": -127.0,
+        "max_value": 127.0
+      }
+    ],
+    "network_properties": []
+  },
+  "Nodes": [
+    { "id": 1, "name": "1", "values": [1.0] },
+    { "id": 2, "name": "2", "values": [20.0] },
+    { "id": 3, "name": "3", "values": [1.0] },
+    { "id": 4, "name": "2bias", "values": [1.0] },
+    { "id": 5, "name": "Lbias", "values": [1.0] }
+  ],
+  "Edges": [
+    { "from": 1, "to": 4, "values": [1.0, 1.0] },
+    { "from": 2, "to": 3, "values": [1.0, 1.0] },
+    { "from": 4, "to": 2, "values": [1.0, 1.0] },
+    { "from": 4, "to": 4, "values": [1.0, 1.0] },
+    { "from": 5, "to": 2, "values": [1.0, 1.0] },
+    { "from": 5, "to": 4, "values": [-1.0, 1.0] }
+  ],
+  "Inputs": [1, 5],
+  "Outputs": [3],
+  "Network_Values": [],
+  "Associated_Data": {
+    "other": { "proc_name": "risp" },
+    "proc_params": {
+      "discrete": true,
+      "leak_mode": "all",
+      "max_delay": 15,
+      "max_threshold": 127.0,
+      "max_weight": 127.0,
+      "min_potential": 0.0,
+      "min_threshold": 1.0,
+      "min_weight": -127.0,
+      "spike_value_factor": 1.0
+    }
+  }
+}
