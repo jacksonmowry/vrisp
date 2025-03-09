@@ -1,12 +1,32 @@
 const std = @import("std");
+const Target = std.Target;
+const Feature = std.Target.Cpu.Feature;
 
 pub fn build(b: *std.Build) void {
-    const target = b.standardTargetOptions(.{});
+    const features = Target.riscv.Feature;
+    var enabled_features = Feature.Set.empty;
+    enabled_features.addFeature(@intFromEnum(features.v));
+    enabled_features.addFeature(@intFromEnum(features.b));
+    enabled_features.addFeature(@intFromEnum(features.m));
+    enabled_features.addFeature(@intFromEnum(features.a));
+    enabled_features.addFeature(@intFromEnum(features.f));
+    enabled_features.addFeature(@intFromEnum(features.d));
+    enabled_features.addFeature(@intFromEnum(features.zicsr));
+    enabled_features.addFeature(@intFromEnum(features.zifencei));
+
+    const rv_target = b.resolveTargetQuery(.{
+        .cpu_arch = Target.Cpu.Arch.riscv64,
+        .os_tag = Target.Os.Tag.linux,
+        .abi = Target.Abi.gnu,
+        .cpu_features_add = enabled_features,
+    });
+
+    // const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
     const lib = b.addStaticLibrary(.{
         .name = "libframework",
-        .target = target,
+        .target = rv_target,
         .optimize = optimize,
     });
     lib.linkLibCpp();
@@ -27,7 +47,7 @@ pub fn build(b: *std.Build) void {
 
     const vrisp = b.addObject(.{
         .name = "vrisp",
-        .target = target,
+        .target = rv_target,
         .optimize = optimize,
     });
     vrisp.linkLibCpp();
@@ -41,7 +61,7 @@ pub fn build(b: *std.Build) void {
 
     const risp = b.addObject(.{
         .name = "risp",
-        .target = target,
+        .target = rv_target,
         .optimize = optimize,
     });
     risp.linkLibCpp();
@@ -54,7 +74,7 @@ pub fn build(b: *std.Build) void {
 
     const vrisp_exe = b.addExecutable(.{
         .name = "vrisp_dbscan",
-        .target = target,
+        .target = rv_target,
         .optimize = optimize,
     });
     vrisp_exe.linkLibCpp();
@@ -68,7 +88,7 @@ pub fn build(b: *std.Build) void {
 
     const risp_exe = b.addExecutable(.{
         .name = "risp_dbscan",
-        .target = target,
+        .target = rv_target,
         .optimize = optimize,
     });
     risp_exe.linkLibCpp();
