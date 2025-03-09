@@ -41,3 +41,6 @@ two.setup
 risp_eventbased.png
 risp_ringbuffer.png
 effective_neuromorphic_sim.bib
+
+.zig-cache/
+zig-out/
