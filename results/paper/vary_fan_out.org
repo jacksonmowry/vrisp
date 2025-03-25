@@ -1,0 +1,25 @@
+#+title: Vary Fan Out
+
+#+PLOT: title:"Desktop | Varied Fan-out, Network 256+256, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
+#+PLOT: labels:("x" "risp" "superneuro" "vrisp")
+- 256 Input Neurons, 256 Output Neurons, 0 Hidden Neurons, Varied Fan-out
+- Fan-out describes how many output neurons each input is connected to
+#+ATTR_HTML: :align center
+#+CAPTION: Simulation time steps per second
+|---------+-----------+-----------+--------------+------------------|
+| Fan-out |      risp |     vrisp |   superneuro | vrisp/superneuro |
+|---------+-----------+-----------+--------------+------------------|
+|       / |         < |         < |            < |                < |
+|       1 | 295665.54 | 303269.24 |      1228.92 |                x |
+|       2 | 240749.21 | 266375.42 |       245.72 |        1084.0608 |
+|       4 | 164956.61 | 265259.02 |        83.76 |        3166.8937 |
+|       8 | 132138.79 | 261328.59 |        24.28 |        10763.121 |
+|      16 |  95975.73 | 222340.80 |         6.38 |        34849.655 |
+|      32 |  62400.54 | 151494.49 |         1.56 |        97111.853 |
+|      64 |  35580.73 |  83102.03 | Failed (OOM) |              inf |
+|     128 |  17448.80 |  53350.40 | Failed (OOM) |              inf |
+|     256 |   8746.69 |  30995.64 | Failed (OOM) |              inf |
+|---------+-----------+-----------+--------------+------------------|
+#+TBLFM: @4$5=($3/$4)::@5$5=($3/$4)::@6$5=($3/$4)::@7$5=($3/$4)::@8$5=($3/$4)

@@ -147,3 +147,6 @@ The data from the desktop run is very dirty, even when averaging across 1000 sim
 1000x1000 Bar Stripe Network
 
 [[file:results/desktop_big_bar_stripe_1000.svg]]
+
+* Benchmark Results
+Benchmark results for the paper can be found [[file:results/paper/]].

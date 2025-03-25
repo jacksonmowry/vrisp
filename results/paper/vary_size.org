@@ -1,0 +1,56 @@
+#+PLOT: title:"Desktop | Varied Network Size, Fan-out 50%, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2"
+#+PLOT: labels:("x" "risp" "vrisp")
+|   _ |    risp |    vrisp |
+|   1 | 3322259 | 10152284 |
+|   2 | 1492760 |  7336757 |
+|   4 | 2712232 |  3098853 |
+|   8 |  544158 |  1434309 |
+|  16 |  416112 |  1959248 |
+|  32 |  319877 |   805283 |
+|  64 |  207267 |   346741 |
+| 128 |   69894 |   119461 |
+
+#+PLOT: title:"K230 | Varied Network Size, Fan-out 50%, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[64:512]"
+#+PLOT: labels:("x" "risp" "vrisp" "vrisp-full")
+|    _ |   risp |   vrisp | vrisp-full |
+|    4 | 736377 | 1252348 |    1192606 |
+|    8 | 401655 |  626684 |     731743 |
+|   16 | 186192 |  289210 |     383759 |
+|   32 |  50510 |  121321 |     198997 |
+|   64 |  13169 |   42375 |      85101 |
+|  128 |   2047 |   13408 |      30501 |
+|  256 |    455 |    3690 |       8970 |
+|  512 |    100 |     832 |       1877 |
+| 1024 |     24 |     202 |        489 |
+
+
+#+PLOT: title:"Desktop | Varied Network Size, Fan-out 50%, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:*]"
+#+PLOT: labels:("x" "risp" "superneuro" "vrisp")
+- 64 Input Neurons, 64 Output Neurons, 32 Fan-out, Random Delay 1-N
+- 25% Activity, Averaged over 5000 time steps
+- Fan-out describes how many output neurons each input is connected to
+#+ATTR_HTML: :align center
+#+CAPTION: Simulation time steps per second
+|----------+-----------------+-----------------+--------------+------------------|
+| N+N Size |            risp |           vrisp |   superneuro | vrisp/superneuro |
+|----------+-----------------+-----------------+--------------+------------------|
+|        / |               < |               < |            < |                < |
+|        1 | 28011204.481793 | 28490028.490028 | 46448.544303 |        613.36752 |
+|        2 | 13037809.647979 | 20533880.903491 | 46655.282778 |        440.11910 |
+|        4 |  8605851.979346 | 11933174.224344 | 44478.247913 |        268.29236 |
+|        8 |  2628120.893561 |  6501950.585176 | 29269.377792 |        222.14174 |
+|       16 |  1571338.780641 |  2935133.548576 |  5373.868062 |        546.18638 |
+|       32 |   502033.234600 |  1486325.802616 |   257.766797 |        5766.1647 |
+|       64 |   215127.785905 |   501630.298470 |    18.305242 |        27403.642 |
+|      128 |    69391.918617 |   145196.886979 |     1.127357 |        128794.06 |
+|      256 |    15340.199607 |    43815.641308 |              |              inf |
+|      512 |     3206.732599 |    12882.265114 |              |              inf |
+|     1024 |      431.250368 |     3153.772259 |              |              inf |
+|----------+-----------------+-----------------+--------------+------------------|
+#+TBLFM: $5=($3/$4)

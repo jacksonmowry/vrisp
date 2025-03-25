@@ -1,0 +1,43 @@
+{ "Properties":
+  { "node_properties": [
+      { "name":"Threshold", "type":73, "index":0, "size":1, "min_value":1.0, "max_value":15.0 }],
+    "edge_properties": [
+      { "name":"Delay", "type":73, "index":1, "size":1, "min_value":1.0, "max_value":15.0 },
+      { "name":"Weight", "type":73, "index":0, "size":1, "min_value":1.0, "max_value":15.0 }],
+    "network_properties": [] },
+ "Nodes":
+  [ {"id":0,"values":[1.0]},
+    {"id":6,"values":[1.0]},
+    {"id":4,"values":[1.0]},
+    {"id":1,"values":[1.0]},
+    {"id":7,"values":[1.0]},
+    {"id":5,"values":[1.0]},
+    {"id":2,"values":[1.0]},
+    {"id":3,"values":[1.0]} ],
+ "Edges":
+  [ {"from":3,"to":4,"values":[6.0,2.0]},
+    {"from":1,"to":6,"values":[4.0,10.0]},
+    {"from":1,"to":5,"values":[7.0,5.0]},
+    {"from":0,"to":5,"values":[5.0,8.0]},
+    {"from":3,"to":7,"values":[4.0,6.0]},
+    {"from":2,"to":6,"values":[7.0,8.0]},
+    {"from":0,"to":4,"values":[5.0,13.0]},
+    {"from":2,"to":7,"values":[3.0,11.0]} ],
+ "Inputs": [0,1,2,3],
+ "Outputs": [4,5,6,7],
+ "Network_Values": [],
+ "Associated_Data":
+   { "other": {"proc_name":"risp"},
+     "proc_params": 
+      { "discrete": true,
+        "fire_like_ravens": false,
+        "leak_mode": "none",
+        "max_delay": 15,
+        "max_threshold": 15.0,
+        "max_weight": 15.0,
+        "min_potential": 0.0,
+        "min_threshold": 1.0,
+        "min_weight": 1.0,
+        "run_time_inclusive": false,
+        "spike_value_factor": 15.0,
+        "threshold_inclusive": true}}}

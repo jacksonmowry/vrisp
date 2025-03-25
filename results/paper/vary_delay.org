@@ -1,0 +1,32 @@
+#+title: Vary Delay
+
+#+PLOT: title:"Desktop | Varied Delay, Network 64+64, 32 Synapse Fan-out, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Max Random Delay'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:15]"
+#+PLOT: labels:("x" "risp" "superneuro" "vrisp")
+- 64 Input Neurons, 64 Output Neurons, 32 Fan-out, Random Delay 1-N
+- 25% Activity, Averaged over 5000 time steps
+- Fan-out describes how many output neurons each input is connected to
+#+ATTR_HTML: :align center
+#+CAPTION: Simulation time steps per second
+|-----------+-----------+-----------+------------+------------------|
+| Max Delay |      risp |     vrisp | superneuro | vrisp/superneuro |
+|-----------+-----------+-----------+------------+------------------|
+|         / |         < |         < |          < |                < |
+|         1 | 258371.22 | 617055.41 |   33961.96 |        18.169016 |
+|         2 | 233067.63 | 617779.69 |    4844.98 |        127.50923 |
+|         3 | 235177.91 | 618314.47 |     967.43 |        639.13097 |
+|         4 | 247622.82 | 616750.95 |     433.93 |        1421.3144 |
+|         5 | 233007.89 | 615384.61 |     251.63 |        2445.5932 |
+|         6 | 229694.96 | 615687.72 |     165.28 |        3725.1193 |
+|         7 | 233945.49 | 609533.09 |     113.92 |        5350.5363 |
+|         8 | 236787.27 | 607644.16 |      81.67 |        7440.2371 |
+|         9 | 234901.69 | 615915.25 |      65.05 |        9468.3359 |
+|        10 | 241411.77 | 609310.26 |      50.89 |        11973.084 |
+|        11 | 230186.68 | 612895.31 |      39.57 |        15488.888 |
+|        12 | 253826.43 | 326381.40 |      32.72 |        9974.9817 |
+|        13 | 234175.58 | 614326.08 |      28.26 |        21738.361 |
+|        14 | 231577.97 | 605913.71 |      23.14 |        26184.689 |
+|        15 | 215996.71 | 604521.82 |      20.61 |        29331.481 |
+|-----------+-----------+-----------+------------+------------------|
+#+TBLFM: $5=($3/$4)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROCESSORS=(risp vrisp)
+PROCESSORS=(risp vrisp vrisp_full)
 
 # `generate_network` takes an empty network, a total number of neurons,
 #  a connectivity chance, and a number of input neurons, returning a
@@ -103,6 +103,10 @@ main() {
         bin/connectivity_app_vrisp "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
     done))
 
+    vrisp_swar=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
+        bin/connectivity_app_vrisp_swar "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
+    done))
+
     if [ -n "${vector}" ]; then
         vr_full=($(for ((activity_percentage = 0; activity_percentage <= activity_max; activity_percentage++)); do
             bin/connectivity_app_vrisp_vector_full "${temp_file}" "${activity_percentage}" "${total_timesteps}" | head -1 | awk -F':' '{ printf("%.8f ", $2) }'
@@ -143,6 +147,7 @@ main() {
 
             printf '%s ' "${risp[${i}]}"
             printf '%s ' "${vrisp[${i}]}"
+            printf '%s ' "${vrisp_swar[${i}]}"
             if [ -n "${vector}" ]; then
                 printf '%s ' "${vr_full[${i}]}"
                 printf '%s ' "${vr_fired[${i}]}"
