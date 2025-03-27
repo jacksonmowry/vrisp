@@ -16,8 +16,8 @@
         "type": 73,
         "index": 1,
         "size": 1,
-        "min_value": 7,
-        "max_value": 1
+        "min_value": 1,
+        "max_value": 7
       },
       {
         "name": "Weight",
