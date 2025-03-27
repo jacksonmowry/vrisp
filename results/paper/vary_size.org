@@ -1,33 +1,26 @@
-#+PLOT: title:"Desktop | Varied Network Size, Fan-out 50%, 25% activity"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2"
-#+PLOT: labels:("x" "risp" "vrisp")
-|   _ |    risp |    vrisp |
-|   1 | 3322259 | 10152284 |
-|   2 | 1492760 |  7336757 |
-|   4 | 2712232 |  3098853 |
-|   8 |  544158 |  1434309 |
-|  16 |  416112 |  1959248 |
-|  32 |  319877 |   805283 |
-|  64 |  207267 |   346741 |
-| 128 |   69894 |   119461 |
-
+* Kendryte K230
 #+PLOT: title:"K230 | Varied Network Size, Fan-out 50%, 25% activity"
-#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
-#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[64:512]"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]" set:"logscale y"
+#+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:1024]"
 #+PLOT: labels:("x" "risp" "vrisp" "vrisp-full")
-|    _ |   risp |   vrisp | vrisp-full |
-|    4 | 736377 | 1252348 |    1192606 |
-|    8 | 401655 |  626684 |     731743 |
-|   16 | 186192 |  289210 |     383759 |
-|   32 |  50510 |  121321 |     198997 |
-|   64 |  13169 |   42375 |      85101 |
-|  128 |   2047 |   13408 |      30501 |
-|  256 |    455 |    3690 |       8970 |
-|  512 |    100 |     832 |       1877 |
-| 1024 |     24 |     202 |        489 |
+|----------+----------------+----------------+----------------|
+| N+N Size |           risp |          vrisp |     vrisp-full |
+|----------+----------------+----------------+----------------|
+|        / |              < |              < |              < |
+|        1 | 3411804.844763 | 2747252.747253 | 3192848.020434 |
+|        2 | 1243317.170210 | 2428953.121205 | 2336448.598131 |
+|        4 |  818330.605565 | 1539882.968894 | 1510574.018127 |
+|        8 |  429387.264374 |  820411.846747 |  941619.585687 |
+|       16 |  196216.937446 |  376180.265583 |  498802.873105 |
+|       32 |   53958.678444 |  148966.914448 |  251895.513741 |
+|       64 |   14084.288835 |   50695.799853 |  113058.224986 |
+|      128 |    2041.307490 |   14051.002328 |   32739.654269 |
+|      256 |     465.297637 |    3833.576765 |    9597.140820 |
+|      512 |      98.518136 |     843.818552 |    1912.665768 |
+|     1024 |      21.575642 |     204.586418 |     487.619226 |
+|----------+----------------+----------------+----------------|
 
-
+* Desktop Intel i5-12400F
 #+PLOT: title:"Desktop | Varied Network Size, Fan-out 50%, 25% activity"
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
 #+PLOT: set:"xlabel 'Network Size (N inputs + N output)'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:*]"

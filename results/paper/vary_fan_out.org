@@ -1,5 +1,26 @@
 #+title: Vary Fan Out
 
+* Kendryte K230
+#+PLOT: title:"K230 | Varied Fan-out, 256+256 Network, Fan-out 50%, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Input Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
+#+PLOT: labels:("x" "risp" "vrisp" "vrisp-full")
+|-         |      |       |            |
+| N+N Size |         risp |        vrisp |   vrisp-full |
+|----------+--------------+--------------+--------------|
+|        / |            < |            < |            < |
+|        1 | 19587.794454 | 24442.766041 | 25402.115488 |
+|        2 | 15712.029916 | 24603.272235 | 26198.585276 |
+|        4 | 12119.845884 | 23448.693087 | 25685.019469 |
+|        8 |  6576.074662 | 20254.190086 | 25273.267202 |
+|       16 |  3366.304037 | 16371.971185 | 25381.870238 |
+|       32 |  1628.326896 | 11232.812393 | 20473.217960 |
+|       64 |   849.972321 |  6726.256818 | 14888.795586 |
+|      128 |   466.391915 |  3841.670912 |  9865.162953 |
+|      256 |   229.502553 |  1919.206769 |  4976.961645 |
+|----------+--------------+--------------+--------------|
+
+* Desktop Intel i5-12400F
 #+PLOT: title:"Desktop | Varied Fan-out, Network 256+256, 25% activity"
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
 #+PLOT: set:"xlabel 'Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
