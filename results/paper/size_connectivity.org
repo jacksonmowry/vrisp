@@ -1,6 +1,7 @@
 #+title: Size Con
 
 * Desktop Intel i5-12400F
+Runtime for 1000 time steps in seconds
 |------+------------------------+---------------+--------------+--------------+--------------|
 | Size | Connection Probability |          risp |        vrisp |      caspian |   superneuro |
 |------+------------------------+---------------+--------------+--------------+--------------|
