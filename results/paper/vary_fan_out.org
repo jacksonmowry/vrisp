@@ -22,6 +22,7 @@
 #+TBLFM: $5=($4/$3)
 
 * MilkV Jupiter
+** 16-bit Integer Charges
 #+PLOT: title:"MilkV Jupiter | Varied Fan-out, 256+256 Network, 25% activity"
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
 #+PLOT: set:"xlabel 'Input Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
@@ -37,9 +38,25 @@
 |           128 |   376.244254 |  5037.055096 |  9679.914275 |              1.9217408 |
 |           256 |   185.412968 |  2714.815918 |  5884.042007 |              2.1673816 |
 #+TBLFM: $5=($4/$3)
-
+** 16-bit Float Charges
+#+PLOT: title:"MilkV Jupiter | Varied Fan-out, 256+256 Network, 25% activity"
+#+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
+#+PLOT: set:"xlabel 'Input Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
+#+PLOT: labels:("x" "risp" "vrisp" "vrisp-full")
+| Input Fan-out |         risp |        vrisp |   vrisp-full | (vrisp - full) / vrisp |
+|             1 | 14531.377604 | 19112.821072 | 26849.890318 |              1.4048104 |
+|             2 | 12930.538441 | 18530.941112 | 26461.676876 |              1.4279726 |
+|             4 | 10413.824560 | 17734.710020 | 26178.079000 |              1.4760929 |
+|             8 |  7278.751432 | 16336.585948 | 26361.088924 |              1.6136229 |
+|            16 |  4217.565655 | 14092.247854 | 26368.248410 |              1.8711173 |
+|            32 |  1886.293831 | 11123.829356 | 22746.762567 |              2.0448680 |
+|            64 |   760.825636 |  7789.035530 | 17776.545271 |              2.2822524 |
+|           128 |   381.371308 |  4694.291319 | 11258.104428 |              2.3982543 |
+|           256 |   187.662719 |  2581.852469 |  7371.347866 |              2.8550616 |
+#+TBLFM: $5=($4/$3)
 
 * Desktop Intel i5-12400F
+** 8-bit Integer Charges
 #+PLOT: title:"Desktop | Varied Fan-out, Network 256+256, 25% activity"
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
 #+PLOT: set:"xlabel 'Neuron Fan-out'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[1:256]"
@@ -63,3 +80,25 @@
 |     256 |   8746.69 |  30995.64 | Failed (OOM) |              inf |
 |---------+-----------+-----------+--------------+------------------|
 #+TBLFM: @4$5=($3/$4)::@5$5=($3/$4)::@6$5=($3/$4)::@7$5=($3/$4)::@8$5=($3/$4)
+** 16-bit Integer Charges
+| Input Neuron Fan-out |          risp |         vrisp |
+|                    1 | 246779.527170 | 318562.645344 |
+|                    2 | 233940.017779 | 264508.279109 |
+|                    4 | 163281.301025 | 267351.085445 |
+|                    8 | 108230.964879 | 257997.936017 |
+|                   16 |  84779.530830 | 212165.574014 |
+|                   32 |  52457.365276 | 134399.569921 |
+|                   64 |  32545.091224 |  77996.427764 |
+|                  128 |  16338.828081 |  45204.891169 |
+|                  256 |   8629.974317 |  23654.810087 |
+** 16-bit Float Charges
+| Input Neuron Fan-out |          risp |         vrisp |
+|                    1 | 235865.745218 | 148714.364320 |
+|                    2 | 241633.442068 | 129325.953132 |
+|                    4 | 167582.785896 | 137515.642404 |
+|                    8 | 116104.912399 | 138759.765218 |
+|                   16 |  85023.168814 | 129745.439448 |
+|                   32 |  55889.339109 |  95535.620456 |
+|                   64 |  32697.690235 |  64331.849412 |
+|                  128 |  16983.897567 |  38621.968175 |
+|                  256 |   8603.734365 |  21928.766595 |
