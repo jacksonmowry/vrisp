@@ -56,7 +56,7 @@
 #+PLOT: set:"size ratio 0.5" set:"yrange [0:*]"
 #+PLOT: set:"xlabel 'Activity Percentage'" set:"ylabel 'Runs per Second'" ind:1 set:"key right top" with:"lines linewidth 2" set:"xrange[0:100]"
 #+PLOT: labels:("x" "SuperNeuroMat" "risp" "vrisp" "vrisp-vector" "caspian")
-| N+N Size |  SuperNeuro |          risp |         vrisp |  vrisp-vector |       caspian |
+| Activity % |  SuperNeuro |          risp |         vrisp |  vrisp-vector |       caspian |
 |       0% | 2405.818231 | 145192.670674 | 164219.791769 | 197199.763360 | 291894.100820 |
 |       1% | 1880.179189 |  91472.059859 | 137720.180138 | 182555.040345 | 129629.389575 |
 |       2% | 1904.597202 |  70853.142691 | 116189.900774 | 170259.134403 |  79601.990050 |
